@@ -1,1 +1,1 @@
-Alimentos naturales congelados de calidad listos para el consumo. Con el objetivo de brindar a los hogares y lugares de trabajo una alimentacion sana, variada, de facil preparacion y a la alcance de la mano.
+Alimentos naturales congelados de calidad listos para el consumo. Con el objetivo de brindar a los hogares y lugares de trabajo una alimentacion sana y variada, de facil preparacion y a la alcance de la mano.
