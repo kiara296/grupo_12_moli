@@ -1,1 +1,1 @@
-Alimentos congelados de calidad, ahorrá todos los días tiempo y dinero. Saboreá lo simple. Pedí desde tu celular, recibí los productos en tu casa, freezá, horneá, y disfrutá.
+Alimentos naturales congelados de calidad listos para el consumo. Con el objetivo de brindar a los hogares y lugares de trabajo una alimentacion sana, variada, de facil preparacion y a la alcance de la mano.
