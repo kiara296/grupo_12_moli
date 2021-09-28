@@ -10,3 +10,6 @@ Paginas referentes:
 3. https://soygourmet.com.ar/?gclid=CjwKCAjw7fuJBhBdEiwA2lLMYSK5xhGil-l8EH4fH7OcM1J-2ddKQlpaRAzbe_vzArabAKXqUiO1ERoClPwQAvD_BwE: Nos gusto la estetica y las categorias. 
 4. https://www.frizata.com/ar/?gclid=CjwKCAjw7fuJBhBdEiwA2lLMYTm1dlaM7YLiqgQZW7Z6bjNewKauFwemvOZUJtbUtOxCeJtzm4TaVhoCUncQAvD_BwE: Esta pagina es el ejemplo de diseño que no nos gusto. Esta demasiado cargada y la paleta de colores no es muy amigable. 
 5. https://www.artesanosdelmar.com.ar/: Nos parecio una imagen limpia y clara. 
+
+Tablero Trello
+https://trello.com/b/SGY03mtR/moli
