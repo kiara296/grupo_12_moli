@@ -1,0 +1,22 @@
+{
+  "name": "grupo_12_moli",
+  "version": "1.0.0",
+  "description": "Alimentos naturales congelados de calidad listos para el consumo. Con el objetivo de brindar a los hogares y lugares de trabajo una alimentación sana y variada, de facil preparación y al alcance de la mano.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiara296/grupo_12_moli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiara296/grupo_12_moli/issues"
+  },
+  "homepage": "https://github.com/kiara296/grupo_12_moli#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
