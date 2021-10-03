@@ -12,9 +12,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 35%;
-    border: solid;
+    border: solid 1px green;
     padding: 0 2rem 2rem 2rem;
     border-radius: 10%;
+    box-shadow: 4px 8px 16px rgb(0 0 0 / 50%);
+    -moz-box-shadow: 4px 8px 16px rgba(0,0,0,.5);
+    box-shadow: 4px 8px 16px rgb(0 0 0 / 50%);
 }
 
 .input-usuario, .input-password, .button-ingresar {
