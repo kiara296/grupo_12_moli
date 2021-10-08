@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+:root {
+    --primary-gray: #96BF85;
+    --primary-blue: #c6cccc;
+    --primary-withe: #f9f3e7;
+    --primary-red: #f1b99e;
+    --primary-orange: #cb7236;
+    --header-typography: 'Raleway', sans-serif;
+    --sub-header-typography: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    background-color: var(--secondary-gray);
+}
