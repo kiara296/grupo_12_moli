@@ -19,5 +19,5 @@
 
 
 html {
-    background-color: var(--secondary-gray);
+    font-family: var(--header-typography);
 }
