@@ -3,11 +3,11 @@ h1 {
     font-weight: bold;
 }
 
-.section, .item-description {
+.section1, .item-description {
     margin: 1rem;
 }
 
-.section {
+.section1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,6 +78,22 @@ article {
     font-size: 15px;
 }
 
+.title-and-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.section2 {
+    margin: 0 1rem;
+}
+
+.sections-container {
+
+}
+
+.articles-container {
+    
+}
 
 @media (min-width:550px) {
     .description {
@@ -87,5 +103,42 @@ article {
 }
 
 @media (min-width: 769px) {
+
+    .sections-container {
+        display: flex;
+    }
+
+    .section1 {
+        width: 70%;
+    }
     
+/*     .section1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .articles-container {
+        display: flex;
+        width: 20rem;
+        justify-content: space-evenly;
+        height: 100px;
+    }
+
+    .button-submit {
+        width: 75px;
+        margin-left: 5px;
+    }
+
+    body {
+        display: flex;
+    }
+
+    .description {
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+        left: 56%;
+    } */
+
 }

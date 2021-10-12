@@ -8,54 +8,63 @@
     <link rel="stylesheet" href="css\general-styles.css" />
     <link rel="stylesheet" href="css\detail.css" />
   </head>
-  <header></header>
-
+  
   <body>
-    <section class="section">
-      <h1>Ravioles de ricota y verdura</h1>
-      <img
-      class="img"
-        src="images/raviol.jpg"
-        alt="Imagen de ravioles de ricota y verdura"
-      />
-      <article>
-          <h2>Cantidad:</h2>
-            <div class="quantity-container">
-                <button class="button">-</button>
-                <div class="quantity">
-                <span class="span-quantity">1</span>
+    <header></header>
+
+    <div class="sections-container">
+      <section class="section1">
+        <div class="title-and-img">
+          <h1>Ravioles de ricota y verdura</h1>
+          <img
+          class="img"
+            src="images/raviol.jpg"
+            alt="Imagen de ravioles de ricota y verdura"
+          />
+        </div>
+      </section>
+      <section class="section2">
+        <div class="articles-container">
+          <article>
+              <h2>Cantidad:</h2>
+                <div class="quantity-container">
+                    <button class="button">-</button>
+                    <div class="quantity">
+                    <span class="span-quantity">1</span>
+                    </div>
+                    <button class="button">+</button>
                 </div>
-                <button class="button">+</button>
+          </article>
+          <article>
+              <h2>Precio:</h2>
+              <div class="prize-container">
+                  <span class="prize">$590</span>
+                  <button class="button button-submit" type="submit">Agregar</button>
+              </div>
+          </article>
+        </div>
+        <dl class="description">
+            <h2>Descripción:</h2>
+            <div class="item-description">
+                <dt>Ingredientes:</dt>
+                <dd>
+                  Sémola de trigo candel, agua, ricotta, espinaca, acelga, queso sardo,
+                  papa, huevo, sal, pimientam salsa pomodoro, (tomate perita entero
+                  italiano, añbahaca, agua, cebolla, apio, aceite de oliva extra virgen
+                  italiano, sal, azucar)
+                </dd>
             </div>
-      </article>
-      <article>
-          <h2>Precio:</h2>
-          <div class="prize-container">
-              <span class="prize">$590</span>
-              <button class="button button-submit" type="submit">Agregar</button>
-          </div>
-      </article>
-    </section>
-    <dl class="description">
-        <h2>Descripción:</h2>
-        <div class="item-description">
-            <dt>Ingredientes:</dt>
-            <dd>
-              Sémola de trigo candel, agua, ricotta, espinaca, acelga, queso sardo,
-              papa, huevo, sal, pimientam salsa pomodoro, (tomate perita entero
-              italiano, añbahaca, agua, cebolla, apio, aceite de oliva extra virgen
-              italiano, sal, azucar)
-            </dd>
-        </div>
-        <div class="item-description">
-            <dt>Informacion nutricional:</dt>
-            <dd>409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.</dd>
-        </div>
-        <div class="item-description">
-            <dt>Preparación y cocción:</dt>
-            <dd>10 minutos en agua hirviendo</dd>
-        </div>
-    </dl>
+            <div class="item-description">
+                <dt>Informacion nutricional:</dt>
+                <dd>409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.</dd>
+            </div>
+            <div class="item-description">
+                <dt>Preparación y cocción:</dt>
+                <dd>10 minutos en agua hirviendo</dd>
+            </div>
+        </dl>
+      </section>
+    </div>
   </body>
 
   <footer></footer>
