@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    
     justify-content: space-between;
     align-items: center;
 }
@@ -34,4 +34,20 @@ input {
 .button-ingresar:hover {
     filter: brightness(75%);
 } 
+@media (min-width:550px) {
+    .description {
+        max-width: 500px;
+        margin: 3rem auto 1rem;
+    }
+}
 
+@media (min-width: 769px) {
+
+    .sections-container {
+        display: flex;
+    }
+
+    .section1 {
+        width: 70%;
+    }
+    

@@ -15,4 +15,8 @@ app.get('/detail', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/detail.html'));
 });
 
+app.get('/regmoli', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/regmoli.html'));
+});
+
 app.use(express.static('public'));

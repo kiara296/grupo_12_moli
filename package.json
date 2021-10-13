@@ -4,7 +4,9 @@
   "description": "Alimentos naturales congelados de calidad listos para el consumo. Con el objetivo de brindar a los hogares y lugares de trabajo una alimentación sana y variada, de facil preparación y al alcance de la mano.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start:watch": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/kiara296/grupo_12_moli#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "run": "^1.4.0"
   }
 }
