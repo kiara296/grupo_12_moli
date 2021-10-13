@@ -22,4 +22,9 @@ app.get('/regmoli', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/regmoli.html'));
 });
 
+app.get('/carrito', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/carrito.html'));
+});
+
+
 app.use(express.static('public'));
