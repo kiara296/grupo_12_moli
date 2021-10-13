@@ -1,53 +1,58 @@
-body {
-    display: flex;
-    flex-direction: column;
-    
-    justify-content: space-between;
-    align-items: center;
-}
 
-.main-form {
-    margin-top: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 35%;
-    border: solid 1px green;
-    padding: 0 2rem 2rem 2rem;
-    border-radius: 10%;
-    box-shadow: 4px 8px 16px rgb(0 0 0 / 50%);
-    -moz-box-shadow: 4px 8px 16px rgba(0,0,0,.5);
-    box-shadow: 4px 8px 16px rgb(0 0 0 / 50%);
-}
-
-.input-usuario, .input-password, .button-ingresar {
-    margin: 0.2rem;
-}
-
-input {
-    height: 25px;
-}
-.button-ingresar {
-    margin-top: 1rem;
-}
-
-.button-ingresar:hover {
-    filter: brightness(75%);
-} 
-@media (min-width:550px) {
-    .description {
-        max-width: 500px;
-        margin: 3rem auto 1rem;
-    }
-}
-
-@media (min-width: 769px) {
-
-    .sections-container {
+    body {
         display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #E0E7E7;
+        font-family: 'Nunito', sans-serif;
+        
     }
-
-    .section1 {
-        width: 70%;
+    .registrate 
+    {display: block;
+    text-align: left;
+    font-style: italic;
+    margin-left: initial;}
+    
+    main form {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: solid 1px green;
+        padding: 0 2rem 2rem 2rem;
+        border-radius: 10%;
+        box-shadow: 4px 8px 16px rgb(0 0 0 / 50%);
+        box-shadow: 4px 8px 16px rgb(0 0 0 / 50%);
+        align-items: center;
+        
+    }
+    main form href {
+        align-items: flex-start;
     }
     
+    .input-usuario, .input-password, .button-submit {
+        margin: 0.2rem;
+    }
+    input {
+        height: 25px;
+    }
+    label {
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-family: 'Nunito', sans-serif;
+        background-color: #96BF85 ;
+        height: 100px;
+      }
+      
+      header img, nav {
+        margin: 0px 20px 0px 20px;
+      }
+      
