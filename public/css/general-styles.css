@@ -276,3 +276,22 @@ button {
   height: 40px;
   font-size: 20px;
 }
+.button-submit {
+  margin-top: 1rem;
+  background-color: #96BF85;
+  color: white;
+  width: 100px;
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+  border: 2px solid gray;
+  transition-duration: .4s;
+  margin-left: 30px;
+  font-weight: bold;
+}
+.button-submit:hover {
+  filter: brightness(75%);
+  color: white;
+} 
+
