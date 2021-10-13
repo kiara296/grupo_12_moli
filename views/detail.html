@@ -8,16 +8,35 @@
     <link rel="stylesheet" href="css\general-styles.css" />
     <link rel="stylesheet" href="css\detail.css" />
   </head>
-  
+
   <body>
-    <header></header>
+    <header>
+      <div class="topBar">Envios gratis desde $1.000</div>
+      <img src="/images/logo-moli.png" alt="Logo Moli" />
+      <nav>
+        <ul class="nav1">
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Recomendados</a></li>
+          <li><a href="#">Ofertas</a></li>
+          <li><a href="#">Nuevos</a></li>
+        </ul>
+        <ul class="nav2">
+          <li><i class="fa fa-search"></i></li>
+          <li><i class="fas fa-shopping-basket"></i></li>
+          <li><a href="/login">Login</a><i class="fas fa-sign-in-alt"></i></li>
+        </ul>
+      </nav>
+      <div class="hambMenu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
 
     <div class="sections-container">
       <section class="section1">
         <div class="title-and-img">
-          <h1>Ravioles de ricota y verdura</h1>
+          <h1 class="title">Ravioles de ricota y verdura</h1>
           <img
-          class="img"
+            class="img"
             src="images/raviol.jpg"
             alt="Imagen de ravioles de ricota y verdura"
           />
@@ -26,46 +45,79 @@
       <section class="section2">
         <div class="articles-container">
           <article>
-              <h2>Cantidad:</h2>
-                <div class="quantity-container">
-                    <button class="button">-</button>
-                    <div class="quantity">
-                    <span class="span-quantity">1</span>
-                    </div>
-                    <button class="button">+</button>
-                </div>
+            <h2 class="title-quantity">Cantidad:</h2>
+            <div class="quantity-container">
+              <button class="button">-</button>
+              <div class="quantity">
+                <span class="span-quantity">1</span>
+              </div>
+              <button class="button">+</button>
+            </div>
           </article>
           <article>
-              <h2>Precio:</h2>
-              <div class="prize-container">
-                  <span class="prize">$590</span>
-                  <button class="button button-submit" type="submit">Agregar</button>
-              </div>
+            <h2 class="title-prize">Precio:</h2>
+            <div class="prize-container">
+              <span class="prize">$590</span>
+              <button class="button button-submit" type="submit">
+                Agregar
+              </button>
+            </div>
           </article>
         </div>
         <dl class="description">
-            <h2>Descripción:</h2>
-            <div class="item-description">
-                <dt>Ingredientes:</dt>
-                <dd>
-                  Sémola de trigo candel, agua, ricotta, espinaca, acelga, queso sardo,
-                  papa, huevo, sal, pimientam salsa pomodoro, (tomate perita entero
-                  italiano, añbahaca, agua, cebolla, apio, aceite de oliva extra virgen
-                  italiano, sal, azucar)
-                </dd>
-            </div>
-            <div class="item-description">
-                <dt>Informacion nutricional:</dt>
-                <dd>409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.</dd>
-            </div>
-            <div class="item-description">
-                <dt>Preparación y cocción:</dt>
-                <dd>10 minutos en agua hirviendo</dd>
-            </div>
+          <h2 class="title-description">Descripción:</h2>
+          <div class="item-description">
+            <dt>Ingredientes:</dt>
+            <dd>
+              Sémola de trigo candel, agua, ricotta, espinaca, acelga, queso
+              sardo, papa, huevo, sal, pimientam salsa pomodoro, (tomate perita
+              entero italiano, añbahaca, agua, cebolla, apio, aceite de oliva
+              extra virgen italiano, sal, azucar)
+            </dd>
+          </div>
+          <div class="item-description">
+            <dt>Informacion nutricional:</dt>
+            <dd>409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.</dd>
+          </div>
+          <div class="item-description">
+            <dt>Preparación y cocción:</dt>
+            <dd>10 minutos en agua hirviendo</dd>
+          </div>
         </dl>
       </section>
     </div>
   </body>
 
-  <footer></footer>
+  <footer>
+    <section class="seccionFooter">
+      <!--                 <div>
+            <i class="fas fa-credit-card iconosFooter"></i>
+        </div> -->
+      <h4>Pagá con tarjeta o en efectivo</h4>
+      <p>
+        Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo
+        en puntos de pago. ¡Y siempre es seguro!
+      </p>
+    </section>
+    <section class="seccionFooter">
+      <!--               <div>
+            <i class="fas fa-gift iconosFooter"></i>
+        </div> -->
+      <h4>Seguinos en las redes</h4>
+      <p><i class="fab fa-facebook"></i>Facebook</p>
+      <p><i class="fab fa-instagram"></i>Instagram</p>
+    </section>
+    <section class="seccionFooter">
+      <!--                 <div>
+            <i class="fas fa-user-shield iconosFooter"></i>
+        </div> -->
+      <h4>Informacion de conacto</h4>
+      <p><i class="far fa-envelope"></i>molifrozenfood@gmail.com</p>
+      <p><i class="fas fa-phone-alt"></i>+549 11 51143253</p>
+      <p><i class="fas fa-map-marker-alt"></i>Av.Libertador 1428, CABA</p>
+    </section>
+    <section class="copyright">
+      <p>Copyright © 2017-2020 Moli: Natural & Frozen Food</p>
+    </section>
+  </footer>
 </html>

@@ -268,7 +268,7 @@ html {
 button {
   width: 25%;
   border-color: var(--primary-gray);
-  background-color: var(--primary-blue);
+  background-color: var(--primary-gray);
   color: white;
   font-weight: bold;
   border: outset;
