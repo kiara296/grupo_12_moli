@@ -1,0 +1,259 @@
+main{
+    width: 100vw;
+    background-color: var(--primary-blue);
+}
+
+section{
+    padding: 0 15px 0 15px;
+}
+
+article{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.padre{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+}
+.sectores{
+    display: flex;
+    flex-direction: row;
+}
+
+.sector1{
+    padding-top: 20px;
+    width: 60%;
+}
+
+.sector2{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.padre div{
+    contain: content;
+    width: 20%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Font Awesome 5 Free';
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.precio{
+    border: 2px solid grey;
+    border-radius: 15%;
+}
+
+.padre p{
+    font-size: 16px;
+    padding: 2px;
+    font-weight: 600;
+    padding-left: 8%;
+}
+
+h1{
+    padding: 8% 0 2% 10%;
+    font-family: inherit;
+}
+
+.botton {
+    border-color: var(--primary-gray);
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: bold;
+    border: outset;
+    border-radius: 10%;
+    height: 30px;
+    font-size: 17px;
+}
+
+input .eliminar{
+    color: blue;
+    font-size: 65%;
+}
+
+.total{
+    margin-top: 30%;
+    width: 100%;
+}
+
+.total1{
+    font-size: 20px
+}
+.subtotal{
+    font-size: 16px
+}
+
+.descuento h4{
+    font-size: 14px
+}
+
+.boton{
+    height: 40%;
+    width: 42%;
+}
+
+.barra{
+    height: 40%;
+    width: 42%;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.botonCompra1, .botonCompra2{
+    width: 90%;
+    height: 25px;
+}
+
+.botonCompra1{
+    background-color: rgb(0, 222, 129);
+    color: white;
+    font-size: 18px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.botonCompra2{
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.Eliminar{
+    font-size: 60%;
+    color: blue;
+}
+
+.total1{
+    text-align: center;
+    font-family: fantasy;
+    font-size: 20px;
+}
+
+
+/*---------------MOBILE-----------------*/
+@media only screen and (max-width: 360px) {
+
+    main{
+        width: 100vw;
+        background-color: var(--primary-blue);
+    }
+    
+    .sectores{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sector1{
+        padding-top: 20px;
+        width: 100%;
+        padding: 0 5px 0 5px;
+    }
+    
+    .sector2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    
+    .padre p {
+    font-size: 14px;
+    padding: 2px;
+    font-weight: 600;
+}
+h1 {
+    padding: 18% 0 2% 5%;
+    font-family: inherit;
+}
+
+.padre {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+}
+
+    .padre p {
+        font-size: 14px;
+        padding: 1px;
+        font-weight: 600;
+    }
+
+    .descrip {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 8px;
+    }
+
+    .botton {
+        border-color: var(--primary-gray);
+        background-color: var(--primary-blue);
+        color: white;
+        font-weight: bold;
+        border: outset;
+        border-radius: 10%;
+        height: 30px;
+        font-size: 17px;
+    }
+
+    .descuento {
+        width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .barra {
+        height: 40%;
+        width: 50%;
+    }
+
+    .total1{
+        text-align: center;
+        font-family: fantasy;
+        font-size: 20px;
+    }
+    
+    .total {
+        margin-top: 10%;
+        width: 100%;
+    }
+
+    .botonCompra1, .botonCompra2 {
+        width: 90%;
+        height: 35px;
+    }
+
+    
+
+
+    
+}

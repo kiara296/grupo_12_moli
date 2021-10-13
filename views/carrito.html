@@ -1,70 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalle del producto</title>
-    <link rel="stylesheet" href="css\general-styles.css" />
-    <link rel="stylesheet" href="css\carrito.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MOLI: Natural & frozen food</title>
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="/css/general-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
   </head>
-  <header></header>
+  <header>
+    <div class="topBar">Envios gratis desde $1.000</div>
+    <img src="/images/logo-moli.png" alt="Logo Moli">
+    <nav>
+        <ul class="nav1">
+            <li><a href=#>Productos</a></li>
+            <li><a href=#>Recomendados</a></li>
+            <li><a href=#>Ofertas</a></li>
+            <li><a href=#>Nuevos</a></li>
+        </ul>
+        <ul class="nav2">
+            <li> <i class="fa fa-search"></i></li>
+            <li><i class="fas fa-shopping-basket"></i></li>
+            <li><a href= '/login'>Login</a><i class="fas fa-sign-in-alt"></i></li>
+        </ul>
+    </nav>
+    <div class="hambMenu">
+        <i class="fas fa-bars"></i>
+    </div>
+  </header>
 
   <body>
-        <h1>Mi carrito</h1>
-        <section>
-            <article>
-                  <div class="padre">
-                      <div>
-                          <img src="./images/raviol.jpg"/>
-                      </div>
+       <main>
+          <h1>Mi carrito</h1>
+            <div class="sectores">
+              <section class="sector1">
+                  <article>
+                        <div class="padre">
+                            <div class="imagen">
+                                <img src="./images/raviol.jpg"/>
+                            </div>
 
-                      <div>
-                          <p>Ravioles</p>
-                      </div>
+                            <div>
+                                <p class="descrip">Ravioles</p>
+                            </div>
 
-                      <div class="quantity-container">
-                        <button class="button">-</button>
-                        <div class="quantity">
-                        <span class="span-quantity">1</span>
+                            <div>
+                              <button class= "botton">-</button>
+                              <div class="quantity">
+                              <span class="span-quantity">1</span>
+                              </div>
+                              <button class= "botton">+</button>
+                          </div>
+
+                            <div>
+                              <p class="precio">$1299.00</p>
+                            </div>
+
+                            <div>
+                      
+                                <input class="Eliminar" type="submit" value="Eliminar">
+                            
+                            </div>
+
                         </div>
-                        <button class="button">+</button>
+                      
+                  </article>
+                  <article>
+                    <div class="padre">
+                        <div class="imagen">
+                            <img src="..\images\papas.png"/>
+                        </div>
+
+                        <div>
+                            <p class="descrip">Papas Fritas</p>
+                        </div>
+
+                        <div>
+                          <button class= "botton">-</button>
+                          <div class="quantity">
+                          <span class="span-quantity">1</span>
+                          </div>
+                          <button class= "botton">+</button>
+                      </div>
+
+                        <div>
+                          <p class="precio">$899.00</p>
+                        </div>
+
+                        <div>
+                  
+                            <input class="Eliminar" type="submit" value="Eliminar">
+                        
+                        </div>
+
+                    </div>
+                  
+              </article>
+              <article>
+                <div class="padre">
+                    <div class="imagen">
+                        <img src="..\images\wok.png"/>
                     </div>
 
-                      <div>
-                        <p>Precio</p>
-                      </div>
-
-                      <div>
-                        <a onclick="">Eliminar</a>
-                      </div>
-
-                  </div>
-                
-            </article>
-        </section>
-                <h3>¿Tenés un cupón de descuento?</h3>
-                <div class="cupon">
                     <div>
-                      <label for="fname"></label><br>
-                      <input type="text" placeholder="codigo" id="fname" name="codigo">
-                      <input class="boton" type="button" onclick="" value="Aplicar">
+                        <p class="descrip">Wok</p>
                     </div>
+
+                    <div>
+                      <button class= "botton">-</button>
+                      <div class="quantity">
+                      <span class="span-quantity">1</span>
+                      </div>
+                      <button class= "botton">+</button>
+                  </div>
+
+                    <div>
+                      <p class="precio">$1499.00</p>
+                    </div>
+
+                    <div>
+              
+                        <input class="Eliminar" type="submit" value="Eliminar">
+                    
+                    </div>
+
+                </div>
+              
+          </article>
+          <article>
+            <div class="padre">
+                <div class="imagen">
+                    <img src="..\images\tartaProducto.png"/>
                 </div>
 
                 <div>
-                  <h3>Subtotal</h3>
-                  <h2>Total</h2><br>
-                  <input class="boton" type="button" onclick="" value="Continuar comprando">
-                  <input class="boton" type="button" onclick="" value="Finalizar compra">
+                    <p class="descrip">Tarta</p>
                 </div>
 
+                <div>
+                  <button class= "botton">-</button>
+                  <div class="quantity">
+                  <span class="span-quantity">1</span>
+                  </div>
+                  <button class= "botton">+</button>
+              </div>
 
-        <section>
+                <div>
+                  <p class="precio">$1199.00</p>
+                </div>
 
-        </section>
+                <div>
+          
+                    <input class="Eliminar" type="submit" value="Eliminar">
+                
+                </div>
 
+            </div>
+          
+      </article>
+
+                  
+            </section>
+            
+              <section class="sector2">
+                  <div class="descuento">
+                    <h4>¿Tenés un cupón de descuento?</h4>
+                    <div class="cupon">
+                        <div>
+                          <label for="fname"></label><br>
+                          <input class="barra" type="text" placeholder="Código" id="fname" name="codigo">
+                          <input class="boton" type="button" onclick="" value="Aplicar">
+                        </div>
+                    </div>
+                  </div>  
+
+                <div class="total">
+                  <p class="total1">Total  $5500.00</p><br>
+                <div class="botones">
+                    <input class="botonCompra1" type="button" onclick="" value="Continuar comprando">
+                    <input class="botonCompra2" type="button" onclick="" value="Finalizar compra">
+                </div>
+                  </div>
+
+              </section>
+            </div>
+          </main>
+        
   </body>
 
-  <footer></footer>
+  <footer>
+    <section class="seccionFooter">
+      <!--                 <div>
+                          <i class="fas fa-credit-card iconosFooter"></i>
+                      </div> -->
+                      <h4>Pagá con tarjeta o en efectivo</h4>
+                      <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en
+                      puntos de pago. ¡Y siempre es seguro!</p>
+                  </section>
+                  <section class="seccionFooter">
+        <!--               <div>
+                          <i class="fas fa-gift iconosFooter"></i>
+                      </div> -->
+                      <h4>Seguinos en las redes</h4>
+                      <p><i class="fab fa-facebook"></i>Facebook</p>
+                      <p><i class="fab fa-instagram"></i>Instagram</p>
+                  </section>
+                  <section class="seccionFooter">
+      <!--                 <div>
+                          <i class="fas fa-user-shield iconosFooter"></i>
+                      </div> -->
+                      <h4>Informacion de conacto</h4>
+                      <p><i class="far fa-envelope"></i>molifrozenfood@gmail.com</p>
+                      <p><i class="fas fa-phone-alt"></i>+549 11 51143253</p>
+                      <p><i class="fas fa-map-marker-alt"></i>Av.Libertador 1428, CABA</p>
+                  </section>
+                  <section class="copyright">
+                      <p>Copyright © 2017-2020 Moli: Natural & Frozen Food</p>
+                  </section>
+  </footer>
 </html>
