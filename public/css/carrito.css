@@ -16,6 +16,12 @@ article{
     flex-direction: row;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 0px 0px 0px white;
+    transition: box-shadow 0.5s;
+}
+
+.padre:hover{
+    box-shadow: 0px 0px 10px rgb(100 100 100);
 }
 .sectores{
     display: flex;
@@ -132,6 +138,8 @@ input .eliminar{
     font-size: 18px;
     margin-top: 5px;
     border-radius: 5px;
+    box-shadow: 0px 0px 0px white;
+    transition: box-shadow 0.5s;
 }
 .botonCompra2{
     background-color: blue;
@@ -139,7 +147,9 @@ input .eliminar{
     font-size: 18px;
     margin-top: 5px;
     border-radius: 5px;
+   
 }
+
 
 .Eliminar{
     font-size: 60%;
@@ -181,12 +191,8 @@ input .eliminar{
         margin-top: 10%;
         margin-bottom: 10%;
     }
-    
-    .padre p {
-    font-size: 14px;
-    padding: 2px;
-    font-weight: 600;
-}
+
+
 h1 {
     padding: 18% 0 2% 5%;
     font-family: inherit;
@@ -197,6 +203,12 @@ h1 {
     flex-direction: row;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 0px 0px 0px white;
+    transition: box-shadow 0.5s;
+}
+
+.padre:hover{
+    box-shadow: 0px 0px 10px rgb(100 100 100);
 }
 
     .padre p {
