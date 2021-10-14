@@ -127,7 +127,7 @@ input .eliminar{
     display: flex;
 }
 
-.botonCompra1, .botonCompra2{
+.botonCompra1, .botonCompra2, .botonCompra3{
     width: 90%;
     height: 25px;
 }
@@ -138,11 +138,18 @@ input .eliminar{
     font-size: 18px;
     margin-top: 5px;
     border-radius: 5px;
-    box-shadow: 0px 0px 0px white;
-    transition: box-shadow 0.5s;
 }
 .botonCompra2{
     background-color: blue;
+    color: white;
+    font-size: 18px;
+    margin-top: 5px;
+    border-radius: 5px;
+   
+}
+
+.botonCompra3{
+    background-color: orange;
     color: white;
     font-size: 18px;
     margin-top: 5px;
@@ -259,7 +266,7 @@ h1 {
         width: 100%;
     }
 
-    .botonCompra1, .botonCompra2 {
+    .botonCompra1, .botonCompra2, .botonCompra3 {
         width: 90%;
         height: 35px;
     }
