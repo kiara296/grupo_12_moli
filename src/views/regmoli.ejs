@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenidos a Moli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="ttps://fonts.google.com/specim
+        en/Raleway" rel="stylesheet1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/stylesregistro.css">
+    <link rel="stylesheet" href="css\general-styles.css" />
+    <link rel="stylesheet" href="css\regmoli.css" />
+
+</head>
+
+<body>
+    <%- include ('./partials/header') %>
+
+        <main class="register">
+            <form action="/" method="POST"> <br><br>
+                <div class="datos">
+                    <label id="name"> Nombre </label> <br>
+                    <input type="text" name="name" placeholder="Ingresá tu nombre " minlength="5" required> <br> <BR>
+                    <label id="name"> Apellido </label> <br>
+                    <input type="text" name="name" placeholder="Ingresá tu apellido" minlength="5" required> <Br><BR>
+                    <label id="email"> Usuario </label> <br>
+                    <input type="email" name="email" placeholder="Ingresá un E-mail" required> <BR><BR>
+
+                    <label id="email"> Contraseña </label> <br>
+                    <input type="password" name="pass" placeholder="Elegí una contraseña" minlength="8" required> <BR>
+                    <BR>
+                    <label id="email"> Repetir contraseña </label> <br>
+                    <input type="password" name="pass_confirm" placeholder="Repetí tu contraseña" required>
+                    <br><br> <BR>
+
+                    <input class="button-submit" type="submit" value="Registrar">
+                    <br>
+                </div>
+
+            </form>
+        </main>
+        <%- include ('./partials/footer.ejs') %>
+</body>
+
+</html>
