@@ -1,11 +1,13 @@
+@import url('general-styles.css');
+
 h1 {
     text-align: center;
     font-weight: bold;
 }
-
+/* 
 .title {
 
-}
+} */
 
 .section1, .item-description {
     margin: 1rem;
@@ -94,14 +96,14 @@ button:hover {
 .section2 {
     margin: 0 1rem;
 }
-
+/* 
 .sections-container {
 
 }
 
 .articles-container {
 
-}
+} */
 
 @media (min-width:550px) {
     .description {

@@ -1,3 +1,10 @@
+@import url('general-styles.css');
+
+/* H3 */
+
+body h3 {
+  background-color: none;
+}
 /* Imagenes */
 
 img {
