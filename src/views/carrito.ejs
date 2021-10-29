@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MOLI: Natural & frozen food</title>
-  <link rel="stylesheet" href="/css/carrito.css">
-  <link rel="stylesheet" href="/css/general-styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-</head>
-
-<%- include ('./partials/header') %>
+  <!-- Head -->
+  <%- include ('./partials/head',{ stylesFile: 'carrito.css'}) %>
 
   <body>
+    <!-- Header -->
+    <%- include ('./partials/header') %>
     <main>
       <h1>Mi carrito</h1>
       <div class="sectores">
@@ -25,7 +13,7 @@
           <article>
             <div class="padre">
               <div class="imagen">
-                <img src="./images/raviol.jpg" />
+                <img src="../images/raviol.jpg" />
               </div>
 
               <div>
