@@ -12,8 +12,8 @@
     <div class="sections-container">
       <section class="section1">
         <div class="title-and-img">
-          <h1 class="title">Ravioles de ricota y verdura</h1>
-          <img class="img" src="/images/raviol.jpg" alt="Imagen de ravioles de ricota y verdura" />
+          <h1 class="title"> <%= productToShow.name %> </h1>
+          <img class="img" src="/images/<%= productToShow.image %>" alt="Imagen de ravioles de ricota y verdura" />
         </div>
       </section>
       <section class="section2">
@@ -31,7 +31,7 @@
           <article>
             <h2 class="title-prize">Precio:</h2>
             <div class="prize-container">
-              <span class="prize">$590</span>
+              <span class="prize"> <%= "$" + " " + productToShow.price %></span>
               <button class="button button-submit" type="submit">
                 Agregar
               </button>
