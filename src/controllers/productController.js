@@ -3,6 +3,7 @@ const path = require("path");
 
 const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const category = require('../data/constants/constants');
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -24,11 +25,11 @@ const deleteByID = (id) => {
 }
 
 const getRecomended = () => {
-  return products.filter(product => product.category.includes("RECOMENDED"));
+  return products.filter(product => product.category.includes(category.recomended));
 }
 
 const getOffer = () => {
-  return products.filter(product => product.category.includes("OFFER"));
+  return products.filter(product => product.category.includes(category.offer));
 }
 
 const productController = {

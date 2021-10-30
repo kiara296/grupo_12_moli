@@ -1,5 +1,5 @@
 const CATEGORY = {
-    OFFER: "OFERTA",
-    RECOMENDED: "RECOMENDADO"
+    offer: "OFFER",
+    recomended: "RECOMENDED"
 }
-
+module.exports = CATEGORY;
