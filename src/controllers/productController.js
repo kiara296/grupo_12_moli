@@ -23,10 +23,20 @@ const deleteByID = (id) => {
 	products = products.filter(p => p.id != id);
 }
 
+const getRecomended = () => {
+  return products.filter(product => product.category.includes("RECOMENDED"));
+}
+
+const getOffer = () => {
+  return products.filter(product => product.category.includes("OFFER"));
+}
+
 const productController = {
   /* Catalogo todos los productos */
   catalog: (req, res) => {
-    res.render("catalog", { 'products': products });
+    const offer = getOffer();
+    const recomended = getRecomended();
+    res.render("catalog", { 'offerProducts': offer, 'recomendedProducts': recomended });
   },
 
   /* Carrito de compra */

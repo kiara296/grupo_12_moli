@@ -10,117 +10,42 @@
       <section class="recomendados">
         <h3>Recomendados</h3>
         <div class="tarjetasProducto">
+        <% recomendedProducts.forEach(product => { %>
           <article>
             <img
               class="imagenProducto"
-              src="/images/frambuesas.png"
+              src="/images/<%= product.image %>"
               alt="frambuesas"
             />
             <div class="descripcionAritculo">
               <i class="fas fa-truck"></i>
-              <p class="precio">$550</p>
-              <!--     <p class="descuento">40% OFF</p> -->
-              <h4 class="descripcion">Frambuesas x 500gr</h4>
+              <p class="precio"> <%= product.price %> </p>
+              <h4 class="descripcion"> <%= product.description %> </h4>
             </div>
           </article>
-          <article>
-            <img
-              class="imagenProducto"
-              src="/images/painChoco.png"
-              alt="Pain au chocolat"
-            />
-            <div class="descripcionAritculo">
-              <i class="fas fa-truck"></i>
-              <p class="precio">$400</p>
-              <!--  <p class="descuento">20% OFF</p> -->
-              <h4 class="descripcion">Pain au chocolat x 6 uni</h4>
-            </div>
-          </article>
-          <article>
-            <img
-              class="imagenProducto"
-              src="/images/tartaProducto.png"
-              alt="Tarta"
-            />
-            <div class="descripcionAritculo">
-              <i class="fas fa-truck"></i>
-              <p class="precio">$660</p>
-              <!--    <p class="descuento">10% OFF</p> -->
-              <h4 class="descripcion">Tarta de espinaca grande</h4>
-            </div>
-          </article>
-          <article>
-            <img
-              class="imagenProducto"
-              src="/images/papas.png"
-              alt="Papas Baston"
-            />
-            <div class="descripcionAritculo">
-              <i class="fas fa-truck"></i>
-              <p class="precio">$120</p>
-              <!--    <p class="descuento">5% OFF</p> -->
-              <h4 class="descripcion">Papas baston x 500gr</h4>
-            </div>
-          </article>
+          <% }) %>
         </div>
-      </section>
-      <section class="recomendados">
-        <h3>Ofertas</h3>
-        <div class="tarjetasProducto">
-          <article>
-            <img
-              class="imagenProducto"
-              src="/images/frambuesas.png"
-              alt="frambuesas"
-            />
-            <div class="descripcionAritculo">
-              <i class="fas fa-truck"></i>
-              <p class="precio">$550</p>
-              <p class="descuento">40% OFF</p>
-              <h4 class="descripcion">Frambuesas x 500gr</h4>
-            </div>
-          </article>
-          <article>
-            <img
-              class="imagenProducto"
-              src="/images/painChoco.png"
-              alt="Pain au chocolat"
-            />
-            <div class="descripcionAritculo">
-              <i class="fas fa-truck"></i>
-              <p class="precio">$400</p>
-              <p class="descuento">20% OFF</p>
-              <h4 class="descripcion">Pain au chocolat x 6 uni</h4>
-            </div>
-          </article>
-          <article>
-            <img
-              class="imagenProducto"
-              src="/images/tartaProducto.png"
-              alt="Tarta"
-            />
-            <div class="descripcionAritculo">
-              <i class="fas fa-truck"></i>
-              <p class="precio">$660</p>
-              <p class="descuento">10% OFF</p>
-              <h4 class="descripcion">Tarta de espinaca grande</h4>
-            </div>
-          </article>
-          <article>
-            <img
-              class="imagenProducto"
-              src="/images/papas.png"
-              alt="Papas Baston"
-            />
-            <div class="descripcionAritculo">
-              <i class="fas fa-truck"></i>
-              <p class="precio">$120</p>
-              <p class="descuento">5% OFF</p>
-              <h4 class="descripcion">Papas baston x 500gr</h4>
-            </div>
-          </article>
-        </div>
-      </section>
+        </section>
+
+        <section class="recomendados">
+          <h3>Ofertas</h3>
+          <div class="tarjetasProducto">
+          <% offerProducts.forEach(product => { %>
+            <article>
+              <img
+                class="imagenProducto"
+                src="/images/<%= product.image %>"
+                alt="frambuesas"
+              />
+              <div class="descripcionAritculo">
+                <i class="fas fa-truck"></i>
+                <p class="precio"> <%= product.price %> </p>
+                <h4 class="descripcion"> <%= product.description %> </h4>
+              </div>
+            </article>
+            <% }) %>
+          </div>
+          </section>
     </main>
     <%- include ('./partials/footer.ejs') %>
 </body>
