@@ -1,39 +1,77 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const productsFilePath = path.join(__dirname, '../data/productosDatos.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const getById = (id) => { return products.find(p => p.id == id); }
+const isNull = (product) => {
+ return product === null;
+}
 
-const productController = {
-    /* Catalogo todos los productos */
-    catalogo: (req, res) => { res.render(path.join(__dirname, '../views/index.ejs')) },
-
-    /* Carrito de compra */
-    carrito: (req, res) => { res.render(path.join(__dirname, '../views/carrito.ejs')) },
-    
-    /* Detalle de un producto  */
-    detail: (req, res) =>  {
-        const requestedId = req.params.id;
-        const productos = getById (requestedId);
-        res.render('detail', {productos})
-    },
-          
-    /* Formulario de creacion de producto */
-    crear: (req, res) => {  res.render(path.join(__dirname, '../views/crearProductoForm.ejs'))},
-
-    /* Creacion producto: Metodo para guardar */
-    guardar: (req, res) => { res.render('Producto creado')},
-
-    /* Formulario de edicion de producto */
-    editar: (req, res) => {  res.render(path.join(__dirname, '../views/editarProductoForm.ejs'))},
-
-    /* Actualizar producto: metodo para editar */
-    update: (req, res) => { res.render('Producto editado')},
+const getById = (id) => {
+  const product = products.find((p) => p.id == id);
+  return product;
 };
 
+const addProduct = (product) => {
+  products.push(product);
+}
 
-module.exports = productController
+const deleteByID = (id) => {
+	products = products.filter(p => p.id != id);
+}
+
+const productController = {
+  /* Catalogo todos los productos */
+  catalog: (req, res) => {
+    res.render("catalog", { 'products': products });
+  },
+
+  /* Carrito de compra */
+  carrito: (req, res) => {
+    res.render("carrito");
+  },
+
+  /* Detalle de un producto  */
+  detail: (req, res) => {
+    const productToShow = getById(req.params.id);
+    if(isNull(productToShow)) {
+      res.redirect('/notFound');
+    } else {
+      res.render("detail", { 'productToShow': productToShow })
+    }
+  },
+
+  /* Formulario de creacion de producto */
+  create: (req, res) => {
+    res.render("crearProductoForm");
+  },
+
+  /* Creacion producto: Metodo para guardar */
+  save: (req, res) => {
+    addProduct(req.body.product);
+    res.redirect('index');
+  },
+
+  /* Formulario de edicion de producto */
+  edit: (req, res) => {
+    const productToEdit = getById(req.params.id);
+    if(isNull(productToEdit)) {
+      res.redirect('/notFound');
+    } else {
+      res.render("editarProductoForm", {'productToEdit': productToEdit});
+    }
+  },
+
+  /* Actualizar producto: metodo para editar */
+  update: (req, res) => {
+    const updatedProduct = req.body.product;
+		deleteByID(updatedProduct.id);
+		addProduct(updatedProduct);
+    res.redirect('/index');
+  },
+};
+
+module.exports = productController;

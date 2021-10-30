@@ -1,7 +1,9 @@
-const path = require('path');
+const path = require("path");
 
 const mainController = {
-    index: (req, res) => { res.render(path.join(__dirname, '../views/index.ejs')) }
+  index: (req, res) => {
+    res.render("index");
+  },
 };
 
-module.exports= mainController
+module.exports = mainController;

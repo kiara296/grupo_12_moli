@@ -4,27 +4,27 @@
         "name": "Frambuesas x 500gr",
         "price": 550,
         "discount": 20,
-        "category": "Oferta",
         "description": "Frambuesas enteras IQF x 500gr. 100% natural",
-        "image": "frambuesas.png"
+        "image": "frambuesas.png",
+        "category": ["OFERTA", "RECOMENDADOS"]
     },
     {
         "id": 2,
         "name": "Pain au chocolat x 6 uni",
         "price": 400,
         "discount": 10,
-        "category": "Oferta",
         "description": "Pan de chocolate 100% artesanal x 6 unidades",
-        "image": "painChoco.png"
+        "image": "painChoco.png",
+        "category": ["OFERTA", "RECOMENDADOS"]
     },
     {
      "id": 3,
      "name": "Tarta de espinaca grande",
      "price": 600,
      "discount": 15,
-     "category": "Oferta",
      "description": "Tarta casera de espinaca. 8 porciones. 100% natural",
-     "image": "tarta.png"
+     "image": "tarta.png",
+     "category": ["OFERTA", "RECOMENDADOS"]
     },
     {
      "id": 4,
@@ -33,6 +33,6 @@
      "discount": 15,
      "description": "Papas baston IQF x 500gr. 100% natural",
      "image": "papas.png",
-     "category": "Oferta"
+     "category": ["OFERTA", "RECOMENDADOS"]
     }
 ]

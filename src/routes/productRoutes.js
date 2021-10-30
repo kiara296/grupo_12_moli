@@ -9,14 +9,17 @@ const productController = require('../controllers/productController');
 router.get('/carrito', productController.carrito);
 
 /* Detalle producto */
-router.get('/detail/:id', productController.detail);
+router.get('/:id/detail', productController.detail);
 
 /* Crear un producto */
-router.get('/crear', productController.crear); 
-router.post('/', productController.guardar); 
+router.get('/create', productController.create); 
+router.post('/create', productController.save); 
 
 /* Editar un producto */ 
-router.get('/:id/edit', productController.editar); 
-router.put('/:id', productController.update);               
+router.get('/:id/edit', productController.edit); 
+router.put('/:id', productController.update);
+
+// catalog
+router.get('/catalog', productController.catalog);
 
 module.exports = router
