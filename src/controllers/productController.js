@@ -7,8 +7,8 @@ const category = require('../data/constants/constants');
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const isNull = (product) => {
- return product === null;
+const isNullOrUndefined = (product) => {
+ return product === null || product === undefined;
 }
 
 const getById = (id) => {
@@ -48,8 +48,8 @@ const productController = {
   /* Detalle de un producto  */
   detail: (req, res) => {
     const productToShow = getById(req.params.id);
-    if(isNull(productToShow)) {
-      res.redirect('/notFound');
+    if(isNullOrUndefined(productToShow)) {
+      res.redirect('/products/' + req.params.id + '/notFound');
     } else {
       res.render("detail", { 'productToShow': productToShow })
     }
@@ -69,8 +69,8 @@ const productController = {
   /* Formulario de edicion de producto */
   edit: (req, res) => {
     const productToEdit = getById(req.params.id);
-    if(isNull(productToEdit)) {
-      res.redirect('/notFound');
+    if(isNullOrUndefined(productToEdit)) {
+      res.redirect('/products/' + req.params.id + '/notFound');
     } else {
       res.render("editarProductoForm", {'productToEdit': productToEdit});
     }
@@ -83,6 +83,11 @@ const productController = {
 		addProduct(updatedProduct);
     res.redirect('/index');
   },
+
+  notFound: (req, res) => {
+    const descriptionError = "The product with id " + req.params.id + " doesn't exists";
+    res.render("notFound", { 'descriptionError': descriptionError });
+  }
 };
 
 module.exports = productController;

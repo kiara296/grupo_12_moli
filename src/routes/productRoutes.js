@@ -22,4 +22,7 @@ router.put('/:id', productController.update);
 // catalog
 router.get('/catalog', productController.catalog);
 
+// not found
+router.get('/:id/notFound', productController.notFound);
+
 module.exports = router
