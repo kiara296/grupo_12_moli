@@ -26,13 +26,16 @@
 
 /* Body */
 
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #e0e7e7;
+}
 body h3 {
   font-size: 24px;
   text-align: center;
   color: #666;
   margin: 20px 0px;
-  font-family: "Nunito", sans-serif;
-  background-color: #e0e7e7;
+ 
 }
 
 main {
