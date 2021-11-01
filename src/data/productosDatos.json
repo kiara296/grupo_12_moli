@@ -34,5 +34,72 @@
      "description": "Papas baston IQF x 500gr. 100% natural",
      "image": "papas.png",
      "category": ["OFFER", "RECOMENDED"]
-    }
+    },
+    {
+        "id": 5,
+        "name": "Wok de verduras x 500gr",
+        "price": 400,
+        "discount": 15,
+        "description": "Verduras cortadas en juliana IQF. 100% natural",
+        "image": "wokPlato.png",
+        "category": ["OFFER", "RECOMENDED"]
+    },
+    {
+        "id": 6,
+        "name": "Ravioles x 500gr",
+        "price": 500,
+        "discount": 15,
+        "description": "Ravioles de hongos patagonicos. 100% natural",
+        "image": "raviol.png",
+        "category": ["OFFER", "RECOMENDED"]
+    },
+    {
+        "id": 7,
+        "name": "Zapallo x 500gr",
+        "price": 500,
+        "discount": 15,
+        "description": "Zapallo en cubos IQF. 100% natural",
+        "image": "zapalloPlato.png",
+        "category": ["OFFER", "RECOMENDED"]
+    },
+    {
+        "id": 8,
+        "name": "Zapallo x 500gr",
+        "price": 500,
+        "discount": 15,
+        "description": "Zapallo en cubos IQF. 100% natural",
+        "image": "zapalloPlato.png",
+        "category": ["OFFER", "RECOMENDED"]
+    },
+    {
+        "id": 9,
+        "name": "Ñoquis de papa x 500gr",
+        "price": 500,
+        "discount": 15,
+        "description": "Noquis de papa x 500gr. 100% natural",
+        "image": "nioquis.png",
+        "category": ["OFFER", "RECOMENDED"]
+    },
+    {
+        "id": 10,
+        "name": "Croissants x 6 unidades",
+        "price": 600,
+        "discount": 15,
+        "description": "Croissants x 6 unidades. 100% caseras y natural",
+        "image": "croissants.png",
+        "category": ["OFFER", "RECOMENDED"]
+    },
+    {
+        "id": 11,
+        "name": "Pan integral baguette x 6 unidades",
+        "price": 500,
+        "discount": 15,
+        "description": "Pan integral baguette x 6 unidades. 100% caseras y natural",
+        "image": "pan.png",
+        "category": ["OFFER", "RECOMENDED"]
+    },
+
+
+
+
 ]
