@@ -13,7 +13,7 @@
       <section class="section1">
         <div class="title-and-img">
           <h1 class="title"> <%= productToShow.name %> </h1>
-          <img class="img" src="/images/<%= productToShow.image %>" alt="Imagen de ravioles de ricota y verdura" />
+          <img class="img" src="/images/<%= productToShow.image %>" alt="<%= productToShow.alt%>" />
         </div>
       </section>
       <section class="section2">
@@ -43,19 +43,15 @@
           <div class="item-description">
             <dt>Ingredientes:</dt>
             <dd>
-              Sémola de trigo candel, agua, ricotta, espinaca, acelga, queso
-              sardo, papa, huevo, sal, pimientam salsa pomodoro, (tomate perita
-              entero italiano, añbahaca, agua, cebolla, apio, aceite de oliva
-              extra virgen italiano, sal, azucar)
+              <%= productToShow.ingredients%>
             </dd>
           </div>
           <div class="item-description">
             <dt>Informacion nutricional:</dt>
-            <dd>409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.</dd>
-          </div>
+            <dd><%= productToShow.infoNutricional%></dd>
           <div class="item-description">
             <dt>Preparación y cocción:</dt>
-            <dd>10 minutos en agua hirviendo</dd>
+            <dd><%= productToShow.cooking%></dd>
           </div>
         </dl>
       </section>

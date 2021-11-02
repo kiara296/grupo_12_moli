@@ -9,7 +9,8 @@
         "alt": "imagen de frambuesas",
         "category": ["OFFER"],
         "ingredients": "Frambuesas naturales." ,
-        "cooking": "Idealmente dejar descongelar en la heladera. De no ser posible se puede descongelar en el microondas."
+        "cooking": "Idealmente dejar descongelar en la heladera. De no ser posible se puede descongelar en el microondas.",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
         
     },
     {
@@ -22,7 +23,8 @@
         "alt": "imagen de pan de chocolate",
         "category": ["OFFER"],
         "ingredients": "Harina de trigo  41,9% [harina de trigo (gluten), gluten de trigo], agua , mantequilla  (leche) 16%, chocolate 11% , azúcar  3,8%, levadura , huevo , sal , gluten de trigo ." ,
-        "cooking": "Precalienta tu horno a 180 ° C. Coloque los pains au chocolat en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar."
+        "cooking": "Precalienta tu horno a 180 ° C. Coloque los pains au chocolat en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
     },
     {
      "id": 3,
@@ -34,7 +36,8 @@
      "alt": "imagen de tarta de espinaca",
      "category": ["OFFER"],
      "ingredients": "Espinaca 26,2%, harina de trigo (gluten), crème fraîche líquida 14,5% (leche), leche desnatada, mantequilla 8,4% (leche), huevo de gallina de corral (líquido, pasteurizado), agua, Parmigiano Reggiano DOP * 4,2% (contiene leche), piñones 4%, almidón y harina de arroz, sal, pimienta." ,
-     "cooking": "Se puede descongelar previamente o sacar del freezer directo al horno bajo. "
+     "cooking": "Se puede descongelar previamente o sacar del freezer directo al horno bajo. ",
+     "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
     },
     {
      "id": 4,
@@ -46,7 +49,8 @@
      "alt": "imagen de papas baston",
      "category": ["OFFER"],
      "ingredients": "Papa natural 100%" ,
-     "cooking": "Cocinar al horno directo o en una sarten. "
+     "cooking": "Cocinar al horno directo o en una sarten. ",
+     "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
     },
     {
         "id": 5,
@@ -58,7 +62,8 @@
         "alt": "imagen de wok de verduras",
         "category": ["OFFER"],
         "ingredients": "Morron rojo, Cebolla, Brocoli, Choclo, Zanahoria. 100% natural" ,
-        "cooking": "Descongelar en la heladera, el dia anterior a consumir. Tambien se puede cocinar directo al fuego sin descongelar. "
+        "cooking": "Descongelar en la heladera, el dia anterior a consumir. Tambien se puede cocinar directo al fuego sin descongelar. ",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
     },
     {
         "id": 6,
@@ -70,7 +75,9 @@
         "alt": "imagen de ravioles",
         "category": ["RECOMENDED"],
         "ingredients": "Sémola de trigo duro (gluten), ricotta 11,9% [suero (leche), leche, nata (leche), sal, regulador de acidez: ácido cítrico], agua, huevo , cebolla asada, mozzarella al 3,3% (leche, sal, fermentos lácticos, coagulante, regulador de acidez: ácido cítrico), espinaca 3%, cebolla. " ,
-        "cooking": "Hervir agua. Salar el agua a gusto. Cocinar durante 6 a 7 minutos. Sacar inmediatamente."
+        "cooking": "Hervir agua. Salar el agua a gusto. Cocinar durante 6 a 7 minutos. Sacar inmediatamente.",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
+        
     },
     {
         "id": 7,
@@ -82,7 +89,8 @@
         "alt": "imagen de zapallo",
         "category": ["RECOMENDED"],
         "ingredients": "Zapallo natural 100%" ,
-        "cooking": "Del freezer directo a tu horno o sarten. "
+        "cooking": "Del freezer directo a tu horno o sarten. ",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
     },
     {
         "id": 8,
@@ -94,7 +102,8 @@
         "alt": "imagen de nuggets de pollo",
         "category": ["RECOMENDED"],
         "ingredients": "Carne de pollo curada, cobertura 34% [aceite de girasol, agua, harina de trigo (gluten), harina de maíz, pan rallado (harina de trigo (gluten), sal, levadura), sémola de trigo duro (gluten), gluten de trigo, sal, almidón de trigo (gluten), polvos de hornear (carbonatos de sodio, difosfatos), pimienta]." ,
-        "cooking": "Del freezer directo a tu horno o sarten."
+        "cooking": "Del freezer directo a tu horno o sarten.",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
     },
     {
         "id": 9,
@@ -106,7 +115,8 @@
         "alt": "imagen de ñoquis",
         "category": ["RECOMENDED"],
         "ingredients": "Papa cocida 34,2% [sémola de trigo duro (gluten), agua, papa deshidratada *, sal], leche desnatada rehidratada" ,
-        "cooking": "Hervir agua. Separar los ñoquis. Salar el agua a gusto. Cocinar hasta que empiezen a flotar. Sacar inmediatamente. "
+        "cooking": "Hervir agua. Separar los ñoquis. Salar el agua a gusto. Cocinar hasta que empiezen a flotar. Sacar inmediatamente. ",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
     },
     {
         "id": 10,
@@ -118,7 +128,8 @@
         "alt": "imagen de croissants",
         "category": ["RECOMENDED"],
         "ingredients": "Harina de trigo * 43,8% [harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. " ,
-        "cooking": " Precalienta tu horno a 180 ° C. Coloque los croissants en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar."
+        "cooking": " Precalienta tu horno a 180 ° C. Coloque los croissants en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
     }
 
 ]

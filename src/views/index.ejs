@@ -14,6 +14,7 @@
         <h3>Recomendados</h3>
         <div class="tarjetasProducto">
         <% recomendedProducts.forEach(product => { %>
+          <a href="/products/<%= product.id %>/detail">
           <article>
             <img
               class="imagenProducto"
@@ -26,6 +27,7 @@
               <h4 class="descripcion"> <%= product.description %> </h4>
             </div>
           </article>
+        </a>
           <% }) %>
         </div>
         </section>
@@ -34,6 +36,7 @@
           <h3>Ofertas</h3>
           <div class="tarjetasProducto">
           <% offerProducts.forEach(product => { %>
+          <a href="/products/<%= product.id %>/detail">
             <article>
               <img
                 class="imagenProducto"
@@ -46,6 +49,7 @@
                 <h4 class="descripcion"> <%= product.description %> </h4>
               </div>
             </article>
+          </a>
             <% }) %>
           </div>
           </section>
