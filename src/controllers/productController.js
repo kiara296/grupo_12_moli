@@ -33,11 +33,16 @@ const getOffer = () => {
 }
 
 const productController = {
+
+  index: (req, res) => {
+    res.render("index", { 'offerProducts': getOffer(), 'recomendedProducts': getRecomended() });
+  },
+
   /* Catalogo todos los productos */
   catalog: (req, res) => {
     const offer = getOffer();
     const recomended = getRecomended();
-    res.render("catalog", { 'offerProducts': offer, 'recomendedProducts': recomended });
+    res.render("catalog", { products });
   },
 
   /* Carrito de compra */
@@ -51,7 +56,7 @@ const productController = {
     if(isNullOrUndefined(productToShow)) {
       res.redirect('/products/' + req.params.id + '/notFound');
     } else {
-      res.render("detail", { 'productToShow': productToShow })
+      res.render("detail", { productToShow })
     }
   },
 
@@ -72,7 +77,7 @@ const productController = {
     if(isNullOrUndefined(productToEdit)) {
       res.redirect('/products/' + req.params.id + '/notFound');
     } else {
-      res.render("editarProductoForm", {'productToEdit': productToEdit});
+      res.render("editarProductoForm", { productToEdit });
     }
   },
 
@@ -86,7 +91,7 @@ const productController = {
 
   notFound: (req, res) => {
     const descriptionError = "The product with id " + req.params.id + " doesn't exists";
-    res.render("notFound", { 'descriptionError': descriptionError });
+    res.render("notFound", { descriptionError });
   }
 };
 

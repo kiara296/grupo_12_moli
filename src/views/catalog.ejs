@@ -8,34 +8,15 @@
     <%- include ('./partials/header') %>
     <main>
       <section class="recomendados">
-        <h3>Recomendados</h3>
+        <h1 class='title-page'>Nuestros productos</h1>
         <div class="tarjetasProducto">
-        <% recomendedProducts.forEach(product => { %>
-          <article>
-            <img
-              class="imagenProducto"
-              src="/images/<%= product.image %>"
-              alt="frambuesas"
-            />
-            <div class="descripcionAritculo">
-              <i class="fas fa-truck"></i>
-              <p class="precio"> <%= product.price %> </p>
-              <h4 class="descripcion"> <%= product.description %> </h4>
-            </div>
-          </article>
-          <% }) %>
-        </div>
-        </section>
-
-        <section class="recomendados">
-          <h3>Ofertas</h3>
-          <div class="tarjetasProducto">
-          <% offerProducts.forEach(product => { %>
+        <% products.forEach(product => { %>
+          <a href="/products/<%= product.id %>/detail">
             <article>
               <img
                 class="imagenProducto"
                 src="/images/<%= product.image %>"
-                alt="frambuesas"
+                alt="<%= product.alt %>"
               />
               <div class="descripcionAritculo">
                 <i class="fas fa-truck"></i>
@@ -43,9 +24,10 @@
                 <h4 class="descripcion"> <%= product.description %> </h4>
               </div>
             </article>
-            <% }) %>
-          </div>
-          </section>
+          </a>
+          <% }) %>
+        </div>
+        </section>
     </main>
     <%- include ('./partials/footer.ejs') %>
 </body>

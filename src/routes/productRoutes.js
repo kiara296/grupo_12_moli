@@ -25,4 +25,7 @@ router.get('/catalog', productController.catalog);
 // not found
 router.get('/:id/notFound', productController.notFound);
 
+//home
+router.get('/', productController.index);
+
 module.exports = router
