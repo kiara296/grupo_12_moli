@@ -67,7 +67,7 @@ const productController = {
 
   /* Creacion producto: Metodo para guardar */
   save: (req, res) => {
-    addProduct(req.body.product);
+    //addProduct(req.body.product);
     res.redirect('index');
   },
 
