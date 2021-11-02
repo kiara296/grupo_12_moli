@@ -68,7 +68,7 @@ const productController = {
   /* Creacion producto: Metodo para guardar */
   save: (req, res) => {
     //addProduct(req.body.product);
-    res.redirect('index');
+    res.redirect('/');
   },
 
   /* Formulario de edicion de producto */
@@ -86,7 +86,7 @@ const productController = {
     const updatedProduct = req.body.product;
 		deleteByID(updatedProduct.id);
 		addProduct(updatedProduct);
-    res.redirect('/index');
+    res.redirect('/');
   },
 
   notFound: (req, res) => {
