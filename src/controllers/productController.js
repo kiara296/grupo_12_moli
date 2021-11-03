@@ -32,6 +32,11 @@ const getOffer = () => {
   return products.filter(product => product.category.includes(category.offer));
 }
 
+const getNextId = () => {
+  const ids = products.map(product => product.id);
+  return Math.max(...ids) + 1 ;
+}
+
 const productController = {
 
   index: (req, res) => {
@@ -40,8 +45,7 @@ const productController = {
 
   /* Catalogo todos los productos */
   catalog: (req, res) => {
-    const offer = getOffer();
-    const recomended = getRecomended();
+    
     res.render("catalog", { products });
   },
 
@@ -62,17 +66,35 @@ const productController = {
 
   /* Formulario de creacion de producto */
   create: (req, res) => {
-    res.render("crearProductoForm");
+    res.render("crearProductoForm", {category});
   },
 
   /* Creacion producto: Metodo para guardar */
   save: (req, res) => {
-    //addProduct(req.body.product);
+    const newProduct = {
+      id: getNextId(),
+      ...req.body,
+      image: req.file ? req.file.filename : ''
+    };
+    // Modificar el arreglo para agregar el nuevo producto
+    const newProductList = [...products, newProduct];
+
+    // Escribir en el JSON el nuevo arreglo actualizado
+    fs.writeFileSync(
+      productsFilePath,
+      JSON.stringify(newProductList, null, ' ')
+    );
+
+    addProduct(newProduct);
+
     res.redirect('/');
   },
 
   /* Formulario de edicion de producto */
   edit: (req, res) => {
+
+
+    
     const productToEdit = getById(req.params.id);
     if(isNullOrUndefined(productToEdit)) {
       res.redirect('/products/' + req.params.id + '/notFound');
