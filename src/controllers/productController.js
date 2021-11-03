@@ -92,9 +92,7 @@ const productController = {
 
   /* Formulario de edicion de producto */
   edit: (req, res) => {
-
-
-    
+  
     const productToEdit = getById(req.params.id);
     if(isNullOrUndefined(productToEdit)) {
       res.redirect('/products/' + req.params.id + '/notFound');
@@ -105,9 +103,14 @@ const productController = {
 
   /* Actualizar producto: metodo para editar */
   update: (req, res) => {
-    const updatedProduct = req.body.product;
+    const updatedProduct = {
+      id: req.params.id,
+      ...req.body,
+       };
+    
 		deleteByID(updatedProduct.id);
 		addProduct(updatedProduct);
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
     res.redirect('/');
   },
 
