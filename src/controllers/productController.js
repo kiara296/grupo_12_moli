@@ -108,20 +108,20 @@ const productController = {
   /* Actualizar producto: metodo para editar */
   update: (req, res) => {
     const requestedId = Number(req.params.id);
-    //console.log(req.body);
 
     const oldProduct = getById(requestedId);
+
     const updatedProduct = {
-      //id: requestedId,
       ...oldProduct,
-      //...req.body,
+      ...req.body,
     };
 
-    console.log(updatedProduct);
-    //deleteByID(updatedProduct.id);
-    //addProduct(updatedProduct);
-    //fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    //res.redirect('/');
+    deleteByID(requestedId);
+    addProduct(updatedProduct);
+    
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    
+    res.redirect('/');
   },
 
   notFound: (req, res) => {

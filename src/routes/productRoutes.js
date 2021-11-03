@@ -37,7 +37,7 @@ router.post('/create', fileUpload.single('file-image'), productController.save);
 
 /* Editar un producto */ 
 router.get('/:id/edit', productController.edit); 
-router.put('/:id', productController.update);
+router.put('/:id', fileUpload.single('file-image'), productController.update);
 
 // catalog
 router.get('/catalog', productController.catalog);
