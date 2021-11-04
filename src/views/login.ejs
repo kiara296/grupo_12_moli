@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
-<!-- Head -->
-<%- include ('./partials/head',{ stylesFile: 'login.css'}) %>
+  <!-- Head -->
+  <%- include ('./partials/head',{ stylesFile: 'login.css'}) %>
 
-
-<body>
-    
+  <body>
     <!-- Header -->
     <%- include ('./partials/header') %>
 
-        <main class="register">
-            <form action="/" method="POST"> <br><br>
-                <div class="datos">
-                    <label id="email"> Usuario </label> <br>
-                    <input type="email" name="email" placeholder="ingresá tu E-mail" required> <BR><BR>
-
-                    <label id="email"> Contraseña </label> <br>
-                    <input type="password" name="pass" placeholder="Ingresá tu contraseña" minlength="8" required> <BR>
-                    <BR>
-
-                    <input class="button-submit" type="submit" value="Ingresar"> <br><br>
-                    <nav class="registrate">
-                        <a href="/regmoli"> No tenes cuenta? Registrate </a>
-                    </nav>
-                </div>
-            </form>
-
-        </main>
-        <%- include ('./partials/footer.ejs') %>
-</body>
-
+    <main class="register">
+      <form action="/" method="POST">
+        <div class="box">
+          <div class="formBox">
+            <label for="email" class="form-label"> Usuario </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ingresá tu E-mail"
+              required
+            />
+          </div>
+          <div class="formBox">
+            <label for="pass" class="form-label"> Contraseña </label>
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              placeholder="Ingresá tu contraseña"
+              minlength="8"
+              required
+            />
+          </div>
+        </div>
+        <div class="formBox">
+          <button type="submit" class="button-general">Ingresar</button>
+        </div>
+        <nav class="registrate">
+          <a href="/regmoli"> No tenes cuenta? Registrate </a>
+        </nav>
+      </form>
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+  </body>
 </html>

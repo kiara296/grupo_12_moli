@@ -28,7 +28,7 @@ const deleteByID = (id) => {
 
 const getRecomended = () => {
   return products.filter((product) =>
-    product.category.includes(category.recomended)
+    product.category.includes(category.recommended)
   );
 };
 

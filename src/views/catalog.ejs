@@ -11,8 +11,8 @@
         <h1 class='title-page'>Nuestros productos</h1>
         <div class="tarjetasProducto">
         <% products.forEach(product => { %>
-          <a href="/products/<%= product.id %>/detail">
             <article>
+              <a href="/products/<%= product.id %>/detail">
               <img
                 class="imagenProducto"
                 src="/images/<%= product.image %>"
