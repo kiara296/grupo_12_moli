@@ -10,133 +10,36 @@
       <h1>Mi carrito</h1>
       <div class="sectores">
         <section class="sector1">
-          <article>
-            <div class="padre">
-              <div class="imagen">
-                <img src="../images/raviol.jpg" />
-              </div>
 
-              <div>
-                <p class="descrip">Ravioles</p>
-              </div>
-
-              <div>
-                <button class="botton">-</button>
-                <div class="quantity">
-                  <span class="span-quantity">1</span>
+          <% carrito.forEach(product => { %>
+            <article>
+              <div class="padre">
+                <div class="imagen">
+                  <img src="../images/<%= product.image %>" />
                 </div>
-                <button class="botton">+</button>
-              </div>
-
-              <div>
-                <p class="precio">$1299.00</p>
-              </div>
-
-              <div>
-
-                <input class="Eliminar" type="submit" value="Eliminar">
-
-              </div>
-
-            </div>
-
-          </article>
-          <article>
-            <div class="padre">
-              <div class="imagen">
-                <img src="..\images\papas.png" alt="<%= productToShow.alt%>" />
-              </div>
-
-              <div>
-                <p class="descrip">Papas Fritas</p>
-              </div>
-
-              <div>
-                <button class="botton">-</button>
-                <div class="quantity">
-                  <span class="span-quantity">1</span>
+                <div>
+                  <p class="descrip"><%= product.name %></p>
                 </div>
-                <button class="botton">+</button>
-              </div>
-
-              <div>
-                <p class="precio">$899.00</p>
-              </div>
-
-              <div>
-
-                <input class="Eliminar" type="submit" value="Eliminar">
-
-              </div>
-
-            </div>
-
-          </article>
-          <article>
-            <div class="padre">
-              <div class="imagen">
-                <img src="..\images\wok.png" />
-              </div>
-
-              <div>
-                <p class="descrip">Wok</p>
-              </div>
-
-              <div>
-                <button class="botton">-</button>
-                <div class="quantity">
-                  <span class="span-quantity">1</span>
+                <div>
+                  <button class="botton">-</button>
+                  <div class="quantity">
+                    <span class="span-quantity">1</span>
+                  </div>
+                  <button class="botton">+</button>
                 </div>
-                <button class="botton">+</button>
-              </div>
-
-              <div>
-                <p class="precio">$1499.00</p>
-              </div>
-
-              <div>
-
-                <input class="Eliminar" type="submit" value="Eliminar">
-
-              </div>
-
-            </div>
-
-          </article>
-          <article>
-            <div class="padre">
-              <div class="imagen">
-                <img src="..\images\tartaProducto.png" />
-              </div>
-
-              <div>
-                <p class="descrip">Tarta</p>
-              </div>
-
-              <div>
-                <button class="botton">-</button>
-                <div class="quantity">
-                  <span class="span-quantity">1</span>
+                <div>
+                  <p class="precio">$ <%= product.price %></p>
                 </div>
-                <button class="botton">+</button>
+                <div>
+                  <input class="Eliminar" type="submit" value="Eliminar">
+                </div>
               </div>
-
-              <div>
-                <p class="precio">$1199.00</p>
-              </div>
-
-              <div>
-
-                <input class="Eliminar" type="submit" value="Eliminar">
-
-              </div>
-
-            </div>
-
-          </article>
-
-
+            </article>
+          <% }) %>
         </section>
+
+
+
 
         <section class="sector2">
           <div class="descuento">
@@ -151,7 +54,7 @@
           </div>
 
           <div class="total">
-            <p class="total1">Total $5500.00</p><br>
+            <p class="total1">Total $$$$$</p><br>
             <div class="botones">
               <input class="botonCompra1" type="button" onclick="" value="Continuar comprando">
               <input class="botonCompra3" type="button" onclick="" value="Vaciar carrito">

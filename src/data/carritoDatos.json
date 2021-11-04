@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Frambuesas x 500gr",
+        "price": 550,
+        "discount": 20,
+        "description": "Frambuesas enteras IQF x 500gr. 100% natural",
+        "image": "frambuesas.png",
+        "alt": "imagen de frambuesas",
+        "category": [
+         "OFFER"
+        ],
+        "ingredients": "Frambuesas naturales.",
+        "cooking": "Idealmente dejar descongelar en la heladera. De no ser posible se puede descongelar en el microondas.",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
+       },
+       {
+        "id": 2,
+        "name": "Pain au chocolat x 6 uni",
+        "price": 400,
+        "discount": 10,
+        "description": "Pan de chocolate 100% artesanal x 6 unidades",
+        "image": "painChoco.png",
+        "alt": "imagen de pan de chocolate",
+        "category": [
+         "OFFER"
+        ],
+        "ingredients": "Harina de trigo  41,9% [harina de trigo (gluten), gluten de trigo], agua , mantequilla  (leche) 16%, chocolate 11% , azúcar  3,8%, levadura , huevo , sal , gluten de trigo .",
+        "cooking": "Precalienta tu horno a 180 ° C. Coloque los pains au chocolat en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
+       },
+       {
+        "id": 3,
+        "name": "Tarta de espinaca grande",
+        "price": 600,
+        "discount": 15,
+        "description": "Tarta casera de espinaca. 8 porciones. 100% natural",
+        "image": "tartaProducto.png",
+        "alt": "imagen de tarta de espinaca",
+        "category": [
+         "OFFER"
+        ],
+        "ingredients": "Espinaca 26,2%, harina de trigo (gluten), crème fraîche líquida 14,5% (leche), leche desnatada, mantequilla 8,4% (leche), huevo de gallina de corral (líquido, pasteurizado), agua, Parmigiano Reggiano DOP * 4,2% (contiene leche), piñones 4%, almidón y harina de arroz, sal, pimienta.",
+        "cooking": "Se puede descongelar previamente o sacar del freezer directo al horno bajo. ",
+        "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
+       }
+]

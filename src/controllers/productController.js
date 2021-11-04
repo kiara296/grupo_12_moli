@@ -2,7 +2,9 @@ const fs = require("fs");
 const path = require("path");
 
 const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
+const carritoFilePath = path.join(__dirname, "../data/carritoDatos.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
 const category = require("../data/constants/constants");
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -21,7 +23,7 @@ const addProduct = (product) => {
 };
 
 const deleteByID = (id) => {
-  products = products.filter((p) => p.id != id);
+  products = products.filter(p => p.id != id);
 };
 
 const getRecomended = () => {
@@ -56,7 +58,7 @@ const productController = {
 
   /* Carrito de compra */
   carrito: (req, res) => {
-    res.render("carrito");
+    res.render("carrito", { carrito });
   },
 
   /* Detalle de un producto  */
@@ -120,7 +122,7 @@ const productController = {
     addProduct(updatedProduct);
     
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    
+
     res.redirect('/');
   },
 
