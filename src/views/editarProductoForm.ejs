@@ -21,6 +21,7 @@
                       name="name"
                       placeholder="Ej: Nombre del plato"
                       class="form-input"
+                      value="<%=productToEdit.name%>"
                     />
                   </div>
                   <div class="formBox">
@@ -33,6 +34,7 @@
                       name="price"
                       placeholder="Ej: 5678"
                       class="form-input"
+                      value="<%=productToEdit.price%>"
                     />
                   </div>
                 </div>
@@ -45,6 +47,7 @@
                       name="discount"
                       placeholder="Ej: 15"
                       class="form-input"
+                      value="<%=productToEdit.discount%>"
                     />
                   </div>
     
@@ -56,11 +59,11 @@
                       class="form-input"
                       required
                     >
-                      <option value="<%= category.offer %> ">Oferta</option>
-                      <option value="<%= category.recommended %>">
+                      <option value=" <%= category.offer %> "  <%= isOnSale ? 'selected' : '' %> >Oferta</option>
+                      <option value=" <%= category.recommended %> " <%= isRecommended ? 'selected' : '' %>>
                         Recomendados
                       </option>
-                      <option value="<%= category.all %>">Todos</option>
+                      <option value="<%= category.all %>" <%= isAll ? 'selected' : '' %>>Todos</option>
                     </select>
                   </div>
                 </div>
@@ -71,7 +74,7 @@
                       name="ingredientes"
                       id="ingredientes"
                       class="form-input"
-                    ></textarea>
+                    ><%=productToEdit.ingredients%></textarea>
                   </div>
                   <div class="formBox">
                     <label for="infoNutricional" class="form-label"
@@ -81,7 +84,7 @@
                       name="infoNutricional"
                       id="infoNutricional"
                       class="form-input"
-                    ></textarea>
+                    > <%=productToEdit.infoNutricional%></textarea>
                   </div>
                   <div class="formBox">
                     <label for="cooking" class="form-label">Modo de coccion:</label>
@@ -89,7 +92,7 @@
                       name="cooking"
                       id="cooking"
                       class="form-input"
-                    ></textarea>
+                    ><%=productToEdit.cooking%></textarea>
                   </div>
                 </div>
                 <div class="box">
@@ -97,6 +100,7 @@
                     <label for="file-image" class="form-label"
                       >Imagen del producto:</label
                     >
+                    <img src="/images/<%=productToEdit.image%>" alt="<%=productToEdit.alt%>"   class="imagenProducto">
                     <input
                       type="file"
                       name="file-image"

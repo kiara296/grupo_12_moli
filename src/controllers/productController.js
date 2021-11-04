@@ -45,6 +45,7 @@ const getNextId = () => {
 
 const productController = {
   index: (req, res) => {
+    products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
     res.render("index", {
       offerProducts: getOffer(),
       recomendedProducts: getRecomended(),
@@ -99,11 +100,17 @@ const productController = {
 
   /* Formulario de edicion de producto */
   edit: (req, res) => {
+  
+
     const productToEdit = getById(req.params.id);
+    const isRecommended = productToEdit.category === category.recommended;
+    const isOnSale = productToEdit.category === category.offer;
+    const isAll = productToEdit.category === category.all;
+
     if (isNullOrUndefined(productToEdit)) {
       res.redirect("/products/" + req.params.id + "/notFound");
     } else {
-      res.render("editarProductoForm", { productToEdit, category });
+      res.render("editarProductoForm", { productToEdit, category, isRecommended, isOnSale, isAll});
     }
   },
 

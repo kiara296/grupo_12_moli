@@ -88,7 +88,7 @@
         </ol>
       </section>
       <section class="recomendados">
-        <h3>Recomendados</h3>
+        <h3 id="recommended">Recomendados</h3>
         <div class="tarjetasProducto">
         <% recomendedProducts.forEach(product => { %>
           <a href="/products/<%= product.id %>/detail">
@@ -110,7 +110,7 @@
         </section>
 
         <section class="recomendados">
-          <h3>Ofertas</h3>
+          <h3 id="offers">Ofertas</h3>
           <div class="tarjetasProducto">
           <% offerProducts.forEach(product => { %>
           <a href="/products/<%= product.id %>/detail">

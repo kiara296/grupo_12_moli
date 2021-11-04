@@ -1,6 +1,6 @@
 const CATEGORY = {
     offer: "OFFER",
-    recomended: "RECOMENDED",
+    recommended: "RECOMMENDED",
     all: "ALL"
 }
 module.exports = CATEGORY;
