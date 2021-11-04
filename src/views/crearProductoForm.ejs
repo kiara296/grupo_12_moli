@@ -1,109 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('./partials/head', { stylesFile: 'general-styles.css'}) %>
+  <%- include ('./partials/head', { stylesFile: 'forms.css'}) %>
 
-    <body>
-        <%- include ('./partials/header') %>
-        <main>
-            <div class="container products-wrapper">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="products-title">Formulario de creación de productos</h2>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="col-12">
-                        <form action="/products/create" method="POST" enctype="multipart/form-data">
-                          <div class="row product-detail">
-                            <div class="col-12 col-md-6">
-                              <label for="name" class="form-label">Nombre del producto:</label>
-                              <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Ej: Nombre del plato"
-                                class="form-input"
-                              />
-                            </div>
-                            <div class="col-12 col-md-6">
-                              <label for="price" class="form-label">Precio del producto:</label>
-                              <input
-                                type="text"
-                                id="price"
-                                name="price"
-                                placeholder="Ej: 5678"
-                                class="form-input"
-                              />
-                            </div>
-                            <div class="col-12 col-md-6">
-                              <label for="discount" class="form-label">Descuento:</label>
-                              <input
-                                type="text"
-                                id="discount"
-                                name="discount"
-                                placeholder="Ej: 15"
-                                class="form-input"
-                              />
-                            </div>
-                            <div class="col-12 col-md-6">
-                              <label for="category" class="form-label">Categoría:</label>
-                              <select name="category" id="category" class="form-input" required>
-                                <option value="<%= category.offer %> ">Oferta</option>
-                                <option value="<%= category.recommended %>">Recomendados</option>
-                                <option value="<%= category.all %>">Todos</option>
-                              </select>
-                            </div>
-                            <div class="col-12">
-                              <label for="ingredientes" class="form-label">Ingredientes:</label>
-                              <textarea
-                                name="ingredientes"
-                                id="ingredientes"
-                                class="form-input"
-                              ></textarea>
-                            </div>
-                            <div class="col-12">
-                              <label for="infoNutricional" class="form-label"
-                                >Informacion nutricional:</label
-                              >
-                              <textarea
-                                name="infoNutricional"
-                                id="infoNutricional"
-                                class="form-input"
-                              ></textarea>
-                            </div>
-                            <div class="col-12">
-                              <label for="cooking" class="form-label">Modo de coccion:</label>
-                              <textarea
-                                name="cooking"
-                                id="cooking"
-                                class="form-input"
-                              ></textarea>
-                            </div>
-                            <div class="col-12">
-                                <label for="file-image" class="form-label">Imagen del producto:</label>
-                                <input type="file" name="file-image" id="file-image" class="form-input"/>
-                            </div>
-                            <div class="col-12">
-                              <label for="alt" class="form-label"
-                                >Texto alternativo imagen:</label
-                              >
-                              <textarea name="alt" id="alt" class="form-input"></textarea>
-                            </div>
-                
-                            <div class="col-12">
-                              <button type="submit" class="buy-now-button">
-                                Guardar producto
-                              </button>
-                            </div>
-                          </div>
-                        </form>
-                </div>
-        
+  <body>
+    <%- include ('./partials/header') %>
+    <main>
+      <div class="containerForm">
+        <div>
+          <h2 class="form-title">Formulario de creación de productos</h2>
+        </div>
+        <form
+          action="/products/create"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+            <div class="box">
+              <div class="formBox">
+                <label for="name" class="form-label"
+                  >Nombre del producto:</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Ej: Nombre del plato"
+                  class="form-input"
+                />
+              </div>
+              <div class="formBox">
+                <label for="price" class="form-label"
+                  >Precio del producto:</label
+                >
+                <input
+                  type="text"
+                  id="price"
+                  name="price"
+                  placeholder="Ej: 5678"
+                  class="form-input"
+                />
+              </div>
             </div>
-        </main>
-        
-        <%- include ('./partials/footer.ejs') %>
+            <div class="box">
+              <div class="formBox">
+                <label for="discount" class="form-label">Descuento:</label>
+                <input
+                  type="text"
+                  id="discount"
+                  name="discount"
+                  placeholder="Ej: 15"
+                  class="form-input"
+                />
+              </div>
 
-    </body>
-
+              <div class="formBox">
+                <label for="category" class="form-label">Categoría:</label>
+                <select
+                  name="category"
+                  id="category"
+                  class="form-input"
+                  required
+                >
+                  <option value="<%= category.offer %> ">Oferta</option>
+                  <option value="<%= category.recommended %>">
+                    Recomendados
+                  </option>
+                  <option value="<%= category.all %>">Todos</option>
+                </select>
+              </div>
+            </div>
+            <div class="box-textarea">
+              <div class="formBox">
+                <label for="ingredientes" class="form-label">Ingredientes:</label>
+                <textarea
+                  name="ingredientes"
+                  id="ingredientes"
+                  class="form-input"
+                ></textarea>
+              </div>
+              <div class="formBox">
+                <label for="infoNutricional" class="form-label"
+                  >Informacion nutricional:</label
+                >
+                <textarea
+                  name="infoNutricional"
+                  id="infoNutricional"
+                  class="form-input"
+                ></textarea>
+              </div>
+              <div class="formBox">
+                <label for="cooking" class="form-label">Modo de coccion:</label>
+                <textarea
+                  name="cooking"
+                  id="cooking"
+                  class="form-input"
+                ></textarea>
+              </div>
+            </div>
+            <div class="box">
+              <div class="formBox">
+                <label for="file-image" class="form-label"
+                  >Imagen del producto:</label
+                >
+                <input
+                  type="file"
+                  name="file-image"
+                  id="file-image"
+                  class="form-input"
+                />
+              </div>
+              <div class="formBox">
+                <label for="alt" class="form-label"
+                  >Texto alternativo imagen:</label
+                >
+                <textarea name="alt" id="alt" class="form-input"></textarea>
+              </div>
+            </div>
+            <div class="formBox">
+              <button type="submit" class="button-general">
+                Guardar producto
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+  </body>
 </html>
