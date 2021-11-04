@@ -103,7 +103,7 @@ const productController = {
     if (isNullOrUndefined(productToEdit)) {
       res.redirect("/products/" + req.params.id + "/notFound");
     } else {
-      res.render("editarProductoForm", { productToEdit });
+      res.render("editarProductoForm", { productToEdit, category });
     }
   },
 
