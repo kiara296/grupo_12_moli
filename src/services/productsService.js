@@ -1,1 +1,74 @@
-// TODO: logica de negocio
+// business layer
+
+const fs = require("fs");
+const path = require("path");
+
+const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
+const carritoFilePath = path.join(__dirname, "../data/carritoDatos.json");
+let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
+const category = require("../data/constants/constants");
+
+const productsService = {
+  getById: (id) => {
+    const product = products.find((p) => p.id == id);
+    return product;
+  },
+
+  addProduct: (product) => {
+    products.push(product);
+  },
+
+  deleteByID: (id) => {
+    products = products.filter((p) => p.id != id);
+  },
+
+  getRecomended: () => {
+    return products.filter((product) =>
+      product.category.includes(category.recommended)
+    );
+  },
+
+  getOffer: () => {
+    return products.filter((product) =>
+      product.category.includes(category.offer)
+    );
+  },
+
+  getNextId: () => {
+    const ids = products.map((product) => product.id);
+    return Math.max(...ids) + 1;
+  },
+
+  updateProducts: () => {
+    products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+  },
+
+  persistProducts: () => {
+    products = fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+  },
+
+  getProducts: () => {
+    //updateProducts();
+    return products;
+  },
+
+  getCategoryOptions: () => {
+    return category;
+  },
+
+  getCarrito: () => {
+    return carrito;
+  },
+
+  persist: (newProduct) => {
+    const newProductList = [...products, newProduct];
+
+    fs.writeFileSync(
+        productsFilePath,
+        JSON.stringify(newProductList, null, " ")
+      );
+  },
+};
+
+module.exports = productsService;

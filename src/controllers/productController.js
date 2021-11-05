@@ -1,71 +1,29 @@
-const fs = require("fs");
-const path = require("path");
-
-const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
-const carritoFilePath = path.join(__dirname, "../data/carritoDatos.json");
-let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
-const category = require("../data/constants/constants");
-
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-const isNullOrUndefined = (product) => {
-  return product === null || product === undefined;
-};
-
-const getById = (id) => {
-  const product = products.find((p) => p.id == id);
-  return product;
-};
-
-const addProduct = (product) => {
-  products.push(product);
-};
-
-const deleteByID = (id) => {
-  products = products.filter(p => p.id != id);
-};
-
-const getRecomended = () => {
-  return products.filter((product) =>
-    product.category.includes(category.recommended)
-  );
-};
-
-const getOffer = () => {
-  return products.filter((product) =>
-    product.category.includes(category.offer)
-  );
-};
-
-const getNextId = () => {
-  const ids = products.map((product) => product.id);
-  return Math.max(...ids) + 1;
-};
+const productsService = require("../services/productsService");
+const validatorService = require("../services/validatorService");
 
 const productController = {
   index: (req, res) => {
-    products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+    productsService.updateProducts();
     res.render("index", {
-      offerProducts: getOffer(),
-      recomendedProducts: getRecomended(),
+      offerProducts: productsService.getOffer(),
+      recomendedProducts: productsService.getRecomended(),
     });
   },
 
   /* Catalogo todos los productos */
   catalog: (req, res) => {
-    res.render("catalog", { products });
+    res.render("catalog", { products: productsService.getProducts() });
   },
 
   /* Carrito de compra */
   carrito: (req, res) => {
-    res.render("carrito", { carrito });
+    res.render("carrito", { carrito: productsService.getCarrito() });
   },
 
   /* Detalle de un producto  */
   detail: (req, res) => {
-    const productToShow = getById(req.params.id);
-    if (isNullOrUndefined(productToShow)) {
+    const productToShow = productsService.getById(req.params.id);
+    if (validatorService.isNullOrUndefined(productToShow)) {
       res.redirect("/products/" + req.params.id + "/notFound");
     } else {
       res.render("detail", { productToShow });
@@ -74,63 +32,58 @@ const productController = {
 
   /* Formulario de creacion de producto */
   create: (req, res) => {
-    res.render("crearProductoForm", { category });
+    res.render("crearProductoForm", { category: productsService.getCategoryOptions() });
   },
 
   /* Creacion producto: Metodo para guardar */
   save: (req, res) => {
     const newProduct = {
-      id: getNextId(),
+      id: productsService.getNextId(),
       ...req.body,
       image: req.file ? req.file.filename : "",
     };
-    // Modificar el arreglo para agregar el nuevo producto
-    const newProductList = [...products, newProduct];
 
-    // Escribir en el JSON el nuevo arreglo actualizado
-    fs.writeFileSync(
-      productsFilePath,
-      JSON.stringify(newProductList, null, " ")
-    );
-
-    addProduct(newProduct);
+    productsService.persist(newProduct);
+    productsService.addProduct(newProduct);
 
     res.redirect("/");
   },
 
   /* Formulario de edicion de producto */
   edit: (req, res) => {
-  
-
-    const productToEdit = getById(req.params.id);
-    const isRecommended = productToEdit.category === category.recommended;
-    const isOnSale = productToEdit.category === category.offer;
-    const isAll = productToEdit.category === category.all;
-
-    if (isNullOrUndefined(productToEdit)) {
+    const productToEdit = productsService.getById(req.params.id);
+    const isRecommended = productToEdit.category === productsService.getCategoryOptions().recommended;
+    const isOnSale = productToEdit.category === productsService.getCategoryOptions().offer;
+    const isAll = productToEdit.category === productsService.getCategoryOptions().all;
+    
+    if (validatorService.isNullOrUndefined(productToEdit)) {
       res.redirect("/products/" + req.params.id + "/notFound");
     } else {
-      res.render("editarProductoForm", { productToEdit, category, isRecommended, isOnSale, isAll});
+      res.render("editarProductoForm", {
+        productToEdit,
+        category: productsService.getCategoryOptions(),
+        isRecommended,
+        isOnSale,
+        isAll,
+      });
     }
   },
 
   /* Actualizar producto: metodo para editar */
   update: (req, res) => {
     const requestedId = Number(req.params.id);
-
-    const oldProduct = getById(requestedId);
+    const oldProduct = productsService.getById(requestedId);
 
     const updatedProduct = {
       ...oldProduct,
       ...req.body,
     };
 
-    deleteByID(requestedId);
-    addProduct(updatedProduct);
-    
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    productsService.deleteByID(requestedId);
+    productsService.addProduct(updatedProduct);
+    productsService.persistProducts();
 
-    res.redirect('/');
+    res.redirect("/");
   },
 
   notFound: (req, res) => {
