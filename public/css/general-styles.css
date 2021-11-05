@@ -76,6 +76,8 @@ header {
   font-family: "Nunito", sans-serif;
   background-color: #96bf85;
   height: 100px;
+  position: fixed;
+  z-index: 1;
 }
 
 header img,
