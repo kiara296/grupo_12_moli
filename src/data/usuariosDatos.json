@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1",
+    "name": "Pepe",
+    "lastname": "Palala",
+    "userName": "ppalala@mail.com",
+    "password": "1",
+    "category": "",
+    "image": ""
+  },
+
+  {
+    "id": "2",
+    "name": "Elena",
+    "lastname": "Melena",
+    "userName": "emelena@mail.com",
+    "password": "2",
+    "category": "",
+    "image": ""
+  },
+
+  {
+    "id": "3",
+    "name": "Pancho",
+    "lastname": "Rancho",
+    "userName": "prancho@mail.com",
+    "password": "3",
+    "category": "",
+    "image": ""
+  },
+
+  {
+    "id": "4",
+    "name": "Casandra",
+    "lastname": "Malandra",
+    "userName": "cmalandra@mail.com",
+    "password": "4",
+    "category": "",
+    "image": ""
+  },
+
+  {
+    "id": "5",
+    "name": "Lucrecia",
+    "lastname": "Magnesia",
+    "userName": "lmagnesia@mail.com",
+    "password": "5",
+    "category": "",
+    "image": ""
+  }
+]
