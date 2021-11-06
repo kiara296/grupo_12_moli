@@ -62,9 +62,6 @@ const productController = {
       res.render("editarProductoForm", {
         productToEdit,
         category: productsService.getCategoryOptions(),
-        isRecommended,
-        isOnSale,
-        isAll,
       });
     }
   },
