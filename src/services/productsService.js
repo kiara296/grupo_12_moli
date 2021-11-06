@@ -8,6 +8,7 @@ const carritoFilePath = path.join(__dirname, "../data/carritoDatos.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
 const category = require("../data/constants/constants");
+const formatterService = require("./formatterService");
 
 const productsService = {
   getById: (id) => {
@@ -45,7 +46,10 @@ const productsService = {
   },
 
   persistProducts: () => {
-    products = fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+    products = fs.writeFileSync(
+      productsFilePath,
+      JSON.stringify(products, null, " ")
+    );
   },
 
   getProducts: () => {
@@ -65,9 +69,15 @@ const productsService = {
     const newProductList = [...products, newProduct];
 
     fs.writeFileSync(
-        productsFilePath,
-        JSON.stringify(newProductList, null, " ")
-      );
+      productsFilePath,
+      JSON.stringify(newProductList, null, " ")
+    );
+  },
+
+  getByString: (valueString) => {
+    return products.find((product) =>
+      product.name.toLowerCase().includes(valueString.toLowerCase())
+    );
   },
 };
 
