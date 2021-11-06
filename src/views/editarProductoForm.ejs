@@ -59,11 +59,11 @@
                       class="form-input"
                       required
                     >
-                      <option value=" <%= category.offer %> "  <%= isOnSale ? 'selected' : '' %> >Oferta</option>
-                      <option value=" <%= category.recommended %> " <%= isRecommended ? 'selected' : '' %>>
-                        Recomendados
-                      </option>
-                      <option value="<%= category.all %>" <%= isAll ? 'selected' : '' %>>Todos</option>
+                      <% Object.values(category).forEach(c => { %>
+                        <option value="<%= c %>" <%= c === productToEdit.category ? 'selected' : '' %>>
+                          <%= c %>
+                        </option>
+                      <% }) %>
                     </select>
                   </div>
                 </div>
@@ -95,24 +95,26 @@
                     ><%=productToEdit.cooking%></textarea>
                   </div>
                 </div>
+                <div class="formBox">
+                  <label for="alt" class="form-label"
+                    >Texto alternativo imagen:</label
+                  >
+                  <textarea name="alt" id="alt" class="form-input"></textarea>
+                </div>
                 <div class="box">
                   <div class="formBox">
                     <label for="file-image" class="form-label"
                       >Imagen del producto:</label
                     >
-                    <img src="/images/<%=productToEdit.image%>" alt="<%=productToEdit.alt%>"   class="imagenProducto">
+                    <img src="/images/<%=productToEdit.image%>" alt="<%=productToEdit.alt%>" class="imagenProducto" width="400px">
                     <input
                       type="file"
                       name="file-image"
                       id="file-image"
                       class="form-input"
+                      value="/images/<%=productToEdit.image%>"
+                      width="50%"
                     />
-                  </div>
-                  <div class="formBox">
-                    <label for="alt" class="form-label"
-                      >Texto alternativo imagen:</label
-                    >
-                    <textarea name="alt" id="alt" class="form-input"></textarea>
                   </div>
                 </div>
                 <div class="formBox">
