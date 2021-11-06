@@ -60,11 +60,11 @@
                   class="form-input"
                   required
                 >
-                  <option  value="<%= category.offer %> ">Oferta</option>
-                  <option value="<%= category.recommended %>">
-                    Recomendados
+                <% Object.values(category).forEach(c => { %>
+                  <option value="<%= c %>">
+                    <%= c %>
                   </option>
-                  <option value="<%= category.all %>">Todos</option>
+                <% }) %>
                 </select>
               </div>
             </div>
