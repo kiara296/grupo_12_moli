@@ -6,7 +6,8 @@
     "userName": "ppalala@mail.com",
     "password": "1",
     "category": "",
-    "image": ""
+    "image": "",
+    "carrito": []
   },
 
   {
@@ -16,7 +17,8 @@
     "userName": "emelena@mail.com",
     "password": "2",
     "category": "",
-    "image": ""
+    "image": "",
+    "carrito": []
   },
 
   {
@@ -26,7 +28,8 @@
     "userName": "prancho@mail.com",
     "password": "3",
     "category": "",
-    "image": ""
+    "image": "",
+    "carrito": []
   },
 
   {
@@ -36,7 +39,8 @@
     "userName": "cmalandra@mail.com",
     "password": "4",
     "category": "",
-    "image": ""
+    "image": "",
+    "carrito": []
   },
 
   {
@@ -46,6 +50,7 @@
     "userName": "lmagnesia@mail.com",
     "password": "5",
     "category": "",
-    "image": ""
+    "image": "",
+    "carrito": []
   }
 ]
