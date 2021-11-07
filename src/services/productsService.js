@@ -46,10 +46,10 @@ const productsService = {
   },
 
   persistProducts: () => {
-    products = fs.writeFileSync(
-      productsFilePath,
-      JSON.stringify(products, null, " ")
-    );
+    fs.writeFileSync(
+        productsFilePath,
+        JSON.stringify(products, null, " ")
+      );
   },
 
   getProducts: () => {
@@ -74,8 +74,8 @@ const productsService = {
     );
   },
 
-  getByString: (valueString) => {
-    return products.find((product) =>
+  getProductsByString: (valueString) => {
+    return products.filter((product) =>
       product.name.toLowerCase().includes(valueString.toLowerCase())
     );
   },

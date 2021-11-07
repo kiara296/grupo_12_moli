@@ -117,20 +117,6 @@
   "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
  },
  {
-  "id": 11,
-  "name": "Croissants",
-  "price": "999",
-  "discount": "999",
-  "description": "Croissants x 6 unidades. 100% caseras y natural",
-  "image": "croissants.png",
-  "alt": "imagen de croissants",
-  "category": "RECOMMENDED",
-  "ingredients": "Harina de trigo * 43,8% [harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. ",
-  "cooking": " Precalienta tu horno a 180 ° C. Coloque los croissants en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.",
-  "infoNutricional": " 409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.",
-  "ingredientes": "Harina de trigo * 43,8% [harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. "
- },
- {
   "id": 2,
   "name": "Pain au chocolat x 6 uni",
   "price": "400",
@@ -143,5 +129,19 @@
   "cooking": "Precalienta tu horno a 180 ° C. Coloque los pains au chocolat en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.",
   "infoNutricional": " 409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.",
   "ingredientes": "Harina de trigo  41,9% [harina de trigo (gluten), gluten de trigo], agua , mantequilla  (leche) 16%, chocolate 11% , azúcar  3,8%, levadura , huevo , sal , gluten de trigo ."
+ },
+ {
+  "id": 11,
+  "name": "Croissants re copados",
+  "price": "111",
+  "discount": "111",
+  "description": "Croissants x 6 unidades. 100% caseras y natural",
+  "image": "croissants.png",
+  "alt": "",
+  "category": "RECOMMENDED",
+  "ingredients": "Harina de trigo * 43,8% [harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. ",
+  "cooking": " Precalienta tu horno a 180 ° C. Coloque los croissants en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.",
+  "infoNutricional": "   409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.",
+  "ingredientes": "Harina de trigo * 43,8% [harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. "
  }
 ]

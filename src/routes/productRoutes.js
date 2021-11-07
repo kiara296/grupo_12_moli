@@ -48,5 +48,7 @@ router.get('/:id/notFound', productController.notFound);
 //home
 router.get('/', productController.index);
 
+router.get('/search', productController.search);
+
 
 module.exports = router

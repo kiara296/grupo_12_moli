@@ -88,6 +88,13 @@ const productController = {
       "The product with id " + req.params.id + " doesn't exists";
     res.render("notFound", { descriptionError });
   },
+
+  search: (req, res) => {
+    const valueSearch = req.query.valueSearch;
+    const filterProducts = productsService.getProductsByString(valueSearch);
+    res.render("catalog", { products: filterProducts });
+  },
+
 };
 
 module.exports = productController;
