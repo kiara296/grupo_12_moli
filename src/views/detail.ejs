@@ -32,9 +32,15 @@
             <h2 class="title-prize">Precio:</h2>
             <div class="prize-container">
               <span class="prize"> <%= "$" + " " + productToShow.price %></span>
-              <button class="button button-submit" type="submit">
-                Agregar
-              </button>
+              <form 
+              action="/users/addProduct?idProduct=<%= productToShow.id %>" 
+              method="POST"
+              enctype="multipart/form-data"
+              >
+                <button class="button button-submit" type="submit">
+                  Agregar
+                </button>
+              </form>
             </div>
           </article>
         </div>

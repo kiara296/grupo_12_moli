@@ -52,9 +52,6 @@ const productController = {
   /* Formulario de edicion de producto */
   edit: (req, res) => {
     const productToEdit = productsService.getById(req.params.id);
-    const isRecommended = productToEdit.category === productsService.getCategoryOptions().recommended;
-    const isOnSale = productToEdit.category === productsService.getCategoryOptions().offer;
-    const isAll = productToEdit.category === productsService.getCategoryOptions().all;
     
     if (validatorService.isNullOrUndefined(productToEdit)) {
       res.redirect("/products/" + req.params.id + "/notFound");

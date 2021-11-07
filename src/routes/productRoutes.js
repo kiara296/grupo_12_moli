@@ -1,28 +1,10 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const path = require('path');
 
 // ************ Controller Require ************
 const productController = require('../controllers/productController');
-
-// ******************** Multer *********************
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, path.join(__dirname, '../../public/images'));
-    },
-
-    filename: (req, file, callback) => {
-        callback(
-          null,
-          file.fieldname + '-' + Date.now() + path.extname(file.originalname)
-        );
-      }
-});
-
-const fileUpload = multer({ storage: storage });
-// *****************************************************
+const upload = require('../middlewares/multer');
 
 /* Carrito producto */
 router.get('/carrito', productController.carrito);
@@ -33,11 +15,11 @@ router.get('/:id/detail', productController.detail);
 /* Crear un producto */
 router.get('/create', productController.create);
 //TODO: pasar como argumento a single() el valor del atributo name del input file presente en el formulario
-router.post('/create', fileUpload.single('file-image'), productController.save); 
+router.post('/create', upload.single('file-image'), productController.save); 
 
 /* Editar un producto */ 
 router.get('/:id/edit', productController.edit); 
-router.put('/:id', fileUpload.single('file-image'), productController.update);
+router.put('/:id', upload.single('file-image'), productController.update);
 
 // catalog
 router.get('/catalog', productController.catalog);
@@ -51,4 +33,4 @@ router.get('/', productController.index);
 router.get('/search', productController.search);
 
 
-module.exports = router
+module.exports = router;

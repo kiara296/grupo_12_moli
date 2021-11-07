@@ -1,56 +1,116 @@
 [
-  {
-    "id": "1",
-    "name": "Pepe",
-    "lastname": "Palala",
-    "userName": "ppalala@mail.com",
-    "password": "1",
-    "category": "",
-    "image": "",
-    "carrito": []
-  },
-
-  {
-    "id": "2",
-    "name": "Elena",
-    "lastname": "Melena",
-    "userName": "emelena@mail.com",
-    "password": "2",
-    "category": "",
-    "image": "",
-    "carrito": []
-  },
-
-  {
-    "id": "3",
-    "name": "Pancho",
-    "lastname": "Rancho",
-    "userName": "prancho@mail.com",
-    "password": "3",
-    "category": "",
-    "image": "",
-    "carrito": []
-  },
-
-  {
-    "id": "4",
-    "name": "Casandra",
-    "lastname": "Malandra",
-    "userName": "cmalandra@mail.com",
-    "password": "4",
-    "category": "",
-    "image": "",
-    "carrito": []
-  },
-
-  {
-    "id": "5",
-    "name": "Lucrecia",
-    "lastname": "Magnesia",
-    "userName": "lmagnesia@mail.com",
-    "password": "5",
-    "category": "",
-    "image": "",
-    "carrito": []
-  }
+ {
+  "id": "1",
+  "name": "Pepe",
+  "lastname": "Palala",
+  "userName": "ppalala@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": "",
+  "carrito": [
+   {
+    "id": 7,
+    "name": "Zapallo x 500gr",
+    "price": 500,
+    "discount": 15,
+    "description": "Zapallo en cubos IQF. 100% natural",
+    "image": "zapalloPlato.png",
+    "alt": "imagen de zapallo",
+    "category": "RECOMMENDED",
+    "ingredients": "Zapallo natural 100%",
+    "cooking": "Del freezer directo a tu horno o sarten. ",
+    "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
+   },
+   {
+    "id": 1,
+    "name": "Frambuesas x 500gr",
+    "price": 550,
+    "discount": 20,
+    "description": "Frambuesas enteras IQF x 500gr. 100% natural",
+    "image": "frambuesas.png",
+    "alt": "imagen de frambuesas",
+    "category": "OFFER",
+    "ingredients": "Frambuesas naturales.",
+    "cooking": "Idealmente dejar descongelar en la heladera. De no ser posible se puede descongelar en el microondas.",
+    "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
+   }
+  ]
+ },
+ {
+  "id": "2",
+  "name": "Elena",
+  "lastname": "Melena",
+  "userName": "emelena@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": "",
+  "carrito": []
+ },
+ {
+  "id": "3",
+  "name": "Pancho",
+  "lastname": "Rancho",
+  "userName": "prancho@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": "",
+  "carrito": []
+ },
+ {
+  "id": "4",
+  "name": "Casandra",
+  "lastname": "Malandra",
+  "userName": "cmalandra@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": "",
+  "carrito": []
+ },
+ {
+  "id": "5",
+  "name": "Lucrecia",
+  "lastname": "Magnesia",
+  "userName": "lmagnesia@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": "",
+  "carrito": []
+ },
+ {
+  "id": "1",
+  "name": "Pepe",
+  "lastname": "Palala",
+  "userName": "ppalala@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": "",
+  "carrito": [
+   {
+    "id": 7,
+    "name": "Zapallo x 500gr",
+    "price": 500,
+    "discount": 15,
+    "description": "Zapallo en cubos IQF. 100% natural",
+    "image": "zapalloPlato.png",
+    "alt": "imagen de zapallo",
+    "category": "RECOMMENDED",
+    "ingredients": "Zapallo natural 100%",
+    "cooking": "Del freezer directo a tu horno o sarten. ",
+    "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
+   },
+   {
+    "id": 1,
+    "name": "Frambuesas x 500gr",
+    "price": 550,
+    "discount": 20,
+    "description": "Frambuesas enteras IQF x 500gr. 100% natural",
+    "image": "frambuesas.png",
+    "alt": "imagen de frambuesas",
+    "category": "OFFER",
+    "ingredients": "Frambuesas naturales.",
+    "cooking": "Idealmente dejar descongelar en la heladera. De no ser posible se puede descongelar en el microondas.",
+    "infoNutricional": "409 Kcal/51gr Hdc/17gr prot./15gr grasas tot."
+   }
+  ]
+ }
 ]
