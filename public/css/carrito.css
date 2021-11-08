@@ -1,86 +1,263 @@
-@import url('general-styles.css');
+@import url("general-styles.css");
+@import url("forms.css");
 
-main{
-    width: 100vw;
-    background-color: var(--primary-blue);
+section {
+  padding: 0 15px 0 15px;
+  margin-bottom: 5%;
 }
 
-section{
-    padding: 0 15px 0 15px;
+article {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-article{
-    margin-top: 15px;
-    margin-bottom: 15px;
+.descuento {
+  margin-top: 15px;
 }
-.padre{
+
+.padre {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px white;
+  transition: box-shadow 0.5s;
+  padding: 5px;
+}
+
+.example input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+.example button:hover {
+  background: #0b7dda;
+}
+
+.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.padre:hover {
+  box-shadow: 0px 0px 10px rgb(100 100 100);
+}
+.sectores {
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.sector1 {
+  /*     padding-top: 20px; */
+  width: 60%;
+}
+
+.sector2 {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*     margin-top: 10%; */
+}
+
+.padre div {
+  contain: content;
+  width: 20%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagenProducto {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--primary-blue);
+  object-fit: cover;
+}
+
+.precio {
+  border: 2px solid grey;
+  border-radius: 15%;
+}
+
+.padre p {
+  font-size: 16px;
+  padding: 2px;
+  font-weight: 600;
+  padding-left: 8%;
+}
+
+h1 {
+  padding: 8% 0 2% 15px;
+  font-family: inherit;
+}
+
+.deleteCart button {
+  background-image: none;
+  background-color: white;
+  color: var(--primary-gray);
+}
+.botones button {
+  width: 70%;
+}
+.button-general {
+  margin: 2px;
+}
+
+input .eliminar {
+  color: blue;
+  font-size: 65%;
+}
+
+.total {
+  margin-top: 15%;
+  width: 100%;
+}
+
+.total1 {
+  font-size: 20px;
+}
+.subtotal {
+  font-size: 16px;
+}
+
+.descuento h4 {
+  font-size: 14px;
+}
+
+.boton {
+  height: 40%;
+  width: 42%;
+}
+
+.barra {
+  height: 40%;
+  width: 42%;
+}
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.botonCompra1,
+.botonCompra2,
+.botonCompra3 {
+  width: 90%;
+  height: 25px;
+}
+
+.botonCompra1 {
+  background-color: rgb(0, 222, 129);
+  color: white;
+  font-size: 18px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.botonCompra2 {
+  background-color: blue;
+  color: white;
+  font-size: 18px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.botonCompra3 {
+  background-color: orange;
+  color: white;
+  font-size: 18px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.Eliminar {
+  font-size: 60%;
+  color: blue;
+}
+
+.total1 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*---------------MOBILE-----------------*/
+@media only screen and (max-width: 360px) {
+  .sectores {
     display: flex;
-    flex-direction: row;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 0px white;
-    transition: box-shadow 0.5s;
-}
+    flex-direction: column;
+  }
 
-.padre:hover{
-    box-shadow: 0px 0px 10px rgb(100 100 100);
-}
-.sectores{
-    display: flex;
-    flex-direction: row;
-}
-
-.sector1{
+  .sector1 {
     padding-top: 20px;
-    width: 60%;
-}
+    width: 100%;
+    padding: 0 5px 0 5px;
+  }
 
-.sector2{
-    width: 40%;
+  .sector2 {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 10%;
     margin-bottom: 10%;
-}
+  }
 
-.padre div{
-    contain: content;
-    width: 20%;
-    height: 70px;
+  h1 {
+    padding: 18% 0 2% 5%;
+    font-family: inherit;
+  }
+
+  .padre {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px white;
+    transition: box-shadow 0.5s;
+  }
+
+  .padre:hover {
+    box-shadow: 0px 0px 10px rgb(100 100 100);
+  }
+
+  .padre p {
+    font-size: 14px;
+    padding: 1px;
+    font-weight: 600;
+  }
+
+  .descrip {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Font Awesome 5 Free';
-}
+    padding-left: 8px;
+  }
 
-img{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: 1px solid;
-    object-fit: cover;
-}
-
-.precio{
-    border: 2px solid grey;
-    border-radius: 15%;
-}
-
-.padre p{
-    font-size: 16px;
-    padding: 2px;
-    font-weight: 600;
-    padding-left: 8%;
-}
-
-h1{
-    padding: 8% 0 2% 10%;
-    font-family: inherit;
-}
-
-.botton {
+  .botton {
     border-color: var(--primary-gray);
     background-color: var(--primary-blue);
     color: white;
@@ -89,193 +266,36 @@ h1{
     border-radius: 10%;
     height: 30px;
     font-size: 17px;
-}
+  }
 
-input .eliminar{
-    color: blue;
-    font-size: 65%;
-}
-
-.total{
-    margin-top: 30%;
+  .descuento {
     width: 100%;
-}
-
-.total1{
-    font-size: 20px
-}
-.subtotal{
-    font-size: 16px
-}
-
-.descuento h4{
-    font-size: 14px
-}
-
-.boton{
-    height: 40%;
-    width: 42%;
-}
-
-.barra{
-    height: 40%;
-    width: 42%;
-}
-
-.botones{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    display: flex;
-}
+    align-items: center;
+  }
 
-.botonCompra1, .botonCompra2, .botonCompra3{
-    width: 90%;
-    height: 25px;
-}
+  .barra {
+    height: 40%;
+    width: 50%;
+  }
 
-.botonCompra1{
-    background-color: rgb(0, 222, 129);
-    color: white;
-    font-size: 18px;
-    margin-top: 5px;
-    border-radius: 5px;
-}
-.botonCompra2{
-    background-color: blue;
-    color: white;
-    font-size: 18px;
-    margin-top: 5px;
-    border-radius: 5px;
-   
-}
-
-.botonCompra3{
-    background-color: orange;
-    color: white;
-    font-size: 18px;
-    margin-top: 5px;
-    border-radius: 5px;
-   
-}
-
-
-.Eliminar{
-    font-size: 60%;
-    color: blue;
-}
-
-.total1{
+  .total1 {
     text-align: center;
     font-family: fantasy;
     font-size: 20px;
-}
+  }
 
+  .total {
+    margin-top: 10%;
+    width: 100%;
+  }
 
-/*---------------MOBILE-----------------*/
-@media only screen and (max-width: 360px) {
-
-    main{
-        width: 100vw;
-        background-color: var(--primary-blue);
-    }
-    
-    .sectores{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .sector1{
-        padding-top: 20px;
-        width: 100%;
-        padding: 0 5px 0 5px;
-    }
-    
-    .sector2{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
-
-
-h1 {
-    padding: 18% 0 2% 5%;
-    font-family: inherit;
-}
-
-.padre {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 0px white;
-    transition: box-shadow 0.5s;
-}
-
-.padre:hover{
-    box-shadow: 0px 0px 10px rgb(100 100 100);
-}
-
-    .padre p {
-        font-size: 14px;
-        padding: 1px;
-        font-weight: 600;
-    }
-
-    .descrip {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 8px;
-    }
-
-    .botton {
-        border-color: var(--primary-gray);
-        background-color: var(--primary-blue);
-        color: white;
-        font-weight: bold;
-        border: outset;
-        border-radius: 10%;
-        height: 30px;
-        font-size: 17px;
-    }
-
-    .descuento {
-        width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
-
-    .barra {
-        height: 40%;
-        width: 50%;
-    }
-
-    .total1{
-        text-align: center;
-        font-family: fantasy;
-        font-size: 20px;
-    }
-    
-    .total {
-        margin-top: 10%;
-        width: 100%;
-    }
-
-    .botonCompra1, .botonCompra2, .botonCompra3 {
-        width: 90%;
-        height: 35px;
-    }
-
-    
-
-
-    
+  .botonCompra1,
+  .botonCompra2,
+  .botonCompra3 {
+    width: 90%;
+    height: 35px;
+  }
 }

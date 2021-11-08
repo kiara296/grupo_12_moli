@@ -1,38 +1,80 @@
 <!DOCTYPE html>
 <html>
+  <!-- Head -->
+  <%- include ('./partials/head',{ stylesFile: 'forms.css'}) %>
 
-<!-- Head -->
-<%- include ('./partials/head',{ stylesFile: 'regmoli.css'}) %>
-
-<body>
-    
-    <!-- Header -->
+  <body>
     <%- include ('./partials/header') %>
-
-        <main class="register">
-            <form action="/" method="POST"> <br><br>
-                <div class="datos">
-                    <label id="name"> Nombre </label> <br>
-                    <input type="text" name="name" placeholder="Ingresá tu nombre " minlength="5" required> <br> <BR>
-                    <label id="name"> Apellido </label> <br>
-                    <input type="text" name="name" placeholder="Ingresá tu apellido" minlength="5" required> <Br><BR>
-                    <label id="email"> Usuario </label> <br>
-                    <input type="email" name="email" placeholder="Ingresá un E-mail" required> <BR><BR>
-
-                    <label id="email"> Contraseña </label> <br>
-                    <input type="password" name="pass" placeholder="Elegí una contraseña" minlength="8" required> <BR>
-                    <BR>
-                    <label id="email"> Repetir contraseña </label> <br>
-                    <input type="password" name="pass_confirm" placeholder="Repetí tu contraseña" required>
-                    <br><br> <BR>
-
-                    <input class="button-submit" type="submit" value="Registrar">
-                    <br>
+    <main>
+      <div class="containerForm">
+        <div>
+          <h2 class="form-title">Completá tus datos</h2>
+        </div>
+        <form action="/" method="POST">
+            <div class="formBox">
+                <div class="formBox">
+                    <label for="name" class="form-label"> Nombre </label>
+                    <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Ingresá tu nombre "
+                    minlength="5"
+                    class="form-input"
+                    required
+                    />
+                </div>   
+                <div class="formBox"> 
+                    <label for="lastName" class="form-label"> Apellido </label>
+                    <input
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    placeholder="Ingresá tu apellido"
+                    minlength="5"
+                    class="form-input"
+                    required
+                    />
                 </div>
-
-            </form>
-        </main>
-        <%- include ('./partials/footer.ejs') %>
-</body>
-
+                <div class="formBox"> 
+                    <label for="user" class="form-label"> Usuario</label>
+                    <input
+                    type="email"
+                    id="user" 
+                    name="email"
+                    placeholder="Ingresá un e-mail"
+                    class="form-input"
+                    required
+                    />
+                </div>    
+                <div class="formBox"> 
+                    <label id="email" class="form-label"> Contraseña </label>
+                    <input
+                    type="password"
+                    name="pass"
+                    placeholder="Elegí una contraseña"
+                    minlength="8"
+                    class="form-input"
+                    required
+                    />
+                </div>    
+                <div class="formBox"> 
+                    <label id="email" class="form-label"> Repetir contraseña </label>
+                    <input
+                    type="password"
+                    name="pass_confirm"
+                    placeholder="Repetí tu contraseña"
+                    class="form-input"
+                    required
+                    />
+                </div>    
+            </div>
+            <div class="formBox">
+                <button type="submit" class="button-general">Registrarse</button>
+            </div>
+        </form>
+      </div>
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+  </body>
 </html>

@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Head -->
   <%- include ('./partials/head',{ stylesFile: 'carrito.css'}) %>
-
   <body>
-    <!-- Header -->
     <%- include ('./partials/header') %>
     <main>
       <h1>Mi carrito</h1>
       <div class="sectores">
         <section class="sector1">
-
           <% carrito.forEach(product => { %>
             <article>
               <div class="padre">
-                <div class="imagen">
-                  <img src="../images/<%= product.image %>" />
+                <div>
+                  <img  class="imagenProducto"src="../images/<%= product.image %>" />
                 </div>
                 <div>
                   <p class="descrip"><%= product.name %></p>
                 </div>
                 <div>
-                  <button class="botton">-</button>
+                  <button type="submit" value="add" class="button-general">
+                    +
+                  </button>
                   <div class="quantity">
                     <span class="span-quantity">1</span>
                   </div>
-                  <button class="botton">+</button>
+                  <button type="submit" value="remove" class="button-general">
+                    -
+                  </button>
                 </div>
                 <div>
                   <p class="precio">$ <%= product.price %></p>
                 </div>
-                <div>
-                  <input class="Eliminar" type="submit" value="Eliminar">
+                <div class="deleteCart">
+                  <button type="submit" value="delete" class="button-general">
+                    <i class="far fa-trash-alt"></i>
+                  </button>
                 </div>
               </div>
             </article>
           <% }) %>
         </section>
-
-
-
-
         <section class="sector2">
           <div class="descuento">
             <h4>¿Tenés un cupón de descuento?</h4>
             <div class="cupon">
               <div>
-                <label for="fname"></label><br>
+               <!--  <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+                  <input type="text" placeholder="Search.." name="search2">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form> -->
+                <label for="fname"></label>
                 <input class="barra" type="text" placeholder="Código" id="fname" name="codigo">
                 <input class="boton" type="button" onclick="" value="Aplicar">
               </div>
             </div>
           </div>
-
           <div class="total">
-            <p class="total1">Total $$$$$</p><br>
+            <p class="total1">Total $$$$$</p>
             <div class="botones">
-              <input class="botonCompra1" type="button" onclick="" value="Continuar comprando">
-              <input class="botonCompra3" type="button" onclick="" value="Vaciar carrito">
-              <input class="botonCompra2" type="button" onclick="" value="Finalizar compra">
+              <button type="submit" value="keepShopping" class="button-general">
+               Seguir comprando
+              </button>
+              <button type="submit" value="emptyCart" class="button-general">
+                Vaciar carrito
+              </button>
+              <button type="submit" value="checkout" class="button-general">
+                Finalizar compra
+              </button>
             </div>
           </div>
-
         </section>
       </div>
     </main>
     <%- include ('./partials/footer.ejs') %>
   </body>
-
-
 </html>

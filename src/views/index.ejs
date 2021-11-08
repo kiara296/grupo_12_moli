@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Head -->
   <%- include ('./partials/head',{ stylesFile: 'index.css'}) %>
-
 <body>
-    <!-- Header -->
     <%- include ('./partials/header') %>
     <section>
       <img class="carrosuel" src="/images/wok.png" alt="Home Banner" />
@@ -12,7 +9,6 @@
     <main>
       <section class="referencia">
         <h3>Buscá tus productos por referencia</h3>
-     
         <div   id= "referencia">
           <article>
             <img
@@ -92,7 +88,6 @@
         <h3 id="recommended">Recomendados</h3>
         <div class="tarjetasProducto">
           <% recomendedProducts.forEach(product => { %>
-         
           <article>
             <a href="/products/<%= product.id %>/detail">
             <img
@@ -110,25 +105,24 @@
           <% }) %>
         </div>
         </section>
-
         <section class="recomendados">
           <h3 id="offers">Ofertas</h3>
           <div class="tarjetasProducto">
           <% offerProducts.forEach(product => { %>
             <article>
               <a href="/products/<%= product.id %>/detail">
-              <img
-                class="imagenProducto"
-                src="/images/<%= product.image %>"
-                alt="<%= product.alt %>"
-              />
-              <div class="descripcionAritculo">
-                <i class="fas fa-truck"></i>
-                <p class="precio"> $ <%= product.price %> </p>
-                <h4 class="descripcion"> <%= product.description %> </h4>
-              </div>
+                <img
+                  class="imagenProducto"
+                  src="/images/<%= product.image %>"
+                  alt="<%= product.alt %>"
+                />
+                <div class="descripcionAritculo">
+                  <i class="fas fa-truck"></i>
+                  <p class="precio"> $ <%= product.price %> </p>
+                  <h4 class="descripcion"> <%= product.description %> </h4>
+                </div>
+              </a>
             </article>
-          </a>
             <% }) %>
           </div>
           </section>
