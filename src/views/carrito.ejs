@@ -5,13 +5,13 @@
     <%- include ('./partials/header') %>
     <main>
       <h1>Mi carrito</h1>
-      <div class="sectores">
+      <div class="sectors">
         <section class="sector1">
           <% carrito.forEach(product => { %>
             <article>
-              <div class="padre">
+              <div class="father">
                 <div>
-                  <img  class="imagenProducto"src="../images/<%= product.image %>" />
+                  <img  class="productoImage"src="../images/<%= product.image %>" />
                 </div>
                 <div>
                   <p class="descrip"><%= product.name %></p>
@@ -28,7 +28,7 @@
                   </button>
                 </div>
                 <div>
-                  <p class="precio">$ <%= product.price %></p>
+                  <p class="price">$ <%= product.price %></p>
                 </div>
                 <div class="deleteCart">
                   <button type="submit" value="delete" class="button-general">
@@ -40,7 +40,7 @@
           <% }) %>
         </section>
         <section class="sector2">
-          <div class="descuento">
+          <div class="discount">
             <h4>¿Tenés un cupón de descuento?</h4>
             <div class="cupon">
               <div>
@@ -49,14 +49,14 @@
                   <button type="submit"><i class="fa fa-search"></i></button>
                 </form> -->
                 <label for="fname"></label>
-                <input class="barra" type="text" placeholder="Código" id="fname" name="codigo">
-                <input class="boton" type="button" onclick="" value="Aplicar">
+                <input class="bar" type="text" placeholder="Código" id="fname" name="codigo">
+                <input class="button" type="button" onclick="" value="Aplicar">
               </div>
             </div>
           </div>
           <div class="total">
             <p class="total1">Total $$$$$</p>
-            <div class="botones">
+            <div class="buttons">
               <button type="submit" value="keepShopping" class="button-general">
                Seguir comprando
               </button>

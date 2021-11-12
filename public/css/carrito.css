@@ -11,11 +11,11 @@ article {
   margin-bottom: 15px;
 }
 
-.descuento {
+.discount {
   margin-top: 15px;
 }
 
-.padre {
+.father {
   display: flex;
   flex-direction: row;
   background-color: white;
@@ -56,10 +56,10 @@ article {
   display: table;
 }
 
-.padre:hover {
+.father:hover {
   box-shadow: 0px 0px 10px rgb(100 100 100);
 }
-.sectores {
+.sectors {
   display: flex;
   margin-bottom: 5%;
 }
@@ -78,7 +78,7 @@ article {
   /*     margin-top: 10%; */
 }
 
-.padre div {
+.father div {
   contain: content;
   width: 20%;
   height: 70px;
@@ -87,19 +87,19 @@ article {
   align-items: center;
 }
 
-.imagenProducto {
+.productoImage {
   width: 100%;
   height: 100%;
   border: 1px solid var(--primary-blue);
   object-fit: cover;
 }
 
-.precio {
+.price {
   border: 2px solid grey;
   border-radius: 15%;
 }
 
-.padre p {
+.father p {
   font-size: 16px;
   padding: 2px;
   font-weight: 600;
@@ -116,7 +116,7 @@ h1 {
   background-color: white;
   color: var(--primary-gray);
 }
-.botones button {
+.buttons button {
   width: 70%;
 }
 .button-general {
@@ -140,21 +140,21 @@ input .eliminar {
   font-size: 16px;
 }
 
-.descuento h4 {
+.discount h4 {
   font-size: 14px;
 }
 
-.boton {
+.button {
   height: 40%;
   width: 42%;
 }
 
-.barra {
+.bar {
   height: 40%;
   width: 42%;
 }
 
-.botones {
+.buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,7 +205,7 @@ input .eliminar {
 
 /*---------------MOBILE-----------------*/
 @media only screen and (max-width: 360px) {
-  .sectores {
+  .sectors {
     display: flex;
     flex-direction: column;
   }
@@ -231,7 +231,7 @@ input .eliminar {
     font-family: inherit;
   }
 
-  .padre {
+  .father {
     display: flex;
     flex-direction: row;
     background-color: white;
@@ -240,11 +240,11 @@ input .eliminar {
     transition: box-shadow 0.5s;
   }
 
-  .padre:hover {
+  .father:hover {
     box-shadow: 0px 0px 10px rgb(100 100 100);
   }
 
-  .padre p {
+  .father p {
     font-size: 14px;
     padding: 1px;
     font-weight: 600;
@@ -268,7 +268,7 @@ input .eliminar {
     font-size: 17px;
   }
 
-  .descuento {
+  .discount {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -276,7 +276,7 @@ input .eliminar {
     align-items: center;
   }
 
-  .barra {
+  .bar {
     height: 40%;
     width: 50%;
   }
