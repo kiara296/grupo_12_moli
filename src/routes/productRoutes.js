@@ -8,6 +8,7 @@ const upload = require('../middlewares/multer');
 
 /* Carrito producto */
 router.get('/carrito', productController.carrito);
+router.delete('/:id/carrito', productController.carritoDelete);
 
 /* Detalle producto */
 router.get('/:id/detail', productController.detail);

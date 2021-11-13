@@ -24,6 +24,10 @@ const productsService = {
     products = products.filter((p) => p.id != id);
   },
 
+  deleteByIDCarrito: (id) => {
+    carrito = carrito.filter((p) => p.id != id);
+  },
+
   getRecomended: () => {
     return products.filter((product) =>
       product.category.includes(category.recommended)
@@ -43,6 +47,10 @@ const productsService = {
 
   updateProducts: () => {
     products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+  },
+
+  updateProductsCarrito: () => {
+    carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
   },
 
   persistProducts: () => {

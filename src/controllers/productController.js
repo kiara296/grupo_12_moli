@@ -92,6 +92,13 @@ const productController = {
     res.render("catalog", { products: filterProducts });
   },
 
+  carritoDelete: (req, res) => {
+    productsService.deleteByIDCarrito(req.params.id);
+    updateProductsCarrito.updateProductsCarrito();
+
+    res.redirect('/products/carrito');
+  }
+
 };
 
 module.exports = productController;

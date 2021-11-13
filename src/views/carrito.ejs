@@ -30,11 +30,13 @@
                 <div>
                   <p class="price">$ <%= product.price %></p>
                 </div>
-                <div class="deleteCart">
-                  <button type="submit" value="delete" class="button-general">
-                    <i class="far fa-trash-alt"></i>
-                  </button>
-                </div>
+                <form action='/products/<%= product.id %>/carrito/?_method=DELETE' method='POST'>
+                  <div class="deleteCart">
+                    <button type="submit" value="delete" class="button-general">
+                      <i class="far fa-trash-alt"></i>
+                    </button>
+                  </div>
+                </form>
               </div>
             </article>
           <% }) %>
