@@ -118,12 +118,21 @@
                   </div>
                 </div>
                 <div class="formBox">
-                  <button type="submit" class="button-general">
-                    Guardar cambios
-                  </button>
+                    <div>
+                      <button type="submit" class="button-general">
+                          Guardar cambios
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+              <div class="containerForm">
+              <form action="/products/<%=productToEdit.id%>/?_method=DELETE" method="POST">
+                <button type="submit" class="button-general">
+                  Eliminar producto
+                </button>
+              </form>
+              </div>    
           </div>
         </main>
         

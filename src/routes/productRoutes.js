@@ -33,5 +33,9 @@ router.get('/', productController.index);
 
 router.get('/search', productController.search);
 
+//delete product
+
+router.delete('/:id', productController.delete);
+
 
 module.exports = router;

@@ -97,6 +97,13 @@ const productController = {
     productsService.persistProductsCarrito();
 
     res.redirect('/products/carrito');
+  },
+
+  delete: (req, res) => {
+    productsService.deleteByID(req.params.id);
+    productsService.persistProducts();
+
+    res.redirect('/products/catalog');
   }
 
 };
