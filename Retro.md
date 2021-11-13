@@ -25,3 +25,20 @@ De la experiencia al momento del los sprints pasados obtuvimos los siguiente lin
 3- Del sprint anterior sacamos la conclusion que debemos planificar, diagramando y definiendo detalladamente todo el trabajo a realizarse antes de iniciar el sprint.
 4-
 5-No dejar para el final los trabajos a entregar. Tratar de realizar con tiempo el trabajo para dejar los ultimos dias para mejorar o corregir la entrega.
+
+Retrospectiva Sprint 3:
+
+De la experiencia al momento de los sprints pasados obtuvimos los siguientes lineamientos 
+
+1- Seguir dividiendo tareas para optimizar el tiempo y trabajando comunicados en equipo.
+
+2- Tener más reuniones. Focalizar más el trabajo.
+
+3- Del sprint anterior sacamos la conclusión que debemos seguir planificando y mejorando la diagramación. Que las reuniones grupales sean solo para sacarnos dudas o repasar cosas que no pudimos hacer. Pero no codear en vivio (excepto algunos casos en especial) porque nos lleva más tiempo.  Si bien nos sirvió mucho el pair programming no tenemos el tiempo suficiente para llegar bien a la entrega con este método. Incorporamos el chat de WA para que la comunicación sea más fluida. 
+Nos dimos cuenta del error de no elegir y utilizar un solo idioma para el proyecto, vemos muy difícil a esta altura cambiar todo lo anterior, por lo cual decidimos continuar con el idioma ingles sin modificar lo anterior.
+Peer review: empezar a aplicar esta técnica para mejorar nuestro código y hacer mejores entregas
+    
+4- Pair programming.
+
+5- Dejar de usar Slack, ya que no estamos tan online con este chat. 
+
