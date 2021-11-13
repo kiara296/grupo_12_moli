@@ -49,8 +49,8 @@ const productsService = {
     products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
   },
 
-  updateProductsCarrito: () => {
-    carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
+  persistProductsCarrito: () => {
+    fs.writeFileSync(carritoFilePath, JSON.stringify(carrito, null, " "));
   },
 
   persistProducts: () => {
