@@ -94,7 +94,7 @@ const productController = {
 
   carritoDelete: (req, res) => {
     productsService.deleteByIDCarrito(req.params.id);
-    updateProductsCarrito.updateProductsCarrito();
+    productsService.updateProductsCarrito();
 
     res.redirect('/products/carrito');
   }
