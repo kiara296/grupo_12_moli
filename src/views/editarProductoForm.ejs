@@ -106,7 +106,7 @@
                     <label for="file-image" class="form-label"
                       >Imagen del producto:</label
                     >
-                    <img src="/images/<%=productToEdit.image%>" alt="<%=productToEdit.alt%>" class="imagenProducto" width="400px">
+                    <img src="/images/<%=productToEdit.image%>" alt="<%=productToEdit.alt%>" class="imagenProducto formImage">
                     <input
                       type="file"
                       name="file-image"
@@ -117,27 +117,26 @@
                     />
                   </div>
                 </div>
-                <div class="formBox">
-                    <div>
+                <div class="box">
+                  <div class="formBox">
+                    <div class="buttonForm">
                       <button type="submit" class="button-general">
-                          Guardar cambios
+                        Guardar cambios
                       </button>
                     </div>
                   </div>
+                  <div class="formBox">
+                    <form action="/products/<%=productToEdit.id%>/?_method=DELETE" method="POST">
+                      <button type="submit" class="button-general">
+                        Eliminar producto
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </form>
-              <div class="containerForm">
-              <form action="/products/<%=productToEdit.id%>/?_method=DELETE" method="POST">
-                <button type="submit" class="button-general">
-                  Eliminar producto
-                </button>
-              </form>
-              </div>    
           </div>
         </main>
-        
-        <%- include ('./partials/footer.ejs') %>
-
+      <%- include ('./partials/footer.ejs') %>
     </body>
 
 </html>

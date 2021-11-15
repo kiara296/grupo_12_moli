@@ -37,6 +37,15 @@ form {
   background-image: linear-gradient(-180deg, #87ac77 0%, #769768 100%);
 }
 
+.buttonForm {
+  display: flex;
+  justify-content: center;
+}
+
+.formImage {
+  align-self: center;
+  width: 50%;
+}
 
 .box {
     display: flex;
