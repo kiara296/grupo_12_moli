@@ -54,7 +54,55 @@ main a, a:link, a:visited, a:focus, a:hover, a:active {
 }
 
 /* Header */
+.searchBar {
+  margin:auto;
+  max-width:300px; 
+  display: initial;
+  background-color: none;
+  padding: initial;
+}
 
+.searchBar input{
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid var(--primary-gray);
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+.searchBar button {
+  float: right;
+  width: 20%;
+  padding: 5px;
+  background: #f1f1f1;
+  color: #96bf85;
+  font-size: 15px;
+  height: auto;
+  border-radius: 0%;
+  border: 1px solid var(--primary-gray);
+  border-left: none;
+  cursor: pointer;
+}
+
+.searchBar button:hover {
+  background: var(--primary-blue);
+}
+
+.searchBar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.fa-bars {
+  color: wheat;
+}
+
+.buttonSubmitSearch {
+  display: none;
+}
 .topBar {
   display: block;
   width: 100%;
