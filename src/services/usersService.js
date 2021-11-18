@@ -21,9 +21,7 @@ const usersService = {
     },
 
     addProduct: (id) => {
-        const product = productsService.getById(id);
-        usersService.userLogged.carrito.push(product);
-        usersService.persist(usersService.userLogged);
+        // TODO: logica de agregar producto al carrito (primero armar modelo de datos de la compra)
     },
 }
 
