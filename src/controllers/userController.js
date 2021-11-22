@@ -4,7 +4,8 @@ const usersService = require('../services/usersService');
 
 const userController = {
   login: (req, res) => {
-    res.render("login");
+    const message = null;
+    res.render("login", { message });
  },
 
   regmoli: (req, res) => {
@@ -18,17 +19,7 @@ const userController = {
   },
 
   auth: (req, res) => {
-    const userName = req.body.email;
-    const pssw = req.body.pass
-    usersService.auth(userName, pssw);
-    const userLogged = usersService.userLogged;
-    
-    if(validator.isNullOrUndefined(userLogged)) {
-      res.send('Credenciales incorrectas. Fallo autenticacion.');
-    } else {
-      usersService.userLogged = userLogged;
-      res.redirect("/");
-    }
+      res.redirect('/');
   }
 };
 

@@ -53,6 +53,10 @@ main a, a:link, a:visited, a:focus, a:hover, a:active {
   color: black !important;
 }
 
+.error {
+  color: red;
+}
+
 /* Header */
 .searchBar {
   margin:auto;
