@@ -23,6 +23,27 @@ const usersService = {
     addProduct: (id) => {
         // TODO: logica de agregar producto al carrito (primero armar modelo de datos de la compra)
     },
+
+    getNextId: () => {
+        const ids = users.map((user) => user.id);
+        return Math.max(...ids) + 1;
+    },
+
+    addUser: (user) => {
+        users.push(user);
+    },
+
+    buildNewUser: (user) => {
+        return {
+            id: usersService.getNextId().toString(),
+            name: user.name,
+            lastname: user.lastname,
+            userName: user.email,
+            password: user.password,
+            category: '',
+            image: ''
+        }
+    },
 }
 
 module.exports = usersService;

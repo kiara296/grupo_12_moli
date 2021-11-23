@@ -10,7 +10,7 @@
         <div>
           <h2 class="form-title">Completá tus datos</h2>
         </div>
-        <form action="/" method="POST">
+        <form action="/users/register" method="POST" enctype="multipart/form-data">
             <div class="formBox">
                 <div class="formBox">
                     <label for="name" class="form-label"> Nombre </label>
@@ -21,19 +21,17 @@
                     placeholder="Ingresá tu nombre "
                     minlength="5"
                     class="form-input"
-                    required
                     />
                 </div>   
                 <div class="formBox"> 
                     <label for="lastName" class="form-label"> Apellido </label>
                     <input
                     type="text"
-                    name="lastName"
-                    id="lastName"
+                    name="lastname"
+                    id="lastname"
                     placeholder="Ingresá tu apellido"
                     minlength="5"
                     class="form-input"
-                    required
                     />
                 </div>
                 <div class="formBox"> 
@@ -44,7 +42,6 @@
                     name="email"
                     placeholder="Ingresá un e-mail"
                     class="form-input"
-                    required
                     />
                 </div>    
                 <div class="formBox"> 
@@ -55,7 +52,6 @@
                     placeholder="Elegí una contraseña"
                     minlength="8"
                     class="form-input"
-                    required
                     />
                 </div>    
                 <div class="formBox"> 
@@ -65,7 +61,6 @@
                     name="pass_confirm"
                     placeholder="Repetí tu contraseña"
                     class="form-input"
-                    required
                     />
                 </div>    
             </div>

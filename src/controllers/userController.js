@@ -22,7 +22,27 @@ const userController = {
 
   auth: (req, res) => {
       res.redirect('/');
+  },
+
+  register: (req, res) => {
+    const data = {...req.body};
+    /* const name = req.body.name;
+    const lastname = req.body.lastname;
+    const user = req.body.email;
+    const pass = req.body.pass;
+    const passConfirm = req.body.pass_confirm; */
+
+    /* const newUser = { name, lastname, user, pass, passConfirm }; */
+
+    const newUser = usersService.buildNewUser(data);
+
+    usersService.persist(newUser);
+    usersService.addUser(newUser);
+
+    res.redirect('/users/login');
+
   }
+
 };
 
 module.exports = userController;
