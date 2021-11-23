@@ -1,6 +1,6 @@
 
-const validator = require('../services/validatorService');
 const usersService = require('../services/usersService');
+const { validationResult } = require('express-validator');
 
 const userController = {
   login: (req, res) => {
@@ -11,7 +11,9 @@ const userController = {
  },
 
   regmoli: (req, res) => {
-    res.render("regmoli");
+    let errors = null;
+    let data = null;
+    res.render("regmoli", { errors, data });
   },
 
   addProduct: (req, res) => {
@@ -25,21 +27,18 @@ const userController = {
   },
 
   register: (req, res) => {
-    const data = {...req.body};
-    /* const name = req.body.name;
-    const lastname = req.body.lastname;
-    const user = req.body.email;
-    const pass = req.body.pass;
-    const passConfirm = req.body.pass_confirm; */
+    let errors = validationResult(req);
+    if(errors.isEmpty()) {
+      const data = {...req.body};
+      const newUser = usersService.buildNewUser(data);
 
-    /* const newUser = { name, lastname, user, pass, passConfirm }; */
+      usersService.persist(newUser);
+      usersService.addUser(newUser);
 
-    const newUser = usersService.buildNewUser(data);
-
-    usersService.persist(newUser);
-    usersService.addUser(newUser);
-
-    res.redirect('/users/login');
+      res.redirect('/users/login');
+    } else {
+      res.render('regmoli', { errors: errors.mapped(), data: req.body });
+    }
 
   }
 

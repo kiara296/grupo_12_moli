@@ -21,7 +21,11 @@
                     placeholder="Ingresá tu nombre "
                     minlength="5"
                     class="form-input"
+                    value="<%= data && data.name ? data.name : '' %>"
                     />
+                    <% if(errors && errors.name) { %>
+                      <span class="error"><%= errors.name.msg %></span>
+                    <% } %>
                 </div>   
                 <div class="formBox"> 
                     <label for="lastName" class="form-label"> Apellido </label>
@@ -32,7 +36,11 @@
                     placeholder="Ingresá tu apellido"
                     minlength="5"
                     class="form-input"
+                    value="<%= data && data.lastname ? data.lastname : '' %>"
                     />
+                    <% if(errors && errors.lastname) { %>
+                      <span class="error"><%= errors.lastname.msg %></span>
+                    <% } %>
                 </div>
                 <div class="formBox"> 
                     <label for="user" class="form-label"> Usuario</label>
@@ -42,7 +50,11 @@
                     name="email"
                     placeholder="Ingresá un e-mail"
                     class="form-input"
+                    value="<%= data && data.email ? data.email : '' %>"
                     />
+                    <% if(errors && errors.email) { %>
+                      <span class="error"><%= errors.email.msg %></span>
+                    <% } %>
                 </div>    
                 <div class="formBox"> 
                     <label id="email" class="form-label"> Contraseña </label>
@@ -52,7 +64,11 @@
                     placeholder="Elegí una contraseña"
                     minlength="8"
                     class="form-input"
+                    value="<%= data && data.pass ? data.pass : '' %>"
                     />
+                    <% if(errors && errors.pass) { %>
+                      <span class="error"><%= errors.pass.msg %></span>
+                    <% } %>
                 </div>    
                 <div class="formBox"> 
                     <label id="email" class="form-label"> Repetir contraseña </label>
@@ -61,7 +77,11 @@
                     name="pass_confirm"
                     placeholder="Repetí tu contraseña"
                     class="form-input"
+                    value="<%= data && data.pass_confirm ? data.pass_confirm : '' %>"
                     />
+                    <% if(errors && errors.pass_confirm) { %>
+                      <span class="error"><%= errors.pass_confirm.msg %></span>
+                    <% } %>
                 </div>    
             </div>
             <div class="formBox">
