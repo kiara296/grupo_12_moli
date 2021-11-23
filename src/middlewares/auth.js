@@ -9,7 +9,7 @@ const auth = (req, res, next) => {
     usersService.auth(userName, pssw);
 
     if(validator.isNullOrUndefined(usersService.userLogged)) {
-        res.render('login', { message: 'Usuario o contraseña invalidos' });
+        res.render('login', { message: 'Usuario o contraseña invalidos', userName, pssw });
     } else {
         next();
     }

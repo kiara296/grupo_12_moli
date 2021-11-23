@@ -5,7 +5,9 @@ const usersService = require('../services/usersService');
 const userController = {
   login: (req, res) => {
     const message = null;
-    res.render("login", { message });
+    const userName = null;
+    const pssw = null;
+    res.render("login", { message, userName, pssw });
  },
 
   regmoli: (req, res) => {
