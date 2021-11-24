@@ -1,4 +1,3 @@
-const users = require('../data/usuariosDatos.json');
 const usersService = require('../services/usersService');
 const validator = require('../services/validatorService');
 

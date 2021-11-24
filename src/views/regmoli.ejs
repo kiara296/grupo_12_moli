@@ -87,6 +87,9 @@
             <div class="formBox">
                 <button type="submit" class="button-general">Registrarse</button>
             </div>
+            <% if(message) { %>
+              <span class="error"><%= message %></span>
+            <% } %>
         </form>
       </div>
     </main>

@@ -4,13 +4,14 @@ const userController = require('../controllers/userController');
 const upload = require('../middlewares/multer');
 const auth = require('../middlewares/auth');
 const validations = require('../middlewares/register');
+const verifyPasswords = require('../middlewares/verifyPasswords');
 
 
 router.get ('/login', userController.login);
 
 router.get ('/regmoli', userController.regmoli);
 
-router.post('/register', validations, userController.register);
+router.post('/register', [upload.none(), verifyPasswords, ...validations], userController.register);
 
 router.post('/addProduct', upload.none(), userController.addProduct);
 

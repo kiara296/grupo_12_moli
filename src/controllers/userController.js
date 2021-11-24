@@ -11,9 +11,10 @@ const userController = {
  },
 
   regmoli: (req, res) => {
+    let message = null;
     let errors = null;
     let data = null;
-    res.render("regmoli", { errors, data });
+    res.render("regmoli", { errors, data, message });
   },
 
   addProduct: (req, res) => {
@@ -27,6 +28,7 @@ const userController = {
   },
 
   register: (req, res) => {
+    let message = null;
     let errors = validationResult(req);
     if(errors.isEmpty()) {
       const data = {...req.body};
@@ -37,7 +39,7 @@ const userController = {
 
       res.redirect('/users/login');
     } else {
-      res.render('regmoli', { errors: errors.mapped(), data: req.body });
+      res.render('regmoli', { errors: errors.mapped(), data: req.body, message });
     }
 
   }
