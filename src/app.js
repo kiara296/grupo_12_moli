@@ -4,8 +4,10 @@ const app = express();
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
+const session = require('express-session');
 
 app.use(methodOverride('_method'));
+app.use(session({secret: 'This is secret!'}));
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
