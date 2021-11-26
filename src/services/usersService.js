@@ -8,7 +8,7 @@ const usersService = {
     userLogged: null,
 
     auth: (userName, pssw) => {
-        usersService.userLogged = users.find(user => user.userName == userName && user.password == pssw);
+        return users.find(user => user.userName == userName && user.password == pssw);
     },
 
     persist: (user) => {

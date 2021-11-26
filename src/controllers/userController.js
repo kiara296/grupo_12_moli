@@ -24,6 +24,7 @@ const userController = {
   },
 
   auth: (req, res) => {
+    console.log(req.session.userLogged);
       res.redirect('/');
   },
 
