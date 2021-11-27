@@ -24,8 +24,8 @@ const userController = {
   },
 
   auth: (req, res) => {
-    console.log(req.session.userLogged);
-      res.redirect('/');
+    /* console.log(req.session.userLogged); */
+    res.redirect('/');
   },
 
   register: (req, res) => {

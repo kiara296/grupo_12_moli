@@ -7,6 +7,10 @@ let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const usersService = {
     userLogged: null,
 
+    getById: (id) => {
+        return users.find(user => user.id == id);
+    },
+
     auth: (userName, pssw) => {
         return users.find(user => user.userName == userName && user.password == pssw);
     },
