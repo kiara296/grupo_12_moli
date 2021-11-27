@@ -7,6 +7,7 @@ const productController = {
     res.render("index", {
       offerProducts: productsService.getOffer(),
       recomendedProducts: productsService.getRecomended(),
+      userLogged: req.session.userLogged
     });
   },
 
