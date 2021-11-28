@@ -85,7 +85,7 @@
                   name="ingredientes"
                   id="ingredientes"
                   class="form-input"
-                >  </textarea>
+                > <%= data && data.ingredientes ? data.ingredientes : '' %> </textarea>
                 <% if(errors && errors.ingredientes) { %>
                   <span class="error"><%= errors.ingredientes.msg %></span>
                 <% } %>
