@@ -7,7 +7,9 @@ const validations = require('../middlewares/register');
 const verifyPasswords = require('../middlewares/verifyPasswords');
 
 
-router.get ('/login', userController.login);
+router.get ('/login',  userController.login);
+
+router.post('/logout', upload.none(), userController.logout);
 
 router.get ('/regmoli', userController.regmoli);
 

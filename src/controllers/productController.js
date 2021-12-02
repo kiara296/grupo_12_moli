@@ -13,12 +13,12 @@ const productController = {
 
   /* Catalogo todos los productos */
   catalog: (req, res) => {
-    res.render("catalog", { products: productsService.getProducts() });
+    res.render("catalog", { products: productsService.getProducts(), userLogged: req.session.userLogged });
   },
 
   /* Carrito de compra */
   carrito: (req, res) => {
-    res.render("carrito", { carrito: productsService.getCarrito() });
+    res.render("carrito", { carrito: productsService.getCarrito(), userLogged: req.session.userLogged });
   },
 
   /* Detalle de un producto  */
@@ -27,13 +27,13 @@ const productController = {
     if (validatorService.isNullOrUndefined(productToShow)) {
       res.redirect("/products/" + req.params.id + "/notFound");
     } else {
-      res.render("detail", { productToShow });
+      res.render("detail", { productToShow, userLogged: req.session.userLogged });
     }
   },
 
   /* Formulario de creacion de producto */
   create: (req, res) => {
-    res.render("crearProductoForm", { category: productsService.getCategoryOptions() });
+    res.render("crearProductoForm", { category: productsService.getCategoryOptions(), userLogged: req.session.userLogged });
   },
 
   /* Creacion producto: Metodo para guardar */
@@ -59,7 +59,7 @@ const productController = {
     } else {
       res.render("editarProductoForm", {
         productToEdit,
-        category: productsService.getCategoryOptions(),
+        category: productsService.getCategoryOptions(), userLogged: req.session.userLogged
       });
     }
   },
@@ -90,7 +90,7 @@ const productController = {
   search: (req, res) => {
     const valueSearch = req.query.valueSearch;
     const filterProducts = productsService.getProductsByString(valueSearch);
-    res.render("catalog", { products: filterProducts });
+    res.render("catalog", { products: filterProducts, userLogged: req.session.userLogged });
   },
 
   carritoDelete: (req, res) => {

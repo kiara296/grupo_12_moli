@@ -3,41 +3,7 @@
   <%- include ('./partials/head', { stylesFile: 'index.css'}) %>
 <body>
   <header>
-    <div class="topBar">Envios gratis desde $1.000</div>
-    <img src="/images/logo-moli.png" alt="Logo Moli" />
-    <nav>
-      <ul class="nav1">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/products/catalog">Productos</a></li>
-        <li><a href="/#recommended">Recomendados</a></li>
-        <li><a href="/#offers">Ofertas</a></li>
-      </ul>
-      <% if(userLogged) { %>
-      <span>Hola <%= userLogged.name + " " + userLogged.lastname + ", "%> bienvenido!</span>
-      <% } %>
-      <ul class="nav2">
-        <li>
-          <form action="/products/search" method="GET" class="searchBar">
-            <input
-              type="text"
-              name="valueSearch"
-              id="search"
-              placeholder="Buscar por nombre"
-            />
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </li>
-        <li>
-          <a href="/products/carrito"><i class="fas fa-shopping-basket"></i></a>
-        </li>
-        <li>
-          <a href="/users/login">Login</a><i class="fas fa-sign-in-alt"></i>
-        </li>
-      </ul>
-    </nav>
-    <div class="hambMenu">
-      <i class="fas fa-bars"></i>
-    </div>
+    <%- include ('./partials/header') %> 
   </header>
     <section>
       <img class="carrosuel" src="/images/wok.png" alt="Home Banner" />

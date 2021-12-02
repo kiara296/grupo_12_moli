@@ -7,14 +7,19 @@ const userController = {
     const message = null;
     const userName = null;
     const pssw = null;
-    res.render("login", { message, userName, pssw });
+    res.render("login", { message, userName, pssw, userLogged: req.session.userLogged });
+ },
+
+ logout: (req, res) => {
+   req.session.userLogged = undefined;
+   res.redirect('/users/login')
  },
 
   regmoli: (req, res) => {
     let message = null;
     let errors = null;
     let data = null;
-    res.render("regmoli", { errors, data, message });
+    res.render("regmoli", { errors, data, message, userLogged: req.session.userLogged  });
   },
 
   addProduct: (req, res) => {
