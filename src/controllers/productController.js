@@ -61,7 +61,6 @@ const productController = {
 
       res.redirect("/");
     } else {
-      console.log(errors.mapped());
       res.render("crearProductoForm", {
         category: productsService.getCategoryOptions(),
         errors: errors.mapped(),
@@ -72,6 +71,7 @@ const productController = {
 
   /* Formulario de edicion de producto */
   edit: (req, res) => {
+    let errors = null;
     const productToEdit = productsService.getById(req.params.id);
 
     if (validatorService.isNullOrUndefined(productToEdit)) {
@@ -80,25 +80,38 @@ const productController = {
       res.render("editarProductoForm", {
         productToEdit,
         category: productsService.getCategoryOptions(),
+        errors
       });
     }
   },
 
   /* Actualizar producto: metodo para editar */
   update: (req, res) => {
-    const requestedId = Number(req.params.id);
-    const oldProduct = productsService.getById(requestedId);
-
-    const updatedProduct = {
-      ...oldProduct,
-      ...req.body,
-    };
-
-    productsService.deleteByID(requestedId);
-    productsService.addProduct(updatedProduct);
-    productsService.persistProducts();
-
-    res.redirect("/");
+    let errors = validationResult(req);
+    
+    if (errors.isEmpty()) {
+      const requestedId = Number(req.params.id);
+      const oldProduct = productsService.getById(requestedId);
+      
+      const updatedProduct = {
+        ...oldProduct,
+        ...req.body,
+      };
+      
+      productsService.deleteByID(requestedId);
+      productsService.addProduct(updatedProduct);
+      productsService.persistProducts();
+      
+      res.redirect("/");
+    } else {
+      let productToEdit = {id: req.params.id, ...req.body};
+      
+      res.render("editarProductoForm", {
+        productToEdit,
+        category: productsService.getCategoryOptions(),
+        errors: errors.mapped()
+      });
+    }
   },
 
   notFound: (req, res) => {

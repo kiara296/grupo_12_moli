@@ -21,8 +21,11 @@
                       name="name"
                       placeholder="Ej: Nombre del plato"
                       class="form-input"
-                      value="<%=productToEdit.name%>"
+                      value="<%= productToEdit && productToEdit.name ? productToEdit.name : '' %>"
                     />
+                    <% if(errors && errors.name) { %>
+                      <span class="error"><%= errors.name.msg %></span>
+                    <% } %>
                   </div>
                   <div class="formBox">
                     <label for="price" class="form-label"
@@ -34,8 +37,11 @@
                       name="price"
                       placeholder="Ej: 5678"
                       class="form-input"
-                      value="<%=productToEdit.price%>"
+                      value="<%= productToEdit && productToEdit.price ? productToEdit.price : '' %>"
                     />
+                    <% if(errors && errors.price) { %>
+                      <span class="error"><%= errors.price.msg %></span>
+                    <% } %>
                   </div>
                 </div>
                 <div class="box">
@@ -47,7 +53,7 @@
                       name="discount"
                       placeholder="Ej: 15"
                       class="form-input"
-                      value="<%=productToEdit.discount%>"
+                      value="<%= productToEdit && productToEdit.discount ? productToEdit.discount : '' %>"
                     />
                   </div>
     
@@ -74,7 +80,10 @@
                       name="ingredientes"
                       id="ingredientes"
                       class="form-input"
-                    ><%=productToEdit.ingredients%></textarea>
+                    ><%= productToEdit && productToEdit.ingredientes ?  productToEdit.ingredientes : '' %></textarea>
+                    <% if(errors && errors.ingredientes) { %>
+                      <span class="error"><%= errors.ingredientes.msg %></span>
+                    <% } %>
                   </div>
                   <div class="formBox">
                     <label for="infoNutricional" class="form-label"
@@ -84,7 +93,10 @@
                       name="infoNutricional"
                       id="infoNutricional"
                       class="form-input"
-                    > <%=productToEdit.infoNutricional%></textarea>
+                    > <%= productToEdit && productToEdit.infoNutricional ?  productToEdit.infoNutricional : '' %></textarea>
+                    <% if(errors && errors.infoNutricional) { %>
+                      <span class="error"><%= errors.infoNutricional.msg %></span>
+                    <% } %>
                   </div>
                   <div class="formBox">
                     <label for="cooking" class="form-label">Modo de coccion:</label>
@@ -92,14 +104,19 @@
                       name="cooking"
                       id="cooking"
                       class="form-input"
-                    ><%=productToEdit.cooking%></textarea>
+                    ><%= productToEdit && productToEdit.cooking ?  productToEdit.cooking : '' %></textarea>
                   </div>
                 </div>
                 <div class="formBox">
                   <label for="alt" class="form-label"
                     >Texto alternativo imagen:</label
                   >
-                  <textarea name="alt" id="alt" class="form-input"></textarea>
+                  <textarea name="alt" id="alt" class="form-input">
+                    <%= productToEdit && productToEdit.alt ?  productToEdit.alt : '' %>
+                  </textarea>
+                  <% if(errors && errors.alt) { %>
+                    <span class="error"><%= errors.alt.msg %></span>
+                  <% } %>
                 </div>
                 <div class="box">
                   <div class="formBox">
