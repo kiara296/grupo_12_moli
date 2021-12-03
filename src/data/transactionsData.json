@@ -1,0 +1,11 @@
+[
+  {
+    "idUser": "2",
+    "products": [
+      { "idProduct": "1", "quantity": "3", "amount": "2400" },
+      { "idProduct": "5", "quantity": "2", "amount": "5000" }
+    ],
+    "date": "2021-12-2",
+    "totalAmount": "7400"
+  }
+]

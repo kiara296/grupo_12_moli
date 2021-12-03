@@ -1,5 +1,6 @@
 const productsService = require("../services/productsService");
 const validatorService = require("../services/validatorService");
+const { validationResult } = require("express-validator");
 
 const productController = {
   index: (req, res) => {
@@ -7,7 +8,7 @@ const productController = {
     res.render("index", {
       offerProducts: productsService.getOffer(),
       recomendedProducts: productsService.getRecomended(),
-      userLogged: req.session.userLogged
+      userLogged: req.session.userLogged,
     });
   },
 
@@ -33,27 +34,50 @@ const productController = {
 
   /* Formulario de creacion de producto */
   create: (req, res) => {
+<<<<<<< HEAD
     res.render("crearProductoForm", { category: productsService.getCategoryOptions(), userLogged: req.session.userLogged });
+=======
+    const errors = null;
+    const data = null;
+
+    res.render("crearProductoForm", {
+      category: productsService.getCategoryOptions(),
+      errors,
+      data,
+    });
+>>>>>>> develop-validations-forms
   },
 
   /* Creacion producto: Metodo para guardar */
   save: (req, res) => {
-    const newProduct = {
-      id: productsService.getNextId(),
-      ...req.body,
-      image: req.file ? req.file.filename : "",
-    };
+    let errors = validationResult(req);
+    console.log(req.body);
 
-    productsService.persist(newProduct);
-    productsService.addProduct(newProduct);
+    if (errors.isEmpty()) {
+      const newProduct = {
+        id: productsService.getNextId(),
+        ...req.body,
+        image: req.file ? req.file.filename : "",
+      };
 
-    res.redirect("/");
+      productsService.persist(newProduct);
+      productsService.addProduct(newProduct);
+
+      res.redirect("/");
+    } else {
+      res.render("crearProductoForm", {
+        category: productsService.getCategoryOptions(),
+        errors: errors.mapped(),
+        data: req.body,
+      });
+    }
   },
 
   /* Formulario de edicion de producto */
   edit: (req, res) => {
+    let errors = null;
     const productToEdit = productsService.getById(req.params.id);
-    
+
     if (validatorService.isNullOrUndefined(productToEdit)) {
       res.redirect("/products/" + req.params.id + "/notFound");
     } else {
@@ -66,19 +90,31 @@ const productController = {
 
   /* Actualizar producto: metodo para editar */
   update: (req, res) => {
-    const requestedId = Number(req.params.id);
-    const oldProduct = productsService.getById(requestedId);
-
-    const updatedProduct = {
-      ...oldProduct,
-      ...req.body,
-    };
-
-    productsService.deleteByID(requestedId);
-    productsService.addProduct(updatedProduct);
-    productsService.persistProducts();
-
-    res.redirect("/");
+    let errors = validationResult(req);
+    
+    if (errors.isEmpty()) {
+      const requestedId = Number(req.params.id);
+      const oldProduct = productsService.getById(requestedId);
+      
+      const updatedProduct = {
+        ...oldProduct,
+        ...req.body,
+      };
+      
+      productsService.deleteByID(requestedId);
+      productsService.addProduct(updatedProduct);
+      productsService.persistProducts();
+      
+      res.redirect("/");
+    } else {
+      let productToEdit = {id: req.params.id, ...req.body};
+      
+      res.render("editarProductoForm", {
+        productToEdit,
+        category: productsService.getCategoryOptions(),
+        errors: errors.mapped()
+      });
+    }
   },
 
   notFound: (req, res) => {
@@ -97,16 +133,15 @@ const productController = {
     productsService.deleteByIDCarrito(req.params.id);
     productsService.persistProductsCarrito();
 
-    res.redirect('/products/carrito');
+    res.redirect("/products/carrito");
   },
 
   delete: (req, res) => {
     productsService.deleteByID(req.params.id);
     productsService.persistProducts();
 
-    res.redirect('/products/catalog');
-  }
-
+    res.redirect("/products/catalog");
+  },
 };
 
 module.exports = productController;
