@@ -34,9 +34,6 @@ const productController = {
 
   /* Formulario de creacion de producto */
   create: (req, res) => {
-<<<<<<< HEAD
-    res.render("crearProductoForm", { category: productsService.getCategoryOptions(), userLogged: req.session.userLogged });
-=======
     const errors = null;
     const data = null;
 
@@ -44,14 +41,14 @@ const productController = {
       category: productsService.getCategoryOptions(),
       errors,
       data,
+      userLogged: req.session.userLogged
     });
->>>>>>> develop-validations-forms
   },
 
   /* Creacion producto: Metodo para guardar */
   save: (req, res) => {
     let errors = validationResult(req);
-    console.log(req.body);
+    console.log(req.session.userLogged);
 
     if (errors.isEmpty()) {
       const newProduct = {
@@ -68,7 +65,8 @@ const productController = {
       res.render("crearProductoForm", {
         category: productsService.getCategoryOptions(),
         errors: errors.mapped(),
-        data: req.body,
+        data: req.data,
+        userLogged: req.session.userLogged
       });
     }
   },
@@ -83,7 +81,9 @@ const productController = {
     } else {
       res.render("editarProductoForm", {
         productToEdit,
-        category: productsService.getCategoryOptions(), userLogged: req.session.userLogged
+        category: productsService.getCategoryOptions(), 
+        userLogged: req.session.userLogged,
+        errors
       });
     }
   },
@@ -112,6 +112,7 @@ const productController = {
       res.render("editarProductoForm", {
         productToEdit,
         category: productsService.getCategoryOptions(),
+        userLogged: req.session.userLogged,
         errors: errors.mapped()
       });
     }
