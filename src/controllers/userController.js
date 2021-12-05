@@ -44,7 +44,8 @@ const userController = {
 
       res.redirect('/users/login');
     } else {
-      res.render('regmoli', { errors: errors.mapped(), data: req.body, message });
+      console.log (req.session.userLogged);
+      res.render('regmoli', { errors: errors.mapped(), data: req.body, message,userLogged: req.session.userLogged });
     }
 
   }

@@ -1,6 +1,7 @@
 const productsService = require("../services/productsService");
 const validatorService = require("../services/validatorService");
 const { validationResult } = require("express-validator");
+const formatterService = require ('../services/formatterService');
 
 const productController = {
   index: (req, res) => {

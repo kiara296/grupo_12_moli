@@ -97,5 +97,32 @@
   "password": "12345678",
   "category": "",
   "image": ""
+ },
+ {
+  "id": "12",
+  "name": "Juan",
+  "lastname": "Santin",
+  "userName": "juanignaciosantin@gmail.com",
+  "password": "$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "13",
+  "name": "Margarita",
+  "lastname": "Hamwee",
+  "userName": "mhamwee@hotmail.com",
+  "password": "$2a$10$flPwDmMuHPZ8x/Q7OrXfAeNfGOpN0HvdGD8LEr1Kmv5xB39ilhBha",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "14",
+  "name": "Margarita",
+  "lastname": "hamwee",
+  "userName": "hamweem@mariva.com.ar",
+  "password": "$2a$10$Q1HsaskwMizPzRDUyWdXKucHHCbOrke.9OzKaVq3.8LzBjtNDy92G",
+  "category": "",
+  "image": ""
  }
 ]

@@ -3,6 +3,7 @@ const path = require("path");
 const productsService = require("./productsService");
 const usersFilePath = path.join(__dirname, "../data/usuariosDatos.json");
 let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+let bcrypt= require ('bcryptjs');
 
 const usersService = {
     userLogged: null,
@@ -12,7 +13,7 @@ const usersService = {
     },
 
     auth: (userName, pssw) => {
-        return users.find(user => user.userName == userName && user.password == pssw);
+        return users.find(user => user.userName == userName && bcrypt.compareSync(pssw,user.password));
     },
 
     persist: (user) => {
@@ -38,12 +39,13 @@ const usersService = {
     },
 
     buildNewUser: (user) => {
+        
         return {
             id: usersService.getNextId().toString(),
             name: user.name,
             lastname: user.lastname,
             userName: user.email,
-            password: user.password,
+            password: bcrypt.hashSync(user.pass, 10),
             category: '',
             image: ''
         }

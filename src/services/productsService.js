@@ -58,6 +58,9 @@ const productsService = {
   },
 
   getProducts: () => {
+  //let formatterPriceProducts= [...products]; 
+  // formatterPriceProducts.forEach (p=> p.price= formatterService.toThousand (p.price))
+ // console.log(products);    
     //updateProducts();
     return products;
   },
