@@ -55,8 +55,11 @@ main a, a:link, a:visited, a:focus, a:hover, a:active {
 
 .error {
   color: red;
+  margin: 10PX;
 }
-
+.recordarme {
+  margin: 10PX;
+}
 /* Header */
 .searchBar {
   margin:auto;
