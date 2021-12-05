@@ -5,20 +5,42 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         name: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false
         },
-        /* price: ,
-        discount: ,
-        description:
-        image:
-        alt:
-        category
-        ingredients
-        cooking
-        infoNutricional */
+        price: {
+            type: dataTypes.DOUBLE,
+            allowNull: false
+        },
+        discount: {
+            type: dataTypes.INTEGER,
+        },
+        description: {
+            type: dataTypes.STRING,
+        },
+        image: {
+            type: dataTypes.STRING,
+            allowNull: false
+        },
+        alt: {
+            type: dataTypes.STRING,
+        },
+        category: {
+            type: dataTypes.STRING,
+        },
+        ingredients: {
+            type: dataTypes.STRING,
+        },
+        cooking: {
+            type: dataTypes.STRING,
+        },
+        infoNutricional: {
+            type: dataTypes.STRING,
+        }
     };
 
     let config = {
@@ -26,7 +48,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     
-    const Producto = sequelize.define();
+    const Producto = sequelize.define(alias, columns, config);
 
     return Producto;
 }
