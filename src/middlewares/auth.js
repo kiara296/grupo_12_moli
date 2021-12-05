@@ -8,12 +8,13 @@ const auth = (req, res, next) => {
 
   if (validator.isNullOrUndefined(req.session.userLogged)) {
     req.session.userLogged = usersService.auth(userName, pssw);
-
+    
     if (validator.isNullOrUndefined(req.session.userLogged)) {
       res.render("login", {
         message: "* Usuario o contraseña invalidos",
         userName,
         pssw,
+        userLogged: req.session.userLogged
       });
     }
 

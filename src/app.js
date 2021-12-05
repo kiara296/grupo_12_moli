@@ -17,9 +17,7 @@ app.set('views', './src/views');
 
 
 app.use('/users', userRoutes);
-
 app.use('/products', productRoutes);
-
 app.use('/', productRoutes);
 
 app.listen(3000, () => {
