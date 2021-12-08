@@ -37,10 +37,11 @@ const userController = {
   },
 
   register: (req, res) => {
-    let message = null;
+    const message = null;
     let errors = validationResult(req);
     if(errors.isEmpty()) {
-      const data = {...req.body};
+      const data = {...req.body, 
+        image: req.file ? req.file.filename : ""};
       const newUser = usersService.buildNewUser(data);
 
       usersService.persist(newUser);

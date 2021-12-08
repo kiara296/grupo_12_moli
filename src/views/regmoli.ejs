@@ -55,7 +55,19 @@
                     <% if(errors && errors.email) { %>
                       <span class="error"><%= errors.email.msg %></span>
                     <% } %>
-                </div>    
+                </div>
+                <div class="box">
+                  <div class="formBox">
+                    <label for="profileImage" class="form-label"
+                      >Imagen de perfil:</label
+                    >
+                    <input
+                      type="file"
+                      name="profileImage"
+                      id="profileImage"
+                      class="form-input"
+                    />
+                  </div>    
                 <div class="formBox"> 
                     <label id="email" class="form-label"> Contraseña </label>
                     <input

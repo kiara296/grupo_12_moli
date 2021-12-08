@@ -15,7 +15,7 @@ router.post('/logout', upload.none(), userController.logout);
 
 router.get ('/regmoli', validateUserInSessionMiddleware, userController.regmoli);
 
-router.post('/register', [upload.none(), verifyPasswords, ...validations], userController.register);
+router.post('/register', [upload.single('profileImage'), verifyPasswords, ...validations], userController.register);
 
 router.post('/addProduct', upload.none(), userController.addProduct);
 

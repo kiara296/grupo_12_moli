@@ -46,7 +46,7 @@ const usersService = {
             userName: user.email,
             password: bcrypt.hashSync(user.pass, 10),
             category: '',
-            image: ''
+            image: user.image
         }
     },
 }
