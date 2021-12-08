@@ -6,7 +6,6 @@ let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 let bcrypt= require ('bcryptjs');
 
 const usersService = {
-    userLogged: null,
 
     getById: (id) => {
         return users.find(user => user.id == id);

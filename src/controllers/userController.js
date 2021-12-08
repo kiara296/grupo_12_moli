@@ -28,6 +28,10 @@ const userController = {
     res.redirect("/products/catalog");
   },
 
+  addTransaction: (req, res) => {
+    res.send('Compra realiza con exito')
+  },
+
   auth: (req, res) => {
     res.redirect('/');
   },

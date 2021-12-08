@@ -58,12 +58,15 @@
               <button type="submit" value="keepShopping" class="button-general">
                Seguir comprando
               </button>
-              <button type="submit" value="emptyCart" class="button-general">
-                Vaciar carrito
-              </button>
-              <button type="submit" value="checkout" class="button-general">
-                Finalizar compra
-              </button>
+              <form action="/users/addTransaction" method="post">
+                  <button type="reset" value="emptyCart" class="button-general">
+                    Vaciar carrito
+                  </button>
+              
+                  <button type="submit" value="checkout" class="button-general">
+                    Finalizar compra
+                  </button>
+              </form>
             </div>
           </div>
         </section>
