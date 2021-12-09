@@ -1,6 +1,10 @@
 <header>
   <div class="topBar">Envios gratis desde $1.000</div>
+  <% if(userLogged) { %>
+    <div class="bienvenido" >HOLA <%= userLogged.name.toUpperCase() + " " + userLogged.lastname.toUpperCase() + ", " %> BIENVENID@!</div>
+  <% } %>
   <img src="/images/logo-moli.png" alt="Logo Moli" />
+
   <nav>
     <ul class="nav1">
       <li><a href="/">Inicio</a></li>
@@ -8,9 +12,7 @@
       <li><a href="/#recommended">Recomendados</a></li>
       <li><a href="/#offers">Ofertas</a></li>
     </ul>
-    <% if(userLogged) { %>
-      <span>Hola <%= userLogged.name + " " + userLogged.lastname + ", " %> bienvenido!</span>
-      <% } %>
+   
         <ul class="nav2">
           <li>
             <form action="/products/search" method="GET" class="searchBar">
@@ -25,7 +27,7 @@
           <% if(userLogged) { %>
             <li>
               <form action="/users/logout" method="POST" enctype="multipart/form-data">
-                <button type="submit">Logout</button><i class="fas fa-sign-in-alt"></i>
+                <button type="submit" id="button-general">Logout</button><i class="fas fa-sign-in-alt"></i>
               </form>
             </li>
             <% }else {%>

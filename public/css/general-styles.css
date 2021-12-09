@@ -11,7 +11,7 @@
   --primary-blue: #c6cccc;
   --primary-withe: #f9f3e7;
   --primary-red: #f1b99e;
-  --primary-orange: #cb7236;
+  --primary-orange: #979797;
   --header-typography: "Raleway", sans-serif;
   --sub-header-typography: "Playfair Display", serif;
 }
@@ -35,7 +35,6 @@ body h3 {
   text-align: center;
   color: #666;
   margin: 20px 0px;
- 
 }
 
 main {
@@ -47,29 +46,48 @@ p {
   font-size: 12px;
 }
 
-
-main a, a:link, a:visited, a:focus, a:hover, a:active {
+main a,
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
   text-decoration: none !important;
   color: black !important;
 }
 
+.bienvenido {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: var(--primary-gray);
+  text-align: center;
+  font-size: 12px;
+  color: #854646;
+  font-family: var(--sub-header-typography);
+  font-weight: bold;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
 .error {
   color: red;
-  margin: 10PX;
+  margin: 10px;
 }
 .recordarme {
-  margin: 10PX;
+  margin: 10px;
 }
 /* Header */
 .searchBar {
-  margin:auto;
-  max-width:300px; 
+  margin: auto;
+  max-width: 300px;
   display: initial;
   background-color: none;
   padding: initial;
 }
 
-.searchBar input{
+.searchBar input {
   padding: 5px;
   font-size: 15px;
   border: 1px solid var(--primary-gray);
@@ -102,9 +120,28 @@ main a, a:link, a:visited, a:focus, a:hover, a:active {
   display: table;
 }
 
-
 .fa-bars {
   color: wheat;
+}
+
+#button-general {
+  background-image: linear-gradient(-180deg, #96bf85 0%, #93be81 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 5px;
+  width: fit-content;
+  border: 0;
+  cursor: pointer;
+  align-self: center;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+#button-general:hover {
+  background-image: linear-gradient(-180deg, #87ac77 0%, #769768 100%);
 }
 
 .buttonSubmitSearch {
@@ -130,7 +167,7 @@ header {
   justify-content: space-between;
   font-family: "Nunito", sans-serif;
   background-color: #96bf85;
-  height: 100px;
+  height: 120px;
   /* position: fixed;
   z-index: 1; */
   width: 100%;
@@ -181,6 +218,7 @@ header li a {
   padding: 5px;
 }
 
+
 .title-page {
   margin: 10% 0% 2%;
   width: 100%;
@@ -227,7 +265,6 @@ h4 {
   padding: 2px;
 }
 
-
 .seccionFooter {
   text-align: center;
   margin: 20px 20px 20px 20px;
@@ -264,7 +301,7 @@ html {
   font-family: var(--header-typography);
 }
 
-button {
+/* button {
   width: 25%;
   border-color: var(--primary-gray);
   background-color: var(--primary-gray);
@@ -274,7 +311,7 @@ button {
   border-radius: 10%;
   height: 40px;
   font-size: 20px;
-}
+} */
 
 .button-submit {
   margin-top: 1rem;

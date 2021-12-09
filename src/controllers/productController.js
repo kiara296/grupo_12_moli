@@ -49,7 +49,6 @@ const productController = {
   /* Creacion producto: Metodo para guardar */
   save: (req, res) => {
     let errors = validationResult(req);
-    console.log(req.session.userLogged);
 
     if (errors.isEmpty()) {
       const newProduct = {
