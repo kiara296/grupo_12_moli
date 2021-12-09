@@ -42,3 +42,17 @@ Peer review: empezar a aplicar esta técnica para mejorar nuestro código y hace
 
 5- Dejar de usar Slack, ya que no estamos tan online con este chat. 
 
+Retrospectiva Sprint 4:
+
+Este sprint nos permitio tener mas tiempo y organizar mejor el trabajo.
+Concluimos en lo siguiente:
+
+1- Seguir dividiendo tareas, planificando la diagramacion detalladamente. Esto nos permitio llegar con tiempo a la entrega. Logramos una buena cominicacion y eso ayudo mucho al avance del proyecto.
+
+2- Peer review, esta tecnica nos sirvio mucho. 
+Tambien en este sprint implementamos dentro de la division de las tareas un cuadro con el grado de dificultad de las mismas al momento de repartirlas.
+
+3- Podriamos consultar en el Slack algunas dudas que surgieron durante el sprint, pero finalmente las resolvimos solos.
+
+
+
