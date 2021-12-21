@@ -1,128 +1,110 @@
-[
- {
-  "id": "1",
-  "name": "Pepe",
-  "lastname": "Palala",
-  "userName": "ppalala@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "2",
-  "name": "Elena",
-  "lastname": "Melena",
-  "userName": "emelena@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "3",
-  "name": "Pancho",
-  "lastname": "Rancho",
-  "userName": "prancho@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "4",
-  "name": "Casandra",
-  "lastname": "Malandra",
-  "userName": "cmalandra@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "5",
-  "name": "Lucrecia",
-  "lastname": "Magnesia",
-  "userName": "lmagnesia@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "6",
-  "name": "Maria",
-  "lastname": "Marc",
-  "userName": "Mmarc@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "7",
-  "name": "Marcos",
-  "lastname": "Dia",
-  "userName": "Mdiaz@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "8",
-  "name": "Marta",
-  "lastname": "Enola",
-  "userName": "Menola@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "9",
-  "name": "Mario",
-  "lastname": "Marton",
-  "userName": "Mmarton@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "10",
-  "name": "Agustin",
-  "lastname": "Perez",
-  "userName": "Aperez@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "11",
-  "name": "Martin",
-  "lastname": "Diez",
-  "userName": "Mdiez@mail.com",
-  "password": "12345678",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "12",
-  "name": "Juan",
-  "lastname": "Santin",
-  "userName": "juanignaciosantin@gmail.com",
-  "password": "$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "13",
-  "name": "Margarita",
-  "lastname": "Hamwee",
-  "userName": "mhamwee@hotmail.com",
-  "password": "$2a$10$flPwDmMuHPZ8x/Q7OrXfAeNfGOpN0HvdGD8LEr1Kmv5xB39ilhBha",
-  "category": "",
-  "image": ""
- },
- {
-  "id": "14",
-  "name": "Margarita",
-  "lastname": "hamwee",
-  "userName": "hamweem@mariva.com.ar",
-  "password": "$2a$10$Q1HsaskwMizPzRDUyWdXKucHHCbOrke.9OzKaVq3.8LzBjtNDy92G",
-  "category": "",
-  "image": ""
- }
-]
+
+ 
+    1,
+    ppalala@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Pepe,
+    Palala,
+    1,
+    null
+
+   
+ 
+ 
+    2,
+    emelena@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Elena,
+    Melena,
+    2,
+    null
+  
+   
+ 
+
+    3,
+    prancho@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Pancho,
+    Rancho,
+    1,
+    null
+  
+   
+ 
+ 
+    4,
+    cmalandra@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Casandra,
+    Malandra,
+    2,
+    null
+  
+   
+ 
+ 
+    5,
+    lmagnesia@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Lucrecia,
+    Magnesia,
+    1,
+    null
+  
+   
+ 
+ 
+    6,
+    Mmarc@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Maria,
+    Marc,
+    2,
+    null
+   
+ 
+ 
+    7,
+    Mdiaz@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Marcos,
+    Dia,
+    1,
+    null
+  
+   
+ 
+ 
+    8,
+    Menola@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Marta,
+    Enola,
+    2,
+    null
+  
+   
+ 
+ 
+    9,
+    Mmarton@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Mario,
+    Marton,
+    1,
+    null
+  
+   
+ 
+ 
+    10,
+    Aperez@mail.com,
+    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
+    Agustin,
+    Perez,
+    1,
+    null
+    
+   
+ 
