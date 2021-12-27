@@ -12,10 +12,10 @@
  
  
     2,
-    emelena@mail.com,
-    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
-    Elena,
-    Melena,
+   ' emelena@mail.com',
+    '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
+    'Elena',
+    'Melena',
     2,
     null
   
@@ -23,10 +23,10 @@
  
 
     3,
-    prancho@mail.com,
-    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
-    Pancho,
-    Rancho,
+    'prancho@mail.com',
+    '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
+    'Pancho',
+    'Rancho',
     1,
     null
   
@@ -34,10 +34,10 @@
  
  
     4,
-    cmalandra@mail.com,
-    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
-    Casandra,
-    Malandra,
+    'cmalandra@mail.com',
+    '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
+    'Casandra',
+    'Malandra',
     2,
     null
   
@@ -45,10 +45,10 @@
  
  
     5,
-    lmagnesia@mail.com,
-    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
-    Lucrecia,
-    Magnesia,
+    'lmagnesia@mail.com',
+    '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
+    'Lucrecia',
+    'Magnesia',
     1,
     null
   
@@ -56,20 +56,20 @@
  
  
     6,
-    Mmarc@mail.com,
-    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
-    Maria,
-    Marc,
+    'Mmarc@mail.com',
+    '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
+    'Maria',
+    'Marc',
     2,
     null
    
  
  
     7,
-    Mdiaz@mail.com,
-    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
-    Marcos,
-    Dia,
+   'Mdiaz@mail.com',
+    '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
+    'Marcos',
+    'Dia',
     1,
     null
   
@@ -77,10 +77,10 @@
  
  
     8,
-    Menola@mail.com,
-    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
-    Marta,
-    Enola,
+    'Menola@mail.com',
+    '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
+   ' Marta',
+    'Enola',
     2,
     null
   
@@ -88,10 +88,10 @@
  
  
     9,
-    Mmarton@mail.com,
-    $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG,
-    Mario,
-    Marton,
+    'Mmarton@mail.com',
+   ' $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
+    'Mario',
+    'Marton',
     1,
     null
   
