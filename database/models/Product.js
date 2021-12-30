@@ -48,7 +48,14 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     
-    const Producto = sequelize.define(alias, columns, config);
+    const Product = sequelize.define(alias, columns, config);
 
-    return Producto;
+    /* Product.associate = (models) => {
+        Product.belongsTo(models.CategoryProduct, {
+            foreignKey: 'categoryProduct_id',
+            as: 'category'
+        })
+    } */
+
+    return Product;
 }

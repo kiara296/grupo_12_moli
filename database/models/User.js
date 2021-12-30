@@ -32,16 +32,16 @@ let alias = 'Users';
         timestamps: false
     };
     
-    let Users = sequelize.define(alias, columns, config);
+    let User = sequelize.define(alias, columns, config);
 
-    Users.associate= function(models){
+    User.associate= function(models){
     User.belongsToMany (models.Category, {
-        as: 'categoryusers',
+        as: 'categoryuser',
         foreingKey: 'user_id',
         timestamps: false
         });
 
     } 
 
-    return Users;
+    return User;
 }

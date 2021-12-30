@@ -2,13 +2,14 @@
 
 const fs = require("fs");
 const path = require("path");
+const category = require("../data/constants/constants");
+const formatterService = require("./formatterService");
+let db = require('../../database/models');
 
 const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
 const carritoFilePath = path.join(__dirname, "../data/carritoDatos.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
-const category = require("../data/constants/constants");
-const formatterService = require("./formatterService");
 
 const productsService = {
   getById: (id) => {
@@ -62,6 +63,10 @@ const productsService = {
   // formatterPriceProducts.forEach (p=> p.price= formatterService.toThousand (p.price))
  // console.log(products);    
     //updateProducts();
+    /* db.Product.findAll().then((products) => {
+      console.log(products);
+    }) */
+
     return products;
   },
 
