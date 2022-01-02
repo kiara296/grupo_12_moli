@@ -34,11 +34,10 @@ let alias = 'Users';
     
     let User = sequelize.define(alias, columns, config);
 
-    User.associate= function(models){
-    User.belongsToMany (models.Category, {
-        as: 'categoryuser',
-        foreingKey: 'user_id',
-        timestamps: false
+    User.associate = function(models){
+        User.belongsTo(models.CategoryUser, {
+            as: 'category_user',
+            foreingKey: 'user_id',
         });
 
     } 

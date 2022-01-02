@@ -30,15 +30,15 @@ const productsService = {
   },
 
   getRecomended: () => {
-    return products.filter((product) =>
+    /* return products.filter((product) =>
       product.category.includes(category.recommended)
-    );
+    ); */
   },
 
   getOffer: () => {
-    return products.filter((product) =>
+    /* return products.filter((product) =>
       product.category.includes(category.offer)
-    );
+    ); */
   },
 
   getNextId: () => {
@@ -66,6 +66,14 @@ const productsService = {
     /* db.Product.findAll().then((products) => {
       console.log(products);
     }) */
+    db.Product.findAll({
+      /* include: [{ association: "product_category" }] */
+    })
+      .then((products) => 
+        console.log(products))
+      .catch((e) => {
+        console.log(e)
+      });
 
     return products;
   },

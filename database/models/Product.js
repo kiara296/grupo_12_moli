@@ -1,3 +1,5 @@
+const categoryProduct = require('../models/CategoryProduct');
+
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Product';
 
@@ -29,16 +31,13 @@ module.exports = (sequelize, dataTypes) => {
         alt: {
             type: dataTypes.STRING,
         },
-        category: {
-            type: dataTypes.STRING,
-        },
         ingredients: {
             type: dataTypes.STRING,
         },
         cooking: {
             type: dataTypes.STRING,
         },
-        infoNutricional: {
+        nutritional_info: {
             type: dataTypes.STRING,
         }
     };
@@ -50,12 +49,12 @@ module.exports = (sequelize, dataTypes) => {
     
     const Product = sequelize.define(alias, columns, config);
 
-    /* Product.associate = (models) => {
-        Product.belongsTo(models.CategoryProduct, {
-            foreignKey: 'categoryProduct_id',
-            as: 'category'
+    Product.associate = function (models) {
+        Product.belongsTo(models.CategoryProduct, { 
+            as: "product_category",
+            foreignKey: "categoryProduct_id"
         })
-    } */
+    }
 
     return Product;
 }
