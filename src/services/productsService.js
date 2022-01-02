@@ -13,6 +13,14 @@ let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
 
 const productsService = {
   getById: (id) => {
+    db.Product.findByPk(id)
+      .then((product) => {
+        console.log(product);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+
     const product = products.find((p) => p.id == id);
     return product;
   },
@@ -30,15 +38,37 @@ const productsService = {
   },
 
   getRecomended: () => {
-    /* return products.filter((product) =>
+    db.Product.findAll({
+      where: {
+        categoryProduct_id: 2
+      }
+    })
+    .then((products) => 
+    console.log(products))
+    .catch((e) => {
+      console.log(e)
+    });
+
+    return products.filter((product) =>
       product.category.includes(category.recommended)
-    ); */
+    );
   },
 
   getOffer: () => {
-    /* return products.filter((product) =>
+    db.Product.findAll({
+      where: {
+        categoryProduct_id: 1
+      }
+    })
+    .then((products) => 
+    console.log(products))
+    .catch((e) => {
+      console.log(e)
+    });
+
+    return products.filter((product) =>
       product.category.includes(category.offer)
-    ); */
+    );
   },
 
   getNextId: () => {
@@ -59,16 +89,9 @@ const productsService = {
   },
 
   getProducts: () => {
-  //let formatterPriceProducts= [...products]; 
-  // formatterPriceProducts.forEach (p=> p.price= formatterService.toThousand (p.price))
- // console.log(products);    
-    //updateProducts();
-    /* db.Product.findAll().then((products) => {
-      console.log(products);
-    }) */
-    db.Product.findAll({
-      /* include: [{ association: "product_category" }] */
-    })
+    db.Product.findAll(/* {
+      include: [{ association: "product_category" }]
+    } */)
       .then((products) => 
         console.log(products))
       .catch((e) => {
