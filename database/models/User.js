@@ -37,7 +37,7 @@ let alias = 'Users';
     User.associate = function(models){
         User.belongsTo(models.CategoryUser, {
             as: 'category_user',
-            foreingKey: 'user_id',
+            foreignKey: 'user_id',
         });
 
     } 
