@@ -2,6 +2,7 @@ const productsService = require("../services/productsService");
 const validatorService = require("../services/validatorService");
 const { validationResult } = require("express-validator");
 const formatterService = require ('../services/formatterService');
+let db = require('../../database/models');
 
 const productController = {
   index: (req, res) => {
@@ -15,7 +16,14 @@ const productController = {
 
   /* Catalogo todos los productos */
   catalog: (req, res) => {
-    res.render("catalog", { products: productsService.getProducts(), userLogged: req.session.userLogged });
+    productsService.getProducts()
+      .then((products) => {
+        res.render("catalog", { products, userLogged: req.session.userLogged });
+      })
+      .catch((e) => {
+        console.log(e)
+      });
+    
   },
 
   /* Carrito de compra */

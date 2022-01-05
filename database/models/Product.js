@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         nutritional_info: {
             type: dataTypes.STRING,
-        }
+        },
     };
 
     let config = {

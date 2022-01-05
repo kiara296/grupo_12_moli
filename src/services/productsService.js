@@ -6,10 +6,10 @@ const category = require("../data/constants/constants");
 const formatterService = require("./formatterService");
 let db = require('../../database/models');
 
-const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
+/* const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
 const carritoFilePath = path.join(__dirname, "../data/carritoDatos.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8"));
+let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8")); */
 
 const productsService = {
   getById: (id) => {
@@ -89,16 +89,9 @@ const productsService = {
   },
 
   getProducts: () => {
-    db.Product.findAll(/* {
+    return db.Product.findAll({
       include: [{ association: "product_category" }]
-    } */)
-      .then((products) => 
-        console.log(products))
-      .catch((e) => {
-        console.log(e)
-      });
-
-    return products;
+    });
   },
 
   getCategoryOptions: () => {
