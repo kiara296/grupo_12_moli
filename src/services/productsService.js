@@ -1,21 +1,15 @@
-// business layer
+
+// SERVICE OBJECT PATTERN (business layer)
 
 const fs = require("fs");
-const path = require("path");
-const category = require("../data/constants/constants");
-const formatterService = require("./formatterService");
 let db = require('../../database/models');
-
-/* const productsFilePath = path.join(__dirname, "../data/productosDatos.json");
-const carritoFilePath = path.join(__dirname, "../data/carritoDatos.json");
-let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-let carrito = JSON.parse(fs.readFileSync(carritoFilePath, "utf-8")); */
+const productDao = require('../dao/productDao');
 
 const productsService = {
   getById: (id) => {
     db.Product.findByPk(id)
       .then((product) => {
-        console.log(product);
+       // console.log(product);
       })
       .catch((e) => {
         console.log(e);
@@ -36,39 +30,26 @@ const productsService = {
   deleteByIDCarrito: (id) => {
     carrito = carrito.filter((p) => p.id != id);
   },
+  
 
-  getRecomended: () => {
-    db.Product.findAll({
-      where: {
-        categoryProduct_id: 2
-      }
-    })
-    .then((products) => 
-    console.log(products))
-    .catch((e) => {
-      console.log(e)
+  getOffer: async() => {
+    const dataFetched = await productDao.getOffer();
+
+    const productsMapped = dataFetched.map(p => {
+      return {...p.dataValues, product_category: p.product_category.dataValues.name}
     });
 
-    return products.filter((product) =>
-      product.category.includes(category.recommended)
-    );
+    return productsMapped;
   },
 
-  getOffer: () => {
-    db.Product.findAll({
-      where: {
-        categoryProduct_id: 1
-      }
-    })
-    .then((products) => 
-    console.log(products))
-    .catch((e) => {
-      console.log(e)
+  getRecommended: async () => {
+    const dataFetched = await productDao.getRecommended();
+
+    const productsMapped = dataFetched.map(p => {
+      return {...p.dataValues, product_category: p.product_category.dataValues.name}
     });
 
-    return products.filter((product) =>
-      product.category.includes(category.offer)
-    );
+    return productsMapped;
   },
 
   getNextId: () => {
@@ -88,14 +69,14 @@ const productsService = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
   },
 
-  getProducts: () => {
-    return db.Product.findAll({
-      include: [{ association: "product_category" }]
-    });
-  },
+  getProducts: async () => {
+    const dataFetched = await productDao.getProducts();
 
-  getCategoryOptions: () => {
-    return category;
+    const productsMapped = dataFetched.map(p => {
+      return {...p.dataValues, product_category: p.product_category.dataValues.name}
+    });
+
+    return productsMapped;
   },
 
   getCarrito: () => {
@@ -119,5 +100,11 @@ const productsService = {
     );
   },
 };
+
+const mapDataToProducts = (data) => {
+return data.map(p => {
+  return {...p.dataValues, product_category: p.product_category.dataValues.name}
+});
+}
 
 module.exports = productsService;

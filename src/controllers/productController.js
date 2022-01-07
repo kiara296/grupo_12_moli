@@ -1,29 +1,35 @@
 const productsService = require("../services/productsService");
 const validatorService = require("../services/validatorService");
+const categoryProductsService = require('../services/categoryProductsService');
 const { validationResult } = require("express-validator");
 const formatterService = require ('../services/formatterService');
-let db = require('../../database/models');
+const db = require('../../database/models');
+let productModel = db.Product;
 
 const productController = {
-  index: (req, res) => {
-    productsService.updateProducts();
-    res.render("index", {
-      offerProducts: productsService.getOffer(),
-      recomendedProducts: productsService.getRecomended(),
-      userLogged: req.session.userLogged,
-    });
+  index: async (req, res) => {
+    try {
+      const offerProducts = await productsService.getOffer();
+      const recommendedProducts = await productsService.getRecommended();
+      
+      res.render("index", {
+        offerProducts,
+        recommendedProducts,
+        userLogged: req.session.userLogged,
+      });
+    } catch(e) {
+      console.log("\nOcurrio un error al intentar cargar la home\n", e);
+    }
   },
 
   /* Catalogo todos los productos */
-  catalog: (req, res) => {
-    productsService.getProducts()
-      .then((products) => {
-        res.render("catalog", { products, userLogged: req.session.userLogged });
-      })
-      .catch((e) => {
-        console.log(e)
-      });
-    
+  catalog: async (req, res) => {
+    try {
+      const products = await productsService.getProducts();
+      res.render("catalog", { products, userLogged: req.session.userLogged });
+    } catch(e) {
+      console.log("\nOcurrio un error al intentar cargar el catalogo de productos\n", e);
+    }
   },
 
   /* Carrito de compra */
@@ -42,40 +48,60 @@ const productController = {
   },
 
   /* Formulario de creacion de producto */
-  create: (req, res) => {
-    const errors = null;
-    const data = null;
+  create: async (req, res) => {
+    try {
+      const errors = null;
+      const data = null;
+      const category = await categoryProductsService.getCategories();
 
-    res.render("crearProductoForm", {
-      category: productsService.getCategoryOptions(),
-      errors,
-      data,
-      userLogged: req.session.userLogged
-    });
+      res.render("crearProductoForm", {
+        category,
+        errors,
+        data,
+        userLogged: req.session.userLogged
+      });
+    } catch(e) {
+      //TODO: Agregar mensaje de error
+      console.log("", e);
+    }
   },
 
   /* Creacion producto: Metodo para guardar */
-  save: (req, res) => {
+  save: async (req, res) => {
+
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      const newProduct = {
-        id: productsService.getNextId(),
-        ...req.body,
-        image: req.file ? req.file.filename : "",
-      };
-
-      productsService.persist(newProduct);
-      productsService.addProduct(newProduct);
-
-      res.redirect("/");
+      productModel.create(
+        {
+          name: req.body.name,
+          price: req.body.price,
+          discount: req.body.discount ? req.body.discount : 0,
+          description: req.body.description,
+          image: req.file ? req.file.filename : "",
+          alt: req.body.alt,
+          ingredients: req.body.ingredients,
+          cooking: req.body.cooking,
+          nutritional_info: req.body.nutritional_info,
+          categoryProduct_id: req.body.category
+        }
+    )
+    .then(()=> {
+        return res.redirect('/')})            
+    .catch(error => res.send(error))
     } else {
-      res.render("crearProductoForm", {
-        category: productsService.getCategoryOptions(),
-        errors: errors.mapped(),
-        data: req.data,
-        userLogged: req.session.userLogged
-      });
+      try {
+        const category = await categoryProductsService.getCategories();
+
+        res.render("crearProductoForm", {
+          category,
+          errors: errors.mapped(),
+          data: req.data,
+          userLogged: req.session.userLogged
+        })
+      } catch(e) {
+        console.log(e);
+      }
     }
   },
 

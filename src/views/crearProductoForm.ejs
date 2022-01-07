@@ -70,9 +70,9 @@
                   required
                   value="<%= data && data.category ? data.category : '' %>"
                 >
-                <% Object.values(category).forEach(c => { %>
-                  <option value="<%= c %>">
-                    <%= c %>
+                <% category.forEach(c => { %>
+                  <option value="<%= c.id %>">
+                    <%= c.name %>
                   </option>
                 <% }) %>
                 </select>
@@ -88,6 +88,17 @@
                 > <%= data && data.ingredientes ? data.ingredientes : '' %> </textarea>
                 <% if(errors && errors.ingredientes) { %>
                   <span class="error"><%= errors.ingredientes.msg %></span>
+                <% } %>
+              </div>
+              <div class="formBox">
+                <label for="description" class="form-label">Descripción:</label>
+                <textarea
+                  name="description"
+                  id="description"
+                  class="form-input"
+                > <%= data && data.description ? data.description : '' %> </textarea>
+                <% if(errors && errors.description) { %>
+                  <span class="error"><%= errors.description.msg %></span>
                 <% } %>
               </div>
               <div class="formBox">
