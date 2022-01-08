@@ -50,6 +50,12 @@ const productsService = {
       await productDao.create(product);
   },
 
+  search: async (value) => {
+    const dataFetched = await productDao.search(value);
+    const products = mapDataToProducts(dataFetched);
+    return products;
+  },
+
 };
 
 const mapDataToProducts = (data) => {

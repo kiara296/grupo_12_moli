@@ -31,11 +31,26 @@ const productDao = {
         db.Product.create(product);
       },
 
-      getById: async (id) => {
+      getById: (id) => {
         return db.Product.findByPk(
                 id, 
                 { include: [{ association: "product_category" }] }
               );
+      },
+
+      search: (value) => {
+        return db.Product.findAll(
+          {
+            include: [
+              { association: "product_category" }
+            ],
+            where: {
+              name: {
+                [Op.like]: '%' + value + '%'
+              }
+            }
+          }
+        );
       },
 }
 

@@ -146,16 +146,18 @@ const productController = {
     res.render("notFound", { descriptionError });
   },
 
-  search: (req, res) => {
+  search: async (req, res) => {
     const valueSearch = req.query.valueSearch;
-    const filterProducts = productsService.getProductsByString(valueSearch);
-    res.render("catalog", { products: filterProducts, userLogged: req.session.userLogged });
+    try {
+      const products = await productsService.search(valueSearch);
+      res.render("catalog", { products, userLogged: req.session.userLogged });
+    } catch(e) {
+      console.log(e);
+    }
   },
 
   carritoDelete: (req, res) => {
-    productsService.deleteByIDCarrito(req.params.id);
-    productsService.persistProductsCarrito();
-
+    productsService.deleteByIdCarrito(req.params.id);
     res.redirect("/products/carrito");
   },
 
