@@ -35,12 +35,16 @@ const productController = {
   },
 
   /* Detalle de un producto  */
-  detail: (req, res) => {
-    const productToShow = productsService.getById(req.params.id);
-    if (validatorService.isNullOrUndefined(productToShow)) {
-      res.redirect("/products/" + req.params.id + "/notFound");
-    } else {
-      res.render("detail", { productToShow, userLogged: req.session.userLogged });
+  detail: async (req, res) => {
+    try {
+      const productToShow = await productsService.getById(req.params.id);
+      if (validatorService.isNullOrUndefined(productToShow)) {
+        res.redirect("/products/" + req.params.id + "/notFound");
+      } else {
+        res.render("detail", { productToShow, userLogged: req.session.userLogged });
+      }
+    } catch(e) {
+      console.log(e);
     }
   },
 

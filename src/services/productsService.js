@@ -1,19 +1,11 @@
 // BUSINESS LAYER
 
-let db = require('../../database/models');
 const productDao = require('../dao/productDao');
 
 const productsService = {
-  getById: (id) => {
-    db.Product.findByPk(id)
-      .then((product) => {
-       // console.log(product);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-
-    const product = products.find((p) => p.id == id);
+  getById: async (id) => {
+    const dataFetched = await productDao.getById(id);
+    const product = {...dataFetched.dataValues, product_category: dataFetched.product_category.dataValues.name}
     return product;
   },
 
@@ -54,8 +46,6 @@ const productsService = {
       nutritional_info: body.nutritional_info,
       categoryProduct_id: body.category
     }
-
-    /* console.log(product); */
 
       await productDao.create(product);
   },

@@ -30,6 +30,13 @@ const productDao = {
       create: (product) => {
         db.Product.create(product);
       },
+
+      getById: async (id) => {
+        return db.Product.findByPk(
+                id, 
+                { include: [{ association: "product_category" }] }
+              );
+      },
 }
 
 module.exports = productDao;
