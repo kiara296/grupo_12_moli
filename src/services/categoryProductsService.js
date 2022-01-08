@@ -6,7 +6,7 @@ const categoryProductService = {
 
         const categoriesMapped = dataFetched.map(c => c.dataValues);
       
-          return categoriesMapped;
+        return categoriesMapped;
     }
 }
 

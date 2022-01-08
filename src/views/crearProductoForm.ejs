@@ -80,14 +80,14 @@
             </div>
             <div class="box-textarea">
               <div class="formBox">
-                <label for="ingredientes" class="form-label">Ingredientes:</label>
+                <label for="ingredients" class="form-label">Ingredientes:</label>
                 <textarea
-                  name="ingredientes"
-                  id="ingredientes"
+                  name="ingredients"
+                  id="ingredients"
                   class="form-input"
-                > <%= data && data.ingredientes ? data.ingredientes : '' %> </textarea>
-                <% if(errors && errors.ingredientes) { %>
-                  <span class="error"><%= errors.ingredientes.msg %></span>
+                > <%= data && data.ingredients ? data.ingredients : '' %> </textarea>
+                <% if(errors && errors.ingredients) { %>
+                  <span class="error"><%= errors.ingredients.msg %></span>
                 <% } %>
               </div>
               <div class="formBox">
@@ -102,16 +102,16 @@
                 <% } %>
               </div>
               <div class="formBox">
-                <label for="infoNutricional" class="form-label"
+                <label for="nutritional_info" class="form-label"
                   >Informacion nutricional:</label
                 >
                 <textarea
-                  name="infoNutricional"
-                  id="infoNutricional"
+                  name="nutritional_info"
+                  id="nutritional_info"
                   class="form-input"
-                > <%= data && data.infoNutricional ? data.infoNutricional : '' %> </textarea>
-                <% if(errors && errors.infoNutricional) { %>
-                  <span class="error"><%= errors.infoNutricional.msg %></span>
+                > <%= data && data.nutritional_info ? data.nutritional_info : '' %> </textarea>
+                <% if(errors && errors.nutritional_info) { %>
+                  <span class="error"><%= errors.nutritional_info.msg %></span>
                 <% } %>
               </div>
               <div class="formBox">

@@ -2,9 +2,6 @@ const productsService = require("../services/productsService");
 const validatorService = require("../services/validatorService");
 const categoryProductsService = require('../services/categoryProductsService');
 const { validationResult } = require("express-validator");
-const formatterService = require ('../services/formatterService');
-const db = require('../../database/models');
-let productModel = db.Product;
 
 const productController = {
   index: async (req, res) => {
@@ -61,38 +58,24 @@ const productController = {
         userLogged: req.session.userLogged
       });
     } catch(e) {
-      //TODO: Agregar mensaje de error
       console.log("", e);
     }
   },
 
   /* Creacion producto: Metodo para guardar */
   save: async (req, res) => {
-
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      productModel.create(
-        {
-          name: req.body.name,
-          price: req.body.price,
-          discount: req.body.discount ? req.body.discount : 0,
-          description: req.body.description,
-          image: req.file ? req.file.filename : "",
-          alt: req.body.alt,
-          ingredients: req.body.ingredients,
-          cooking: req.body.cooking,
-          nutritional_info: req.body.nutritional_info,
-          categoryProduct_id: req.body.category
-        }
-    )
-    .then(()=> {
-        return res.redirect('/')})            
-    .catch(error => res.send(error))
+      try {
+        productsService.create(req.body);
+        return res.redirect('/');
+      } catch(e) {
+        console.log(e);
+      } 
     } else {
       try {
         const category = await categoryProductsService.getCategories();
-
         res.render("crearProductoForm", {
           category,
           errors: errors.mapped(),
@@ -102,6 +85,7 @@ const productController = {
       } catch(e) {
         console.log(e);
       }
+      
     }
   },
 

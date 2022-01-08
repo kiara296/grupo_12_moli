@@ -1,7 +1,5 @@
+// BUSINESS LAYER
 
-// SERVICE OBJECT PATTERN (business layer)
-
-const fs = require("fs");
 let db = require('../../database/models');
 const productDao = require('../dao/productDao');
 
@@ -19,25 +17,10 @@ const productsService = {
     return product;
   },
 
-  addProduct: (product) => {
-    products.push(product);
-  },
-
-  deleteByID: (id) => {
-    products = products.filter((p) => p.id != id);
-  },
-
-  deleteByIDCarrito: (id) => {
-    carrito = carrito.filter((p) => p.id != id);
-  },
-  
-
   getOffer: async() => {
     const dataFetched = await productDao.getOffer();
 
-    const productsMapped = dataFetched.map(p => {
-      return {...p.dataValues, product_category: p.product_category.dataValues.name}
-    });
+    const productsMapped = mapDataToProducts(dataFetched);
 
     return productsMapped;
   },
@@ -45,60 +28,38 @@ const productsService = {
   getRecommended: async () => {
     const dataFetched = await productDao.getRecommended();
 
-    const productsMapped = dataFetched.map(p => {
-      return {...p.dataValues, product_category: p.product_category.dataValues.name}
-    });
+    const productsMapped = mapDataToProducts(dataFetched);
 
     return productsMapped;
-  },
-
-  getNextId: () => {
-    const ids = products.map((product) => product.id);
-    return Math.max(...ids) + 1;
-  },
-
-  updateProducts: () => {
-    products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-  },
-
-  persistProductsCarrito: () => {
-    fs.writeFileSync(carritoFilePath, JSON.stringify(carrito, null, " "));
-  },
-
-  persistProducts: () => {
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
   },
 
   getProducts: async () => {
     const dataFetched = await productDao.getProducts();
 
-    const productsMapped = dataFetched.map(p => {
-      return {...p.dataValues, product_category: p.product_category.dataValues.name}
-    });
+    const productsMapped = mapDataToProducts(dataFetched);
 
     return productsMapped;
   },
 
-  getCarrito: () => {
-    return carrito;
+  create: async (body) => {
+    const product = {
+      name: body.name,
+      price: body.price,
+      discount: body.discount ? body.discount : 0,
+      description: body.description,
+      image: body.file ? body.file.filename : "",
+      alt: body.alt,
+      ingredients: body.ingredients,
+      cooking: body.cooking,
+      nutritional_info: body.nutritional_info,
+      categoryProduct_id: body.category
+    }
+
+    /* console.log(product); */
+
+      await productDao.create(product);
   },
 
-  persist: (newProduct) => {
-    const newProductList = [...products, newProduct];
-
-    fs.writeFileSync(
-      productsFilePath,
-      JSON.stringify(newProductList, null, " ")
-    );
-  },
-
-  getProductsByString: (valueString) => {
-    return products.filter(
-      (product) =>
-        product.name.toLowerCase().includes(valueString.toLowerCase()) ||
-        product.description.toLowerCase().includes(valueString.toLowerCase())
-    );
-  },
 };
 
 const mapDataToProducts = (data) => {

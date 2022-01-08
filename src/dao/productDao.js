@@ -1,5 +1,4 @@
-
-// DATA ACCESS OBJECT PATTERN
+// DATA ACCESS LAYER (data access object pattern)
 
 const db = require('../../database/models');
 
@@ -26,6 +25,10 @@ const productDao = {
             categoryProduct_id: 1
           }
         })
+      },
+
+      create: (product) => {
+        db.Product.create(product);
       },
 }
 
