@@ -1,6 +1,7 @@
 // DATA ACCESS LAYER (data access object pattern)
 
 const db = require('../../database/models');
+const { Op } = require("sequelize");
 
 const productDao = {
     getProducts: () => {
