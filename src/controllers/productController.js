@@ -5,6 +5,7 @@ const { validationResult } = require("express-validator");
 
 const productController = {
   index: async (req, res) => {
+    const valueSearch = '';
     try {
       const offerProducts = await productsService.getOffer();
       const recommendedProducts = await productsService.getRecommended();
@@ -13,7 +14,9 @@ const productController = {
         offerProducts,
         recommendedProducts,
         userLogged: req.session.userLogged,
-      });
+        valueSearch
+      },
+      );
     } catch(e) {
       console.log("\nOcurrio un error al intentar cargar la home\n", e);
     }
@@ -21,9 +24,10 @@ const productController = {
 
   /* Catalogo todos los productos */
   catalog: async (req, res) => {
+    const valueSearch = '';
     try {
       const products = await productsService.getProducts();
-      res.render("catalog", { products, userLogged: req.session.userLogged });
+      res.render("catalog", { products, userLogged: req.session.userLogged, valueSearch });
     } catch(e) {
       console.log("\nOcurrio un error al intentar cargar el catalogo de productos\n", e);
     }
@@ -31,17 +35,19 @@ const productController = {
 
   /* Carrito de compra */
   carrito: (req, res) => {
-    res.render("carrito", { carrito: productsService.getCarrito(), userLogged: req.session.userLogged });
+    const valueSearch = '';
+    res.render("carrito", { carrito: productsService.getCarrito(), userLogged: req.session.userLogged, valueSearch });
   },
 
   /* Detalle de un producto  */
   detail: async (req, res) => {
+    const valueSearch = '';
     try {
       const productToShow = await productsService.getById(req.params.id);
       if (validatorService.isNullOrUndefined(productToShow)) {
         res.redirect("/products/" + req.params.id + "/notFound");
       } else {
-        res.render("detail", { productToShow, userLogged: req.session.userLogged });
+        res.render("detail", { productToShow, userLogged: req.session.userLogged, valueSearch });
       }
     } catch(e) {
       console.log(e);
@@ -50,6 +56,7 @@ const productController = {
 
   /* Formulario de creacion de producto */
   create: async (req, res) => {
+    const valueSearch = '';
     try {
       const errors = null;
       const data = null;
@@ -59,7 +66,8 @@ const productController = {
         category,
         errors,
         data,
-        userLogged: req.session.userLogged
+        userLogged: req.session.userLogged,
+        valueSearch
       });
     } catch(e) {
       console.log("", e);
@@ -69,6 +77,7 @@ const productController = {
   /* Creacion producto: Metodo para guardar */
   save: async (req, res) => {
     let errors = validationResult(req);
+    const valueSearch = '';
 
     if (errors.isEmpty()) {
       try {
@@ -84,7 +93,8 @@ const productController = {
           category,
           errors: errors.mapped(),
           data: req.data,
-          userLogged: req.session.userLogged
+          userLogged: req.session.userLogged,
+          valueSearch
         })
       } catch(e) {
         console.log(e);
@@ -95,6 +105,7 @@ const productController = {
 
   /* Formulario de edicion de producto */
   edit: (req, res) => {
+    const valueSearch = '';
     let errors = null;
     const productToEdit = productsService.getById(req.params.id);
 
@@ -105,13 +116,15 @@ const productController = {
         productToEdit,
         category: productsService.getCategoryOptions(), 
         userLogged: req.session.userLogged,
-        errors
+        errors,
+        valueSearch
       });
     }
   },
 
   /* Actualizar producto: metodo para editar */
   update: (req, res) => {
+    const valueSearch = '';
     let errors = validationResult(req);
     
     if (errors.isEmpty()) {
@@ -135,7 +148,8 @@ const productController = {
         productToEdit,
         category: productsService.getCategoryOptions(),
         userLogged: req.session.userLogged,
-        errors: errors.mapped()
+        errors: errors.mapped(),
+        valueSearch
       });
     }
   },
