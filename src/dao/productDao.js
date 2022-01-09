@@ -53,6 +53,14 @@ const productDao = {
           }
         );
       },
+
+      delete: (paramId) => {
+        db.Product.destroy({
+          where: {
+            id: paramId
+          }
+        });
+      },
 }
 
 module.exports = productDao;

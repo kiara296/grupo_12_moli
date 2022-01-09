@@ -175,10 +175,12 @@ const productController = {
     res.redirect("/products/carrito");
   },
 
-  delete: (req, res) => {
-    productsService.deleteByID(req.params.id);
-    productsService.persistProducts();
-
+  delete: async (req, res) => {
+    try {
+      await productsService.delete(req.params.id);
+    } catch(e) {
+      console.log(e);
+    }
     res.redirect("/products/catalog");
   },
 };

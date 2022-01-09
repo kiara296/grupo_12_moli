@@ -56,6 +56,10 @@ const productsService = {
     return products;
   },
 
+  delete: async (id) => {
+    await productDao.delete(id);
+  },
+
 };
 
 const mapDataToProducts = (data) => {
