@@ -59,18 +59,19 @@
     
                   <div class="formBox">
                     <label for="category" class="form-label">Categoría:</label>
-                    <select
-                      name="category"
-                      id="category"
-                      class="form-input"
-                      required
-                    >
-                      <% Object.values(category).forEach(c => { %>
-                        <option value="<%= c %>" <%= c === productToEdit.category ? 'selected' : '' %>>
-                          <%= c %>
+                      <select
+                          name="category"
+                          id="category"
+                          class="form-input"
+                          required
+                          value="<%= data && data.category ? data.category : '' %>"
+                        >
+                      <% category.forEach(c => { %>
+                        <option value="<%= c.id %>">
+                          <%= c.name %>
                         </option>
                       <% }) %>
-                    </select>
+                      </select>
                   </div>
                 </div>
                 <div class="box-textarea">
@@ -80,9 +81,9 @@
                       name="ingredientes"
                       id="ingredientes"
                       class="form-input"
-                    ><%= productToEdit && productToEdit.ingredientes ?  productToEdit.ingredientes : '' %></textarea>
-                    <% if(errors && errors.ingredientes) { %>
-                      <span class="error"><%= errors.ingredientes.msg %></span>
+                    ><%= productToEdit && productToEdit.ingredients ?  productToEdit.ingredients : '' %></textarea>
+                    <% if(errors && errors.ingredients) { %>
+                      <span class="error"><%= errors.ingredients.msg %></span>
                     <% } %>
                   </div>
                   <div class="formBox">
@@ -93,9 +94,9 @@
                       name="infoNutricional"
                       id="infoNutricional"
                       class="form-input"
-                    > <%= productToEdit && productToEdit.infoNutricional ?  productToEdit.infoNutricional : '' %></textarea>
-                    <% if(errors && errors.infoNutricional) { %>
-                      <span class="error"><%= errors.infoNutricional.msg %></span>
+                    > <%= productToEdit && productToEdit.nutritional_info ?  productToEdit.nutritional_info : '' %></textarea>
+                    <% if(errors && errors.nutritional_info) { %>
+                      <span class="error"><%= errors.nutritional_info.msg %></span>
                     <% } %>
                   </div>
                   <div class="formBox">

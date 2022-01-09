@@ -104,7 +104,46 @@ const productController = {
   },
 
   /* Formulario de edicion de producto */
-  edit: (req, res) => {
+
+  edit: async(req,res) => {
+    const valueSearch = null;
+    try{
+      const errors = null;
+      const data = null;
+      
+      let productToEdit = await productsService.getById(req.params.id);
+      let category =  await categoryProductsService.getCategories();
+     
+      res.render("editarProductoForm", {
+        productToEdit,
+        category,
+        errors,
+        data,
+        userLogged: req.session.userLogged,
+        valueSearch
+      })
+    } catch(e) {
+      console.log("", e);
+    }
+  },
+    
+    
+    
+   /*Promise
+    .all([promProduct, promCategory])
+    .then(([productToEdit, allCategories]) => {
+      res.render("editarProductoForm", {
+        productToEdit,
+        allCategories,
+        errors,
+        userLogged: req.session.userLogged,
+        valueSearch
+      })
+    })
+    .catch(error => res.send(error))
+   
+  },  */ 
+   /* edit: (req, res) => {
     const valueSearch = '';
     let errors = null;
     const productToEdit = productsService.getById(req.params.id);
@@ -120,10 +159,46 @@ const productController = {
         valueSearch
       });
     }
-  },
-
+  }, */
+ 
   /* Actualizar producto: metodo para editar */
-  update: (req, res) => {
+  update: function (req,res) {
+    const valueSearch = null;
+    let productId = req.params.id;
+    
+    if (errors.isEmpty()) {
+      productModel.update(
+        {
+          name: req.body.name,
+          price: req.body.price,
+          discount: req.body.discount ? req.body.discount : 0,
+          description: req.body.description,
+          image: req.file ? req.file.filename : "",
+          alt: req.body.alt,
+          ingredients: req.body.ingredients,
+          cooking: req.body.cooking,
+          nutritional_info: req.body.nutritional_info,
+          categoryProduct_id: req.body.category
+        },
+        {
+            where: {id: productId}
+        })
+        .then(()=> {
+          return res.redirect("/")})   
+          .catch(error => res.send(error))
+    } else {
+        
+      res.render("editarProductoForm", {
+        productToEdit,
+        category: productsService.getCategoryOptions(),
+        userLogged: req.session.userLogged,
+        errors: errors.mapped(),
+        valueSearch
+      });
+    }
+    }, 
+    
+/*   update: (req, res) => {
     const valueSearch = '';
     let errors = validationResult(req);
     
@@ -152,7 +227,7 @@ const productController = {
         valueSearch
       });
     }
-  },
+  }, */
 
   notFound: (req, res) => {
     const descriptionError =

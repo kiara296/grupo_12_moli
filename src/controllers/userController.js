@@ -4,10 +4,11 @@ const { validationResult } = require('express-validator');
 
 const userController = {
   login: (req, res) => {
+    const valueSearch = ''
     const message = null;
     const userName = null;
     const pssw = null;
-    res.render("login", { message, userName, pssw, userLogged: req.session.userLogged });
+    res.render("login", { message, userName, pssw, userLogged: req.session.userLogged, valueSearch });
  },
 
  logout: (req, res) => {
@@ -16,10 +17,11 @@ const userController = {
  },
 
   regmoli: (req, res) => {
+    const valueSearch = ''
     let message = null;
     let errors = null;
     let data = null;
-    res.render("regmoli", { errors, data, message, userLogged: req.session.userLogged  });
+    res.render("regmoli", { errors, data, message, userLogged: req.session.userLogged, valueSearch  });
   },
 
   addProduct: (req, res) => {
@@ -37,6 +39,7 @@ const userController = {
   },
 
   register: (req, res) => {
+    const valueSearch = ''
     const message = null;
     let errors = validationResult(req);
     if(errors.isEmpty()) {
@@ -50,7 +53,7 @@ const userController = {
       res.redirect('/users/login');
     } else {
       console.log (req.session.userLogged);
-      res.render('regmoli', { errors: errors.mapped(), data: req.body, message,userLogged: req.session.userLogged });
+      res.render('regmoli', { errors: errors.mapped(), data: req.body, message,userLogged: req.session.userLogged, valueSearch });
     }
 
   }
