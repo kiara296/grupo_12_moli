@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/head',{ stylesFile: 'productAdmin.css'}) %>
+  <body>
+    <%- include ('./partials/header', valueSearch) %>
+    <main>
+      <h1>Mis productos</h1>
+      <div class="agregarProduct">
+        <button type="submit" value="add" class="button-general">
+          + Agregar producto
+        </button>
+      </div>
+        <section class="sector1">
+          <% products.forEach(product => { %>
+            <article>
+              <div class="father">
+                <div>
+                  <img  class="productoImage"src="../images/<%= product.image %>" />
+                </div>
+                <div>
+                  <p class="descrip"><%= product.name %></p>
+                </div>
+                <div>
+                  <p class="descrip"><%= product.description %></p>
+                </div>
+                <div>
+                  <p class="price">$ <%= product.price %></p>
+                </div>
+                <div class="buttonForm">
+                  <button type="submit" class="button-general">
+                    Ver
+                  </button>
+                </div>
+                <div class="buttonForm">
+                  <a href="/product/<%= product.id %>/edit" >
+                    <button type="submit" class="button-general">
+                      Editar
+                    </button>
+                  </a>
+                 
+                </div>
+                <form id="formDeleteCart" action='/products/<%= product.id %>/carrito/?_method=DELETE' method='POST'>
+                  <div class="deleteCart">
+                    <button type="submit" value="delete" class="button-general">
+                      <i class="far fa-trash-alt"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </article>
+          <% }) %>
+        </section>
+     
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+  </body>
+</html>

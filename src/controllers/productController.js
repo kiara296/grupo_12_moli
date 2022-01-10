@@ -2,6 +2,8 @@ const productsService = require("../services/productsService");
 const validatorService = require("../services/validatorService");
 const categoryProductsService = require('../services/categoryProductsService');
 const { validationResult } = require("express-validator");
+const validations = require("../middlewares/validateProductForm");
+const db = require("../../database/models");
 
 const productController = {
   index: async (req, res) => {
@@ -82,7 +84,7 @@ const productController = {
     if (errors.isEmpty()) {
       try {
         productsService.create(req.body);
-        return res.redirect('/');
+        return res.redirect( '/');
       } catch(e) {
         console.log(e);
       } 
@@ -111,8 +113,8 @@ const productController = {
       const errors = null;
       const data = null;
       
-      let productToEdit = await productsService.getById(req.params.id);
-      let category =  await categoryProductsService.getCategories();
+      const productToEdit = await productsService.getById(req.params.id);
+      const category =  await categoryProductsService.getCategories();
      
       res.render("editarProductoForm", {
         productToEdit,
@@ -125,6 +127,7 @@ const productController = {
     } catch(e) {
       console.log("", e);
     }
+
   },
     
     
@@ -163,17 +166,20 @@ const productController = {
  
   /* Actualizar producto: metodo para editar */
   update: function (req,res) {
+    console.log(req.body)
+    let errors = validationResult(req);
+    const data = null;
     const valueSearch = null;
     let productId = req.params.id;
     
     if (errors.isEmpty()) {
-      productModel.update(
+      db.Product.update(
         {
           name: req.body.name,
           price: req.body.price,
           discount: req.body.discount ? req.body.discount : 0,
           description: req.body.description,
-          image: req.file ? req.file.filename : "",
+          image: req.file ? req.file.filename : req.body.oldImage,
           alt: req.body.alt,
           ingredients: req.body.ingredients,
           cooking: req.body.cooking,
@@ -187,16 +193,20 @@ const productController = {
           return res.redirect("/")})   
           .catch(error => res.send(error))
     } else {
-        
-      res.render("editarProductoForm", {
-        productToEdit,
-        category: productsService.getCategoryOptions(),
-        userLogged: req.session.userLogged,
-        errors: errors.mapped(),
-        valueSearch
+      let productToEdit = {id: req.params.id, ...req.body};
+      categoryProductsService.getCategories().then((category)=>{
+        res.render("editarProductoForm", {
+          productToEdit,
+          category,
+          userLogged: req.session.userLogged,
+          errors: errors.mapped(),
+          valueSearch,
+          data
+        })
       });
+      ;
     }
-    }, 
+  }, 
     
 /*   update: (req, res) => {
     const valueSearch = '';
@@ -257,6 +267,16 @@ const productController = {
       console.log(e);
     }
     res.redirect("/products/catalog");
+  },
+
+  admin: async (req, res) => {
+    const valueSearch = '';
+    try {
+      const products = await productsService.getProducts();
+      res.render("productAdmin", { products, userLogged: req.session.userLogged, valueSearch });
+    } catch(e) {
+      console.log("\nOcurrio un error al intentar cargar el catalogo de productos\n", e);
+    }
   },
 };
 

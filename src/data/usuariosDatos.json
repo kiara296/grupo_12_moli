@@ -1,101 +1,110 @@
 [
-    {
-     "id": "1",
-     "name": "Pepe",
-     "lastname": "Palala",
-     "userName": "ppalala@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "2",
-     "name": "Elena",
-     "lastname": "Melena",
-     "userName": "emelena@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "3",
-     "name": "Pancho",
-     "lastname": "Rancho",
-     "userName": "prancho@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "4",
-     "name": "Casandra",
-     "lastname": "Malandra",
-     "userName": "cmalandra@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "5",
-     "name": "Lucrecia",
-     "lastname": "Magnesia",
-     "userName": "lmagnesia@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "6",
-     "name": "Maria",
-     "lastname": "Marc",
-     "userName": "Mmarc@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "7",
-     "name": "Marcos",
-     "lastname": "Dia",
-     "userName": "Mdiaz@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "8",
-     "name": "Marta",
-     "lastname": "Enola",
-     "userName": "Menola@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "9",
-     "name": "Mario",
-     "lastname": "Marton",
-     "userName": "Mmarton@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "10",
-     "name": "Agustin",
-     "lastname": "Perez",
-     "userName": "Aperez@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    },
-    {
-     "id": "11",
-     "name": "Martin",
-     "lastname": "Diez",
-     "userName": "Mdiez@mail.com",
-     "password": "12345678",
-     "category": "",
-     "image": ""
-    }
-   ]
+ {
+  "id": "1",
+  "name": "Pepe",
+  "lastname": "Palala",
+  "userName": "ppalala@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "2",
+  "name": "Elena",
+  "lastname": "Melena",
+  "userName": "emelena@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "3",
+  "name": "Pancho",
+  "lastname": "Rancho",
+  "userName": "prancho@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "4",
+  "name": "Casandra",
+  "lastname": "Malandra",
+  "userName": "cmalandra@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "5",
+  "name": "Lucrecia",
+  "lastname": "Magnesia",
+  "userName": "lmagnesia@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "6",
+  "name": "Maria",
+  "lastname": "Marc",
+  "userName": "Mmarc@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "7",
+  "name": "Marcos",
+  "lastname": "Dia",
+  "userName": "Mdiaz@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "8",
+  "name": "Marta",
+  "lastname": "Enola",
+  "userName": "Menola@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "9",
+  "name": "Mario",
+  "lastname": "Marton",
+  "userName": "Mmarton@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "10",
+  "name": "Agustin",
+  "lastname": "Perez",
+  "userName": "Aperez@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "11",
+  "name": "Martin",
+  "lastname": "Diez",
+  "userName": "Mdiez@mail.com",
+  "password": "12345678",
+  "category": "",
+  "image": ""
+ },
+ {
+  "id": "12",
+  "name": "kiara",
+  "lastname": "heinrich",
+  "userName": "kiaraheinrich@hotmail.com",
+  "password": "$2a$10$e9ikDecCUmeIqpuFC/mNNemLtHkU9YwiIRrmxwxAgcuthS62zRNGG",
+  "category": "",
+  "image": ""
+ }
+]

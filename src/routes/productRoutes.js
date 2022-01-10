@@ -35,5 +35,9 @@ router.get('/search', productController.search);
 
 router.delete('/:id', productController.delete);
 
+//administart 
+
+router.get('/admin', productController.admin )
+
 
 module.exports = router;
