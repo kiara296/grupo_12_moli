@@ -1,6 +1,7 @@
 
 const usersService = require('../services/usersService');
 const { validationResult } = require('express-validator');
+const db = require('../../database/models');
 
 const userController = {
   login: (req, res) => {
@@ -10,6 +11,10 @@ const userController = {
     const pssw = null;
     res.render("login", { message, userName, pssw, userLogged: req.session.userLogged, valueSearch });
  },
+
+ auth: (req, res) => {
+  res.redirect('/');
+},
 
  logout: (req, res) => {
    req.session.userLogged = undefined;
@@ -32,10 +37,6 @@ const userController = {
 
   addTransaction: (req, res) => {
     res.send('Compra realiza con exito')
-  },
-
-  auth: (req, res) => {
-    res.redirect('/');
   },
 
   register: (req, res) => {

@@ -4,6 +4,8 @@ const productsService = require("./productsService");
 const usersFilePath = path.join(__dirname, "../data/usuariosDatos.json");
 let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 let bcrypt= require ('bcryptjs');
+const db = require('../../database/models');
+const { Op } = require("sequelize");
 
 const usersService = {
 
@@ -11,8 +13,19 @@ const usersService = {
         return users.find(user => user.id == id);
     },
 
-    auth: (userName, pssw) => {
-        return users.find(user => user.userName == userName && bcrypt.compareSync(pssw,user.password));
+    auth: async (userName, pssw) => {
+        try {
+            const dataFetched = await db.User.findAll({
+                where: {
+                    username: userName,
+                }
+            });
+            const dataMapped = dataFetched ? dataFetched.map(user => user.dataValues) : undefined;
+            const user = dataMapped ? dataMapped.find(user => bcrypt.compareSync(pssw, user.password)) : undefined;
+            return user;
+        } catch(e) {
+            console.log(e);
+        }
     },
 
     persist: (user) => {
