@@ -54,5 +54,16 @@ Tambien en este sprint implementamos dentro de la division de las tareas un cuad
 
 3- Podriamos consultar en el Slack algunas dudas que surgieron durante el sprint, pero finalmente las resolvimos solos.
 
+Retrospectiva Sprint 5:
 
+Este sprint pudimos llegar con tiempo a la entrega. 
+
+Nuestras conclusiones del sprint:
+
+1- Seguir dividiendo tareas, planificando la diagramacion detalladamente. 
+Continuar con la comunicacion fluida del grupo y las reuniones periodicas.
+
+2- Peer review, esta tecnica nos sirvio mucho.
+   
+4- Pair programing, a pesar de ser menos eficiente en cuanto a tiempos, algo siempre tenemos que hacer y ayuda en el proceso de aprendizaje.
 

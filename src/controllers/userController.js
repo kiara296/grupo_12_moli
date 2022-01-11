@@ -109,26 +109,23 @@ const userController = {
       res.redirect("/users/login");
     },
 
-  register: (req, res) => {
-    const valueSearch = ''
-    const message = null;
+  register: async (req, res) => {
+    const valueSearch = '';
     let errors = validationResult(req);
-    if(errors.isEmpty()) {
-      const data = {...req.body, 
-        image: req.file ? req.file.filename : ""};
-      const newUser = usersService.buildNewUser(data);
-
-      usersService.persist(newUser);
-      usersService.addUser(newUser);
-
-      res.redirect('/users/login');
-    } else {
-      console.log (req.session.userLogged);
-      res.render('regmoli', { errors: errors.mapped(), data: req.body, message,userLogged: req.session.userLogged, valueSearch });
+    if (errors.isEmpty ()){
+    try {
+      const data = null;
+      await usersService.create(req.body)
+      
+      res.redirect("/users/login");
+      
+    } catch(e) {
+      console.log("", e);
     }
-
+  } else {
+    res.redirect ("regmoli")
   }
-
+  },
 };
 
 module.exports = userController;

@@ -52,22 +52,21 @@ const usersService = {
         users.push(user);
     },
 
-    buildNewUser: (user) => {
-        
-        return {
-            id: usersService.getNextId().toString(),
-            name: user.name,
-            lastname: user.lastname,
-            userName: user.email,
-            password: bcrypt.hashSync(user.pass, 10),
-            category: '',
-            image: user.image
-        }
-    },
     delete: async (id) => {
         await userDao.delete(id);
       },
+      create: async (body) => {
+        const user = {
+            name: body.name,
+            lastname: body.lastname,
+            username: body.email,
+            password: bcrypt.hashSync(body.password, 10),
+            category_id: 2,
+            image: body.profileImage
+        }
     
+          await userDao.create(user);
+      }, 
 
 }
 

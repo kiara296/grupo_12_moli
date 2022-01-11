@@ -17,6 +17,10 @@ const userDao = {
       }
     });
   },
+  create: (user) => {
+    db.User.create(user);
+  },
+
 }
 
 module.exports = userDao;
