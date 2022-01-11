@@ -1,17 +1,19 @@
 const fs = require("fs");
 const path = require("path");
-const productsService = require("./productsService");
 const usersFilePath = path.join(__dirname, "../data/usuariosDatos.json");
 let users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 let bcrypt= require ('bcryptjs');
 const db = require('../../database/models');
-const { Op } = require("sequelize");
+const userDao = require('../dao/userDao');
 
 const usersService = {
 
-    getById: (id) => {
-        return users.find(user => user.id == id);
-    },
+    getById: async (id) => {
+          const dataFetched = await userDao.getById(id);
+          const user = {...dataFetched.dataValues, category_user: dataFetched.category_user.dataValues.name}
+          return user;
+        },
+    
 
     auth: async (userName, pssw) => {
         try {
@@ -62,6 +64,11 @@ const usersService = {
             image: user.image
         }
     },
+    delete: async (id) => {
+        await userDao.delete(id);
+      },
+    
+
 }
 
 module.exports = usersService;

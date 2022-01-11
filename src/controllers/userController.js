@@ -39,6 +39,76 @@ const userController = {
     res.send('Compra realiza con exito')
   },
 
+  auth: (req, res) => {
+    res.redirect('/');
+  },
+  edit: async(req,res) => {
+    const valueSearch = null;
+    try{
+      const errors = null;
+      const data = null;
+      
+      const dataToEdit = await usersService.getById(req.params.id);
+      const userToEdit = {... dataToEdit, password_confirm: dataToEdit.password
+      }     
+      res.render("editUserForm", {
+        userToEdit,
+        errors,
+        data,
+        userLogged: req.session.userLogged,
+        valueSearch
+      })
+    } catch(e) {
+      console.log("", e);
+    }
+
+  },
+  update: function (req,res) {
+    console.log(req.body)
+    let errors = validationResult(req);
+    const data = null;
+    const valueSearch = null;
+    let userId = req.params.id;
+    
+    if (errors.isEmpty()) {
+      db.User.update(
+        {
+          username: req.body.username,
+          password: req.body.password,
+          name: req.body.name,
+          lastname: req.body.lastname,
+          image: req.file ? req.file.filename : ""
+        },
+        {
+            where: {id: userId}
+        })
+        .then(()=> {
+          return res.redirect("/")})   
+          .catch(error => res.send(error))
+    } else {
+      let userToEdit = {id: req.params.id, ...req.body};
+      
+        res.render("editUserForm", {
+          userToEdit,
+          userLogged: req.session.userLogged,
+          errors: errors.mapped(),
+          valueSearch,
+          data
+        })
+      
+      ;
+    }
+  }, 
+
+     delete: async (req, res) => {
+      try {
+        await usersService.delete(req.params.id);
+      } catch(e) {
+        console.log(e);
+      }
+      res.redirect("/users/login");
+    },
+
   register: (req, res) => {
     const valueSearch = ''
     const message = null;

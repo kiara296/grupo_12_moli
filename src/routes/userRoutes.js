@@ -11,6 +11,12 @@ const validateGuestMiddleware = require('../middlewares/validateGuestMiddleware'
 
 router.get ('/login', validateUserInSessionMiddleware,  userController.login);
 
+router.get ('/:id/edit', validateUserInSessionMiddleware,  userController.edit);
+
+router.put ('/:id', [upload.single('profileImage'), validateUserInSessionMiddleware],  userController.update);
+
+router.delete ('/:id', validateUserInSessionMiddleware,  userController.delete);
+
 router.post('/logout', upload.none(), userController.logout);
 
 router.get ('/regmoli', validateUserInSessionMiddleware, userController.regmoli);
