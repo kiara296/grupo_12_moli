@@ -10,11 +10,11 @@
               <h2 class="form-title">Perfil de usuario</h2>
             </div>
             <form action="/users/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+              <div class="box">
                 <div class="formBox">
-                  <div class="formBox">
-                    <label for="name" class="form-label"
-                      >Nombre: </label
-                    >
+                  <label for="name" class="form-label">
+                    Nombre: 
+                  </label>
                     <input
                       type="text"
                       id="name"
@@ -28,27 +28,26 @@
                       <span class="error"><%= errors.name.msg %></span>
                     <% } %>
                   </div>
-
-                  <div class="box">
-                    <div class="formBox">
-                      <label for="lastname" class="form-label"
-                        > Apellido: </label
-                      >
-                      <input
-                        type="text"
-                        id="lastname"
-                        name="lastname"
-                        placeholder="Ingresa tu apellido"
-                        minlength="5"
-                        class="form-input"
-                        value="<%= userToEdit && userToEdit.lastname ? userToEdit.lastname : '' %>"
-                      />
-                      <% if(errors && errors.lastname) { %>
-                        <span class="error"><%= errors.lastname.msg %></span>
-                      <% } %>
-                    </div>
-
-                    <div class="formBox"> 
+                  <div class="formBox">
+                    <label for="lastname" class="form-label"
+                      > Apellido: </label
+                    >
+                    <input
+                      type="text"
+                      id="lastname"
+                      name="lastname"
+                      placeholder="Ingresa tu apellido"
+                      minlength="5"
+                      class="form-input"
+                      value="<%= userToEdit && userToEdit.lastname ? userToEdit.lastname : '' %>"
+                    />
+                    <% if(errors && errors.lastname) { %>
+                      <span class="error"><%= errors.lastname.msg %></span>
+                    <% } %>
+                  </div>
+                </div>
+                <div class="formBox">
+                      <div class="formBox"> 
                         <label for="username" class="form-label"> Usuario</label>
                         <input
                         type="email"
@@ -61,8 +60,8 @@
                         <% if(errors && errors.username) { %>
                           <span class="error"><%= errors.username.msg %></span>
                         <% } %>
-                    </div>
-
+                  </div>
+                  <div class="box">
                     <div class="formBox"> 
                         <label id="password" class="form-label"> Contraseña </label>
                         <input
@@ -90,9 +89,8 @@
                           <span class="error"><%= errors.password_confirm.msg %></span>
                         <% } %>
                     </div>    
-                </div>
-                    
-                                
+                  </div>    
+                </div>    
                 <div class="box">
                   <div class="formBox">
                     <label for="fileImage" class="form-label"
