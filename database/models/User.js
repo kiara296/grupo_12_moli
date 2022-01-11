@@ -38,7 +38,7 @@ let alias = 'User';
     };
 
     let config = {
-        tableName: 'user',
+        tableName: 'users',
         timestamps: false,
         underescore: true
     };

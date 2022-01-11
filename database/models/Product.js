@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: 'product',
+        tableName: 'products',
         timestamps: false,
         underescore: true
     };

@@ -106,5 +106,14 @@
   "password": "$2a$10$e9ikDecCUmeIqpuFC/mNNemLtHkU9YwiIRrmxwxAgcuthS62zRNGG",
   "category": "",
   "image": ""
+ },
+ {
+  "id": "13",
+  "name": "kiara",
+  "lastname": "heinrich",
+  "userName": "kiaraheinrich@hotmail.com",
+  "password": "$2a$10$H0SL5t30RSMcKgjdIlLU9upFfHuUVnSxyo0AhtAD7JaE6ELqQpe9y",
+  "category": "",
+  "image": "profileImage-1641865511166.png"
  }
 ]

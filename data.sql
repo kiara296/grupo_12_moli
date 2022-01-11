@@ -1,15 +1,15 @@
 
-# INSERT categoryproduct
-insert into categoryproduct() values(1, 'OFFER');
-insert into categoryproduct() values(2, 'RECOMMENDED');
-insert into categoryproduct() values(3, 'ALL');
+# INSERT categoriesProducts
+insert into categoriesProducts() values(1, 'OFFER');
+insert into categoriesProducts() values(2, 'RECOMMENDED');
+insert into categoriesProducts() values(3, 'ALL');
 
-# INSERT categoryuser
-insert into categoryuser() values(1, 'ADMIN');
-insert into categoryuser() values(2, 'GUEST');
+# INSERT categoriesUsers
+insert into categoriesUsers() values(1, 'ADMIN');
+insert into categoriesUsers() values(2, 'GUEST');
 
-#INSERT product
-insert into product() values(
+#INSERT products
+insert into products() values(
 	1,
 	'Frambuesas x 500gr',
 	1550,
@@ -22,22 +22,21 @@ insert into product() values(
 	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
 	1
 );
-insert into product() values( 
-	2,
+insert into products() values( 
+	 2,
     'Pain au chocolat x 6 uni',
     '400',
     '12',
     'Pan de chocolate 100% artesanal x 6 unidades',
     'painChoco.png',
     'imagen pain au chocolat',
-    'Harina de trigo  41,9%harina de trigo (gluten), gluten de trigo], agua , mantequilla  (leche) 16%, chocolate 11% , azúcar  3,8%, levadura , huevo , sal , gluten de trigo .',
 	'Precalienta tu horno a 180 ° C. Coloque los pains au chocolat en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.',
     '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
     'Harina de trigo  41,9%harina de trigo (gluten), gluten de trigo], agua , mantequilla  (leche) 16%, chocolate 11% , azúcar  3,8%, levadura , huevo , sal , gluten de trigo .',
     1
 );
 
-insert into product() values(
+insert into products() values(
 	3,
 	'Tarta de espinaca grande',
 	600,
@@ -51,7 +50,7 @@ insert into product() values(
 	2
 );
 
-insert into product() values(
+insert into products() values(
 	4,
 	'Papas baston x 500gr',
 	270,
@@ -65,7 +64,7 @@ insert into product() values(
 	3
 );
 
-insert into product() values(
+insert into products() values(
 	5,
 	'Wok de verduras x 500gr',
 	400,
@@ -79,7 +78,7 @@ insert into product() values(
 	1
 );
 
-insert into product() values(
+insert into products() values(
 	6,
 	'Ravioles x 500gr',
 	500,
@@ -93,7 +92,7 @@ insert into product() values(
 	2
 );
 
-insert into product() values(
+insert into products() values(
 	7,
 	'Zapallo x 500gr',
     500,
@@ -107,7 +106,7 @@ insert into product() values(
     3
 );
 
-insert into product() values(
+insert into products() values(
 	8,
 	'Nuggets de pollo x 500gr',
 	500,
@@ -121,7 +120,7 @@ insert into product() values(
 	1
 );
 
-insert into product() values(
+insert into products() values(
 	9,
 	'Ñoquis de papa x 500gr',
 	500,
@@ -134,7 +133,7 @@ insert into product() values(
 	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
 	2
 );
-insert into product() values(
+insert into products() values(
 	10,
 	'Croissants x 6 unidades',
 	600,
@@ -147,7 +146,7 @@ insert into product() values(
 	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
 	3
 );
-insert into product() values(
+insert into products() values(
 	11,
 	'Croissants re copados',
 	'111',
@@ -158,10 +157,9 @@ insert into product() values(
 	'Harina de trigo * 43,8%harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. ',
 	'Precalienta tu horno a 180 ° C. Coloque los croissants en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.',
 	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	'Harina de trigo * 43,8%harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. ',
      2
 );
-insert into product() values(
+insert into products() values(
 	12,
     'Pechuga de pollo orgánica al verdeo x 500gr',
 	700,
@@ -174,7 +172,7 @@ insert into product() values(
     '550 Kcal/gr Hdc/25gr prot./75gr grasas tot.',
     3
 );
-insert into product() values(
+insert into products() values(
 	13,
     'Milanesas de soja rellenas de espinaca x 500gr',
     400,
@@ -188,7 +186,7 @@ insert into product() values(
     1
 );
 
-insert into product() values(
+insert into products() values(
 	14,
     'Pan de carne x 1Kg',
     400,
@@ -202,7 +200,7 @@ insert into product() values(
     2
 );
 
-insert into product() values(
+insert into products() values(
 	15,
     'Albondigas con pure de papa x 500gr',
     700,
@@ -216,7 +214,7 @@ insert into product() values(
     3
 );
 
-insert into product() values(
+insert into products() values(
 	16,
     'Paella Madrileña x 500gr',
     800,
@@ -229,7 +227,7 @@ insert into product() values(
     '100 Kcal/gr Hdc/25gr prot./0 gr grasas tot.',
     1
 );
-insert into product() values(
+insert into products() values(
 	17,
     'Torta de chocolate selva negra',
     1200,
@@ -243,7 +241,7 @@ insert into product() values(
     2
 );
 
-insert into product() values(
+insert into products() values(
 	18,
     'Tarta de atun',
     500,
@@ -258,7 +256,7 @@ insert into product() values(
 );
 
 
-insert into product() values(
+insert into products() values(
 	19,
     'Cazuela de mariscos x 500gr',
     800,
@@ -272,7 +270,7 @@ insert into product() values(
     1
 );
 
-insert into product() values(
+insert into products() values(
 	20,
     'Pan dulce con frutas x 500gr',
     800,
@@ -286,7 +284,7 @@ insert into product() values(
     2
 );
 
-insert into user() values(
+insert into users() values(
 	1,
     'ppalala@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -296,7 +294,7 @@ insert into user() values(
     null
 );
 
-insert into user() values(
+insert into users() values(
 	2,
    ' emelena@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -306,7 +304,7 @@ insert into user() values(
     null
 );
 
-insert into user() values(
+insert into users() values(
 	3,
     'prancho@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -315,7 +313,7 @@ insert into user() values(
     1,
     null
 );
-insert into user() values(
+insert into users() values(
 	4,
     'cmalandra@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -324,7 +322,7 @@ insert into user() values(
     2,
     null
 );
-insert into user() values(
+insert into users() values(
 	5,
     'lmagnesia@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -334,7 +332,7 @@ insert into user() values(
     null
   
 );
-insert into user() values(
+insert into users() values(
 	6,
     'Mmarc@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -343,7 +341,7 @@ insert into user() values(
     2,
     null
 );
-insert into user() values(
+insert into users() values(
 	7,
    'Mdiaz@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -352,7 +350,7 @@ insert into user() values(
     1,
     null
 );
-insert into user() values(
+insert into users() values(
 	8,
     'Menola@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -361,7 +359,7 @@ insert into user() values(
     2,
     null
 );
-insert into user() values(
+insert into users() values(
 	9,
     'Mmarton@mail.com',
    ' $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
@@ -371,7 +369,7 @@ insert into user() values(
     null
   
 );
-insert into user() values(
+insert into users() values(
 	10,
     'Aperez@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
