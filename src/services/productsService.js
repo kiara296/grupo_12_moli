@@ -34,12 +34,13 @@ const productsService = {
   },
 
   create: async (body) => {
+    console.log(body.file)
     const product = {
       name: body.name,
       price: body.price,
       discount: body.discount ? body.discount : 0,
       description: body.description,
-      image: body.file ? body.file.filename : "",
+      image: body.file ? body.file.fileImage : "",
       alt: body.alt,
       ingredients: body.ingredients,
       cooking: body.cooking,
@@ -59,8 +60,14 @@ const productsService = {
   delete: async (id) => {
     await productDao.delete(id);
   },
+  
+  getCarrito: () => {
+
+  },
 
 };
+
+ 
 
 const mapDataToProducts = (data) => {
 return data.map(p => {

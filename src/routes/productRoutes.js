@@ -18,7 +18,7 @@ router.post('/create', [upload.single('fileImage'), ...validateProductForm], pro
 
 /* Editar un producto */ 
 router.get('/:id/edit', productController.edit); 
-router.put('/:id', [upload.single('fileImage'), ...validateProductForm], productController.update);
+router.put('/:id/update', [upload.single('fileImage'), ...validateProductForm], productController.update);
 
 // catalog
 router.get('/catalog', productController.catalog);
@@ -33,9 +33,9 @@ router.get('/search', productController.search);
 
 //delete product
 
-router.delete('/:id', productController.delete);
+router.delete('/:id', upload.none() ,productController.delete);
 
-//administart 
+//administar
 
 router.get('/admin', productController.admin )
 
