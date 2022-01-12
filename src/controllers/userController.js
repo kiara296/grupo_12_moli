@@ -5,16 +5,11 @@ const db = require('../../database/models');
 
 const userController = {
   login: (req, res) => {
-    const valueSearch = ''
-    const message = req.query && req.query.message ? req.query.message : null;
+       const message = req.query && req.query.message ? req.query.message : null;
     const userName = req.query && req.query.userName ? req.query.userName : null;
     const pssw = null;
-    res.render("login", { message, userName, pssw, userLogged: req.session.userLogged, valueSearch });
+    res.render("login", { message, userName, pssw, userLogged: req.session.userLogged});
  },
-
- auth: (req, res) => {
-  res.redirect('/');
-},
 
  logout: (req, res) => {
    req.session.userLogged = undefined;
@@ -22,11 +17,11 @@ const userController = {
  },
 
   regmoli: (req, res) => {
-    const valueSearch = ''
+    
     let message = null;
     let errors = null;
     let data = null;
-    res.render("regmoli", { errors, data, message, userLogged: req.session.userLogged, valueSearch  });
+    res.render("regmoli", { errors, data, message, userLogged: req.session.userLogged });
   },
 
   addProduct: (req, res) => {
@@ -43,7 +38,7 @@ const userController = {
     res.redirect('/');
   },
   edit: async(req,res) => {
-    const valueSearch = null;
+    
     try{
       const errors = null;
       const data = null;
@@ -56,7 +51,7 @@ const userController = {
         errors,
         data,
         userLogged: req.session.userLogged,
-        valueSearch
+        
       })
     } catch(e) {
       console.log("", e);
@@ -67,7 +62,6 @@ const userController = {
     console.log(req.body)
     let errors = validationResult(req);
     const data = null;
-    const valueSearch = null;
     let userId = req.params.id;
     
     if (errors.isEmpty()) {
@@ -92,7 +86,6 @@ const userController = {
           userToEdit,
           userLogged: req.session.userLogged,
           errors: errors.mapped(),
-          valueSearch,
           data
         })
       
@@ -101,6 +94,7 @@ const userController = {
   }, 
 
      delete: async (req, res) => {
+       console.log (" hola");
       try {
         await usersService.delete(req.params.id);
       } catch(e) {
@@ -110,7 +104,7 @@ const userController = {
     },
 
   register: async (req, res) => {
-    const valueSearch = '';
+    
     let errors = validationResult(req);
     if (errors.isEmpty ()){
     try {

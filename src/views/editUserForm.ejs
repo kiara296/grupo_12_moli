@@ -3,7 +3,7 @@
 <%- include ('./partials/head', { stylesFile: 'forms.css'}) %>
 
     <body>
-      <%- include ('./partials/header', valueSearch) %>
+      <%- include ('./partials/header') %>
         <main>
           <div class="containerForm">
             <div>
@@ -115,15 +115,16 @@
                       </button>
                     </div>
                   </div>
-                  <div class="formBox">
-                    <form action="/products/<%=userToEdit.id%>/?_method=DELETE" method="POST">
-                      <button type="submit" class="button-general">
-                        Eliminar usuario
-                      </button>
-                    </form>
-                  </div>
+                  
                 </div>
               </form>
+              <div class="formBox">
+                <form action="/users/<%=userToEdit.id%>?_method=DELETE" method="POST">
+                  <button type="submit" class="button-general">
+                    Eliminar usuario
+                  </button>
+                </form>
+              </div>
           </div>
         </main>
       <%- include ('./partials/footer.ejs') %>

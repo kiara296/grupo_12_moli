@@ -15,6 +15,7 @@ const usersService = {
         },
     
 
+
     auth: async (userName, pssw) => {
         try {
             const dataFetched = await db.User.findAll({
@@ -37,10 +38,6 @@ const usersService = {
             usersFilePath,
           JSON.stringify(newUsersList, null, " ")
         );
-    },
-
-    addProduct: (id) => {
-        // TODO: logica de agregar producto al carrito (primero armar modelo de datos de la compra)
     },
 
     getNextId: () => {

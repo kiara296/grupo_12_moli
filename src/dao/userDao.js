@@ -21,6 +21,7 @@ const userDao = {
     db.User.create(user);
   },
 
+
 }
 
 module.exports = userDao;
