@@ -23,8 +23,6 @@ router.get ('/regmoli', validateNotUserInSessionMiddleware, userController.regmo
 
 router.post('/register', [upload.single('profileImage'), verifyPasswords, ...validations], userController.register);
 
-router.post('/addProduct', upload.none(), userController.addProduct);
-
 router.post('/addTransaction', [upload.none(), validateUserInSessionMiddleware], userController.addTransaction);
 
 router.post('/auth', [upload.none(), auth], userController.auth);

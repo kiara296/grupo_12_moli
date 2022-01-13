@@ -52,6 +52,7 @@ const usersService = {
     delete: async (id) => {
         await userDao.delete(id);
       },
+    
       create: async (body) => {
         const user = {
             name: body.name,
@@ -59,7 +60,7 @@ const usersService = {
             username: body.email,
             password: bcrypt.hashSync(body.password, 10),
             category_id: 2,
-            image: body.profileImage
+            image: body.file ? body.file : ""
         }
     
           await userDao.create(user);

@@ -63,6 +63,7 @@
                     >
                     <input
                       type="file"
+                      value="<%= data && data.profileImage ? data.profileImage : '' %>"
                       name="profileImage"
                       id="profileImage"
                       class="form-input"
@@ -76,10 +77,10 @@
                     placeholder="Elegí una contraseña"
                     minlength="8"
                     class="form-input"
-                    value="<%= data && data.pass ? data.pass : '' %>"
+                    value="<%= data && data.password ? data.password : '' %>"
                     />
-                    <% if(errors && errors.pass) { %>
-                      <span class="error"><%= errors.pass.msg %></span>
+                    <% if(errors && errors.password) { %>
+                      <span class="error"><%= errors.password.msg %></span>
                     <% } %>
                 </div>    
                 <div class="formBox"> 

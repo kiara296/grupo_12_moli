@@ -26,7 +26,7 @@ const auth = async (req, res, next) => {
           id: req.session.userLogged.id,
           userName: req.session.userLogged.userName,
         },
-        { maxAge: 300000 }
+        { maxAge: 1000000 }
       );
     }
   }

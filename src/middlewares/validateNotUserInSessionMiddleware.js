@@ -4,7 +4,7 @@ function validateNotUserInSessionMiddleware(req, res, next){
     if (userNotInSession(req.session.userLogged)){
         next()
     } else {
-        res.send('Esto es para usuarios no logueados')
+        res.send('Para ingresar no debes estar logeado.')
     }
     
 } 

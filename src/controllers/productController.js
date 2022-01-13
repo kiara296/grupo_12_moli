@@ -78,11 +78,9 @@ const productController = {
   /* Creacion producto: Metodo para guardar */
   save: async (req, res) => {
     let errors = validationResult(req);
-    
-    console.log(req.body)
     if (errors.isEmpty()) {
       try {
-        productsService.create(req.body);
+        productsService.create({...req.body, file: req.file.filename});
         return res.redirect( '/');
       } catch(e) {
         console.log(e);
@@ -134,7 +132,6 @@ const productController = {
   
   /* Actualizar producto: metodo para editar */
   update: function (req,res) {
-    console.log(req.body)
     let errors = validationResult(req);
     const data = null;
    
@@ -197,25 +194,8 @@ const productController = {
     res.redirect("/products/carrito");
   },
 
- /* /*  delete: function (req,res) {
-    let movieId = req.params.id;
-    Movies
-    .findByPk(movieId)
-    .then(Movie => {
-        return res.render(path.resolve(__dirname, '..', 'views',  'moviesDelete'), {Movie})})
-    .catch(error => res.send(error))
-}, 
-    destroy: function (req,res) {
-    let productId = req.params.id;
-    Movies
-    .destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
-    .then(()=>{
-        return res.redirect('/products/catalog')})
-    .catch(error => res.send(error)) 
-}, */
 
    delete: async (req, res) => {
-     console.log(req.params.id)
     try {
       await productsService.delete(req.params.id);
     } catch(e) {

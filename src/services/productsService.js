@@ -34,13 +34,12 @@ const productsService = {
   },
 
   create: async (body) => {
-    console.log(body.file)
     const product = {
       name: body.name,
       price: body.price,
       discount: body.discount ? body.discount : 0,
       description: body.description,
-      image: body.file ? body.file.fileImage : "",
+      image: body.file ? body.file : "",
       alt: body.alt,
       ingredients: body.ingredients,
       cooking: body.cooking,

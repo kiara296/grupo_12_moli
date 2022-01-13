@@ -59,7 +59,6 @@ const userController = {
 
   },
   update: function (req,res) {
-    console.log(req.body)
     let errors = validationResult(req);
     const data = null;
     let userId = req.params.id;
@@ -94,22 +93,22 @@ const userController = {
   }, 
 
      delete: async (req, res) => {
-       console.log (" hola");
       try {
         await usersService.delete(req.params.id);
+        req.session.userLogged = undefined
       } catch(e) {
         console.log(e);
       }
-      res.redirect("/users/login");
+      res.redirect("/");
     },
 
   register: async (req, res) => {
-    
     let errors = validationResult(req);
+    let data = { ...req.body, file: req.file.filename};
     if (errors.isEmpty ()){
     try {
-      const data = null;
-      await usersService.create(req.body)
+     
+      await usersService.create(data)
       
       res.redirect("/users/login");
       
@@ -117,7 +116,10 @@ const userController = {
       console.log("", e);
     }
   } else {
-    res.redirect ("regmoli")
+   
+    let message = null;
+
+    res.render("regmoli", {errors, userLogged: req.session.userLogged, data, message} )
   }
   },
 };

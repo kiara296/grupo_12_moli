@@ -5,7 +5,7 @@ const validations = [
   check("lastname").notEmpty().withMessage("* Apellido requerido"),
   check("email").notEmpty().withMessage("* Email requerido").bail(),
   check("email").isEmail().withMessage("* Email invalido"),
-  check("pass").notEmpty().withMessage("* Contraseña requerida"),
+  check("password").notEmpty().withMessage("* Contraseña requerida"),
   check("pass_confirm").notEmpty().withMessage("* Contraseña requerida"),
 ];
 
