@@ -1,11 +1,15 @@
 const validator = require('../services/validatorService');
 
 function validateUserInSessionMiddleware(req, res, next){
-    if (validator.isNullOrUndefined(req.session.userLogged)){
+    if (userInSession(req.session.userLogged)){
         next()
     } else {
-        res.send('Esto es para usuarios no logueados')
+        res.send('Necesita estar logueado para acceder a este sitio')
     }
-} 
+};
 
-module.exports = validateUserInSessionMiddleware;
+function userInSession (user) {
+    return !validator.isNullOrUndefined(req.session.userLogged)
+};
+
+module.exports = validateUserInSessionMiddleware ;
