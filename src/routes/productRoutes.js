@@ -14,13 +14,13 @@ router.delete('/:id/carrito', productController.carritoDelete);
 router.get('/:id/detail', productController.detail);
 
 /* Crear un producto */
-router.get('/create', productController.create);
-//TODO: pasar como argumento a single() el valor del atributo name del input file presente en el formulario
-router.post('/create', [upload.single('fileImage'), ...validateProductForm], productController.save); 
+router.get('/create',  validateAdminInSessionMiddleware ,productController.create);
+
+router.post('/create', [upload.single('fileImage'), ...validateProductForm], validateAdminInSessionMiddleware, productController.save); 
 
 /* Editar un producto */ 
-router.get('/:id/edit', productController.edit); 
-router.put('/:id/update', [upload.single('fileImage'), ...validateProductForm], productController.update);
+router.get('/:id/edit',  validateAdminInSessionMiddleware, productController.edit); 
+router.put('/:id/update', [upload.single('fileImage'), ...validateProductForm],  validateAdminInSessionMiddleware ,productController.update);
 
 // catalog
 router.get('/catalog', productController.catalog);
