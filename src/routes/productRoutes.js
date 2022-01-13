@@ -3,6 +3,8 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 const upload = require('../middlewares/multer');
 const validateProductForm = require('../middlewares/validateProductForm');
+const validateUserInSessionMiddleware = require('../middlewares/validateUserInSessionMiddleware');
+const validateAdminInSessionMiddleware = require('../middlewares/validateAdminInSessionMiddleware');
 
 /* Carrito producto */
 router.get('/carrito', productController.carrito);
@@ -37,7 +39,7 @@ router.delete('/:id', upload.none() ,productController.delete);
 
 //administar
 
-router.get('/admin', productController.admin )
+router.get('/admin', validateUserInSessionMiddleware , validateAdminInSessionMiddleware,  productController.admin )
 
 
 module.exports = router;

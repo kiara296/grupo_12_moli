@@ -1,6 +1,6 @@
 const validator = require('../services/validatorService');
 
-function validateUserNotInSessionMiddleware(req, res, next){
+function validateNotUserInSessionMiddleware(req, res, next){
     if (userNotInSession(req.session.userLogged)){
         next()
     } else {
@@ -9,7 +9,7 @@ function validateUserNotInSessionMiddleware(req, res, next){
     
 } 
 function userNotInSession (user) {
-    return validator.isNullOrUndefined(req.session.userLogged)
+    return validator.isNullOrUndefined(user)
 };
 
 module.exports = validateNotUserInSessionMiddleware;

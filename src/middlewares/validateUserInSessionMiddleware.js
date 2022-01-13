@@ -9,7 +9,7 @@ function validateUserInSessionMiddleware(req, res, next){
 };
 
 function userInSession (user) {
-    return !validator.isNullOrUndefined(req.session.userLogged)
+    return !validator.isNullOrUndefined(user)
 };
 
 module.exports = validateUserInSessionMiddleware ;

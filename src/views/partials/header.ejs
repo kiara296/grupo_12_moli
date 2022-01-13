@@ -11,8 +11,15 @@
       <li><a href="/products/catalog">Productos</a></li>
       <li><a href="/#recommended">Recomendados</a></li>
       <li><a href="/#offers">Ofertas</a></li>
+      <% if(userLogged) { %>
       <li><a href="/users/<%= userLogged.id%>/edit">Mi perfil</a></li>
-
+      <% }else {%>
+      <% } %>
+      <% if(userLogged && userLogged.category_id === 1) { %>
+        <li><a href="/admin">Administrar productos</a></li>
+      <% }else {%>
+        <li style="display: none;"><a href="/admin">Administrar productos</a></li>
+      <% } %>
     </ul>
    
         <ul class="nav2">

@@ -19,7 +19,7 @@ router.delete ('/:id', validateUserInSessionMiddleware,  userController.delete);
 
 router.post('/logout', upload.none(), userController.logout);
 
-router.get ('/regmoli', validateNotUSerInSessionMiddleware, userController.regmoli);
+router.get ('/regmoli', validateNotUserInSessionMiddleware, userController.regmoli);
 
 router.post('/register', [upload.single('profileImage'), verifyPasswords, ...validations], userController.register);
 
