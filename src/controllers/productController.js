@@ -28,7 +28,7 @@ const productController = {
  
     try {
       const products = await productsService.getProducts();
-      res.render("catalog", { products, userLogged: req.session.userLogged });
+      res.render("catalog", { products, userLogged: req.session.userLogged, valueSearch: undefined });
     } catch(e) {
       console.log("\nOcurrio un error al intentar cargar el catalogo de productos\n", e);
     }
@@ -183,7 +183,7 @@ const productController = {
     const valueSearch = req.query.valueSearch;
     try {
       const products = await productsService.search(valueSearch);
-      res.render("catalog", { products, userLogged: req.session.userLogged });
+      res.render("catalog", { products, userLogged: req.session.userLogged, valueSearch });
     } catch(e) {
       console.log(e);
     }
