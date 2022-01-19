@@ -27,4 +27,4 @@ router.post('/addTransaction', [upload.none(), validateUserInSessionMiddleware],
 
 router.post('/auth', [upload.none(), auth], userController.auth);
 
-module.exports = router
+module.exports = router;

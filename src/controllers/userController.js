@@ -24,12 +24,6 @@ const userController = {
     res.render("regmoli", { errors, data, message, userLogged: req.session.userLogged });
   },
 
-  addProduct: (req, res) => {
-    const idProduct = req.query.idProduct;
-    usersService.addProduct(idProduct);
-    res.redirect("/products/catalog");
-  },
-
   addTransaction: (req, res) => {
     res.send('Compra realiza con exito')
   },

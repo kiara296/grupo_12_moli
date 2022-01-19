@@ -1,45 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('./partials/head',{ stylesFile: 'carrito.css'}) %>
+  <%- include ('./partials/head',{ stylesFile: 'carrito.css', jsFile: 'shoppingCart.js'}) %>
   <body>
     <%- include ('./partials/header') %>
     <main>
       <h1>Mi carrito</h1>
       <div class="sectors">
-        <section class="sector1">
-          <% carrito.forEach(product => { %>
-            <article>
-              <div class="father">
-                <div>
-                  <img  class="productoImage"src="../images/<%= product.image %>" />
-                </div>
-                <div>
-                  <p class="descrip"><%= product.name %></p>
-                </div>
-                <div>
-                  <button type="submit" value="add" class="button-general">
-                    +
-                  </button>
-                  <div class="quantity">
-                    <span class="span-quantity">1</span>
-                  </div>
-                  <button type="submit" value="remove" class="button-general">
-                    -
-                  </button>
-                </div>
-                <div>
-                  <p class="price">$ <%= product.price %></p>
-                </div>
-                <form action='/products/<%= product.id %>/carrito/?_method=DELETE' method='POST'>
-                  <div class="deleteCart">
-                    <button type="submit" value="delete" class="button-general">
-                      <i class="far fa-trash-alt"></i>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </article>
-          <% }) %>
+        <section id="sector1" class="sector1">
+
         </section>
         <section class="sector2">
           <div class="discount">
@@ -55,18 +23,15 @@
           <div class="total">
             <p class="total1">Total $$$$$</p>
             <div class="buttons">
-              <button type="submit" value="keepShopping" class="button-general">
+              <button id="continue" type="submit" value="keepShopping" class="button-general">
                Seguir comprando
               </button>
-              <form action="/users/addTransaction" method="post">
-                  <button type="reset" value="emptyCart" class="button-general">
-                    Vaciar carrito
-                  </button>
-              
-                  <button type="submit" value="checkout" class="button-general">
-                    Finalizar compra
-                  </button>
-              </form>
+              <button id="reset" type="reset" value="emptyCart" class="button-general">
+                Vaciar carrito
+              </button>
+              <button id="addTransaction" type="submit" value="checkout" class="button-general">
+                Finalizar compra
+              </button>
             </div>
           </div>
         </section>

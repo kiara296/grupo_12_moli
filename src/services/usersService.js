@@ -64,7 +64,11 @@ const usersService = {
         }
     
           await userDao.create(user);
-      }, 
+      },
+
+      addProduct: (id) => {
+        localStorage.setItem(id, );
+      },
 
 }
 
