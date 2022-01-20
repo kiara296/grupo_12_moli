@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
         let article = document.createElement('article');
 
         article.innerHTML = `
-            <input type="hidden" id="productId" value="${product.id}">
+            <input type="hidden" value="${product.id}">
             <div class="father">
                 <div>
                     <img class="productoImage" src="../images/${product.image}" />
@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
                 </div>
                 <div class="deleteCart">
                     <button type="submit" value="${product.id}" class="button-general delete-button">
-                        <i class="far fa-trash-alt"></i>
+                        <i value="${product.id}" class="far fa-trash-alt"></i>
                     </button>
                 </div>
             </div>`;
@@ -58,10 +58,21 @@ window.addEventListener('load', function() {
         window.location.replace("http://localhost:3000/products/carrito");
     }));
 
+    let deleteIcons = document.querySelectorAll('i');
+    deleteIcons.forEach(btn => btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.localStorage.removeItem(e.target.value);
+        window.location.replace("http://localhost:3000/products/carrito");
+    }));
+
     // TODO: Aqui hay que utilizar fetch o axios para hacer la llamada por post al endpoint de la api
     // correspondiente, el cual realizara propiamente la transaccion
-    document.querySelector('#reset').addEventListener('click', function(e) {
+    document.querySelector('#addTransaction').addEventListener('click', function(e) {
         e.preventDefault();
+        if(confirm("Confirmar el pago")) {
+            window.localStorage.clear();
+            window.location.replace("http://localhost:3000/products/carrito");
+        }
     });
     
 });
