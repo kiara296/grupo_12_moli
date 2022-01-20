@@ -54,14 +54,12 @@ window.addEventListener('load', function() {
     let deleteButtons = document.querySelectorAll('.delete-button');
     deleteButtons.forEach(btn => btn.addEventListener('click', function(e) {
         e.preventDefault();
-        window.localStorage.removeItem(e.target.value);
-        window.location.replace("http://localhost:3000/products/carrito");
-    }));
+        if(event.target.value === undefined) {
+            window.localStorage.removeItem(e.currentTarget.value);
+        } else {
+            window.localStorage.removeItem(e.target.value);
+        }
 
-    let deleteIcons = document.querySelectorAll('i');
-    deleteIcons.forEach(btn => btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.localStorage.removeItem(e.target.value);
         window.location.replace("http://localhost:3000/products/carrito");
     }));
 
