@@ -52,9 +52,9 @@ window.addEventListener('load', function() {
     });
 
     let deleteButtons = document.querySelectorAll('.delete-button');
-    deleteButtons.forEach(btn => btn.addEventListener('click', function(e) {
+    deleteButtons.forEach(btn => btn.addEventListener('click', function(c) {
         e.preventDefault();
-        if(event.target.value === undefined) {
+        if(es.target.value === undefined) {
             window.localStorage.removeItem(e.currentTarget.value);
         } else {
             window.localStorage.removeItem(e.target.value);
