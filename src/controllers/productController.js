@@ -80,7 +80,7 @@ const productController = {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       try {
-        productsService.create({...req.body, file: req.file.filename});
+        productsService.create({...req.body, file: req.file ? req.file.filename : ""});
         return res.redirect( '/');
       } catch(e) {
         console.log(e);
