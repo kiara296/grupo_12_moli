@@ -3,8 +3,20 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 const upload = require('../middlewares/multer');
 const validateProductForm = require('../middlewares/validateProductForm');
+
 const validateUserInSessionMiddleware = require('../middlewares/validateUserInSessionMiddleware');
 const validateAdminInSessionMiddleware = require('../middlewares/validateAdminInSessionMiddleware');
+/* const validateFile = (file) =>{
+let accepted = [".jpg", ".jpeg", ".png", '.gif']
+let extension=  path.extname(file.originalname)
+if (!file){
+    throw new Error ("Debes subir una imagen")
+} else {
+    if (!accepted.includes(extension)){
+        throw new Error ("Deberá ser un archivo válido (JPG, JPEG, PNG, GIF)")
+     }
+}
+ */
 
 /* Carrito producto */
 router.get('/carrito', productController.carrito);
@@ -14,9 +26,9 @@ router.delete('/:id/carrito', productController.carritoDelete);
 router.get('/:id/detail', productController.detail);
 
 /* Crear un producto */
-router.get('/create',  validateAdminInSessionMiddleware ,productController.create);
+router.get('/create', validateAdminInSessionMiddleware  ,productController.create);
 
-router.post('/create', [upload.single('fileImage'), ...validateProductForm], validateAdminInSessionMiddleware, productController.save); 
+router.post('/create', [upload.single('fileImage'), ...validateProductForm, /* validateFile(req.file) */], validateAdminInSessionMiddleware, productController.save); 
 
 /* Editar un producto */ 
 router.get('/:id/edit',  validateAdminInSessionMiddleware, productController.edit); 

@@ -4,8 +4,8 @@ const db = require('../../database/models');
 const { Op } = require("sequelize");
 
 const productDao = {
-    getProducts: () => {
-        return db.Product.findAll({
+    getProducts: async() => {
+        return await db.Product.findAll({
           include: [{ association: "product_category" }]
         });
       },

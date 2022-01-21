@@ -80,7 +80,7 @@ const productController = {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       try {
-        productsService.create({...req.body, file: req.file ? req.file.filename : ""});
+        await productsService.create({...req.body, file: req.file ? req.file.filename : ""});
         return res.redirect( '/');
       } catch(e) {
         console.log(e);
@@ -91,7 +91,7 @@ const productController = {
         res.render("crearProductoForm", {
           category,
           errors: errors.mapped(),
-          data: req.data,
+          data: req.body,
           userLogged: req.session.userLogged,
           
         })

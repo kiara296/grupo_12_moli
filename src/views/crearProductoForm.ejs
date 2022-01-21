@@ -135,6 +135,9 @@
                   class="form-input"
                 />
               </div>
+              <% if(errors && errors.fileImage) { %>
+                <span class="error"><%= errors.fileImage.msg %></span>
+              <% } %>
               <div class="formBox">
                 <label for="alt" class="form-label"
                   >Texto alternativo imagen:</label
