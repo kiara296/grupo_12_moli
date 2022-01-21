@@ -3,7 +3,12 @@ const db = require('../../database/models');
 const { Op } = require("sequelize");
 
 const userDao = {
-
+  getUsers: async() => {
+    return await db.User.findAll({
+      include: [{ association: "category_user" }]
+    });
+  },
+  
  getById: (id) => {
     return db.User.findByPk(
             id, 

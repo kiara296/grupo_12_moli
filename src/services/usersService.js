@@ -7,6 +7,13 @@ const db = require('../../database/models');
 const userDao = require('../dao/userDao');
 
 const usersService = {
+    getUsers: async () => {
+        const dataFetched = await userDao.getUsers();
+    
+        const usersMapped = mapDataToUsers(dataFetched);
+    
+        return usersMapped;
+      },
 
     getById: async (id) => {
           const dataFetched = await userDao.getById(id);
@@ -70,6 +77,13 @@ const usersService = {
         localStorage.setItem(id, );
       },
 
+     
+
 }
+const mapDataToUsers = (data) => {
+    return data.map(p => {
+      return {...p.dataValues, user_category: p.user_category.dataValues.name}
+    });
+    }
 
 module.exports = usersService;

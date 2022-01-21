@@ -1,12 +1,39 @@
 const { check } = require("express-validator");
+const path = require('path')
+const usersService = require('../services/usersService');
 
 const validations = [
-  check("name").notEmpty().withMessage("* Nombre requerido"),
-  check("lastname").notEmpty().withMessage("* Apellido requerido"),
-  check("email").notEmpty().withMessage("* Email requerido").bail(),
-  check("email").isEmail().withMessage("* Email invalido"),
-  check("password").notEmpty().withMessage("* Contraseña requerida"),
-  check("pass_confirm").notEmpty().withMessage("* Contraseña requerida"),
-];
-
-module.exports = validations;
+    check("name").trim().notEmpty().withMessage("* Nombre requerido").isLength({min:5}).withMessage("* Debe tener al menos 5 caracteres"),
+    check("lastname").trim().notEmpty().withMessage("* Apellido requerido").isLength({min:5}).withMessage("* Debe tener al menos 5 caracteres"),
+    check("email").trim().notEmpty().withMessage("* Email requerido").bail().isEmail().withMessage("* Debes escribir un correo electrónico válido")
+    .custom(async (email, {req}) => {
+        const existingUser = 
+            await usersService.getUsers(req.body.email)
+        if (existingUser) {
+            throw new Error('Direccion de correo ya registrado')
+        }
+    }),
+    check("password").trim().notEmpty().withMessage("* Contraseña requerida").bail().isLength({min:8}).withMessage("* Debe tener al menos 8 caracteres"),
+    check("pass_confirm").trim().notEmpty().withMessage("* Debes repetir la contraseña").isLength({min:8, max:16}).withMessage("* Debe tener al menos 8 caracteres")
+        .custom(async (confirmPassword, {req}) => {
+        const password = req.body.password
+        if(password !== pass_confirm){
+            throw new Error('Las contraseñas deben ser las mismas')
+          }
+        }),
+    check('profileImage').custom((value, { req }) => {
+          let file = req.file;
+          let acceptedExtensions = ['.jpg', '.png', '.gif', '.jpeg'];
+    
+          if (!file) {
+              throw new Error('Tenes que subir una imagen');
+          } else {
+              let fileExtension = path.extname(file.originalname);
+          if (!acceptedExtensions.includes(fileExtension)) {
+              throw new Error(`El formato de la imagen no es valido, subir ${acceptedExtensions.join(', ')}`);
+          }
+      };
+          return true;}),
+    
+]
+  module.exports = validations;

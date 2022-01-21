@@ -96,10 +96,12 @@ const userController = {
       res.redirect("/");
     },
 
+/* Creacion de usuario: metodo para guardar usuario nuevo */
+
   register: async (req, res) => {
     let errors = validationResult(req);
-    let data = { ...req.body, file: req.file.filename};
-    if (errors.isEmpty ()){
+    let data = { ...req.body, file: req.file ? req.file.filename : ""};
+    if (errors.isEmpty()){
     try {
      
       await usersService.create(data)
@@ -107,13 +109,18 @@ const userController = {
       res.redirect("/users/login");
       
     } catch(e) {
-      console.log("", e);
+      console.log(e);
     }
   } else {
    
-    let message = null;
+   /*  let message = null; */
 
-    res.render("regmoli", {errors, userLogged: req.session.userLogged, data, message} )
+    res.render("regmoli", {
+      errors: errors.mapped(), 
+      userLogged: req.session.userLogged, 
+      data,
+     /*  message */
+    } )
   }
   },
 };

@@ -2,7 +2,6 @@ const productsService = require("../services/productsService");
 const validatorService = require("../services/validatorService");
 const categoryProductsService = require('../services/categoryProductsService');
 const { validationResult } = require("express-validator");
-const validations = require("../middlewares/validateProductForm");
 const db = require("../../database/models");
 
 const productController = {
