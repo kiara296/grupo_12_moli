@@ -67,3 +67,17 @@ Continuar con la comunicacion fluida del grupo y las reuniones periodicas.
    
 4- Pair programing, a pesar de ser menos eficiente en cuanto a tiempos, algo siempre tenemos que hacer y ayuda en el proceso de aprendizaje.
 
+Retrospectiva Sprint 6:
+
+Este sprint nos resulto un poco largo y mas trabajoso que otros con mayor grado de dificultad. Es por eso que gran parte del trabajo la hicimos en conjunto. Con gran esfuerzo hicimos la entrega en tiempo y forma. 
+
+Nuestras conclusiones del sprint:
+
+1- Seguir dividiendo tareas, planificando la diagramacion detalladamente. 
+Continuar con la comunicacion fluida del grupo y las reuniones periodicas.
+
+2- Peer review, esta tecnica nos sirvio mucho. En este sprint lo usamos y e hicimos muchas reuniones para realizar arreglos.  Esto nos sirvio mucho para identificar los posibles errores y ademas continuar el proceso de aprendizaje. Es algo para continuar haciendo.
+   
+4- Ya a esta altura es poco lo que no debemos hacer. Sin embargo en el apuro nos encontramos en algun momento trabajando en conjunto en distintos equipos y al momento de enviar al repositorio tuvimos algunos conflictos que pudimos solucionar. Pero nos sirvio para evidenciar lo que no hay que hacer (hasta ahora veniamos muy cuidadosos con eso).
+
+
