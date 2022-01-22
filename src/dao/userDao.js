@@ -26,6 +26,13 @@ const userDao = {
     db.User.create(user);
   },
 
+  findByEmail: (email) => {
+    db.User.findOne({
+      where: {
+        username: email
+      }
+    });
+  }
 
 }
 

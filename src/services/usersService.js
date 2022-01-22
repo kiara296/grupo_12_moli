@@ -77,7 +77,9 @@ const usersService = {
         localStorage.setItem(id, );
       },
 
-     
+      findByEmail: async(email) => {
+        await userDao.findByEmail(email);
+      }
 
 }
 const mapDataToUsers = (data) => {

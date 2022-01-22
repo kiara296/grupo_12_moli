@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <!-- Head -->
-  <%- include ('./partials/head',{ stylesFile: 'forms.css', jsFile: ''}) %>
+  <%- include ('./partials/head',{ stylesFile: 'forms.css', jsFile: 'validateFrontRegmoli.js'}) %>
 
   <body>
     <%- include ('./partials/header') %>
@@ -10,7 +10,7 @@
         <div>
           <h2 class="form-title">Completá tus datos</h2>
         </div>
-        <form action="/users/register" method="POST" enctype="multipart/form-data">
+        <form id="form" action="/users/register" method="POST" enctype="multipart/form-data">
             <div class="formBox">
                 <div class="formBox">
                     <label for="name" class="form-label"> Nombre </label>
@@ -25,6 +25,7 @@
                     <% if(errors && errors.name) { %>
                       <span class="error"><%= errors.name.msg %></span>
                     <% } %>
+                    <span id="error-name" class=''></span>
                 </div>   
                 <div class="formBox"> 
                     <label for="lastName" class="form-label"> Apellido </label>
@@ -73,6 +74,7 @@
                 <div class="formBox"> 
                     <label id="email" class="form-label"> Contraseña </label>
                     <input
+                    id="password"
                     type="password"
                     name="password"
                     placeholder="Elegí una contraseña"
@@ -86,6 +88,7 @@
                 <div class="formBox"> 
                     <label id="email" class="form-label"> Repetir contraseña </label>
                     <input
+                    id="pass_confirm"
                     type="password"
                     name="pass_confirm"
                     placeholder="Repetí tu contraseña"
