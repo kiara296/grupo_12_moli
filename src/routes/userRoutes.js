@@ -4,12 +4,11 @@ const userController = require('../controllers/userController');
 const upload = require('../middlewares/multer');
 const auth = require('../middlewares/auth');
 const validations = require('../middlewares/register');
-const verifyPasswords = require('../middlewares/verifyPasswords');
 const validateNotUserInSessionMiddleware = require('../middlewares/validateNotUserInSessionMiddleware');
 const validateUserInSessionMiddleware = require('../middlewares/validateUserInSessionMiddleware');
 
 
-router.get ('/login', validateNotUserInSessionMiddleware,  userController.login);
+router.get ('/login', validateNotUserInSessionMiddleware, userController.login);
 
 router.get ('/:id/edit', validateUserInSessionMiddleware,  userController.edit);
 
@@ -21,7 +20,7 @@ router.post('/logout', upload.none(), userController.logout);
 
 router.get ('/regmoli', validateNotUserInSessionMiddleware, userController.regmoli);
 
-router.post('/register', [upload.single('profileImage'), /* verifyPasswords, */ ...validations], userController.register);
+router.post('/register', [upload.single('profileImage'), ...validations], userController.register);
 
 router.post('/addTransaction', [upload.none(), validateUserInSessionMiddleware], userController.addTransaction);
 

@@ -12,19 +12,19 @@
         <div>
           <h2 class="form-title">Ingresá tus datos</h2>
         </div>
-        <form action="/users/auth" method="POST" enctype="multipart/form-data" >
+        <form action="/users/auth" method="POST" enctype="multipart/form-data" id="form" >
           <div class="formBox">
             <div class="formBox">
               <label for="email" class="form-label"> Usuario </label>
               <input
-                type="email"
+                type="text"
                 id="email"
                 name="email"
                 value="<%= userName ? userName : '' %>"
                 placeholder="Ingresá tu E-mail"
                 class="form-input"
-                required
               />
+              <span id="error-email" class='spanErrors'></span>
             </div>
             <div class="formBox">
               <label for="pass" class="form-label"> Contraseña </label>
@@ -33,10 +33,9 @@
                 name="pssw"
                 id="pass"
                 placeholder="Ingresá tu contraseña"
-                minlength="8"
                 class="form-input"
-                required
               />
+              <span id="error-pass" class='spanErrors'></span>
             </div>
             <div class="recordarme">
               <input type="checkbox" name="remember" id="remember">

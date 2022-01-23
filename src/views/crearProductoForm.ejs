@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('./partials/head', { stylesFile: 'forms.css', jsFile: ''}) %>
+  <%- include ('./partials/head', { stylesFile: 'forms.css', jsFile: 'validateFrontProduct.js'}) %>
 
   <body>
     <%- include ('./partials/header') %>
@@ -10,6 +10,7 @@
           <h2 class="form-title">Formulario de creación de productos</h2>
         </div>
         <form
+          id='form'
           action="/products/create"
           method="POST"
           enctype="multipart/form-data"
@@ -30,6 +31,7 @@
                 <% if(errors && errors.name) { %>
                   <span class="error"><%= errors.name.msg %></span>
                 <% } %>
+                <span id="error-name" class='spanErrors'></span>
               </div>
               <div class="formBox">
                 <label for="price" class="form-label"
@@ -46,6 +48,7 @@
                 <% if(errors && errors.price) { %>
                   <span class="error"><%= errors.price.msg %></span>
                 <% } %>
+                <span id="error-price" class='spanErrors'></span>
               </div>
             </div>
             <div class="box">
@@ -60,7 +63,6 @@
                   value="<%= data && data.discount ? data.discount : '' %>"
                 />
               </div>
-
               <div class="formBox">
                 <label for="category" class="form-label">Categoría:</label>
                 <select
@@ -85,10 +87,12 @@
                   name="ingredients"
                   id="ingredients"
                   class="form-input"
-                > <%= data && data.ingredients ? data.ingredients : '' %> </textarea>
+                  value="<%= data && data.ingredients ? data.ingredients : '' %>"
+                ></textarea>
                 <% if(errors && errors.ingredients) { %>
                   <span class="error"><%= errors.ingredients.msg %></span>
                 <% } %>
+                <span id="error-ingredients" class='spanErrors'></span>
               </div>
               <div class="formBox">
                 <label for="description" class="form-label">Descripción:</label>
@@ -96,10 +100,12 @@
                   name="description"
                   id="description"
                   class="form-input"
-                > <%= data && data.description ? data.description : '' %> </textarea>
+                  value="<%= data && data.description ? data.description : '' %>"
+                ></textarea>
                 <% if(errors && errors.description) { %>
                   <span class="error"><%= errors.description.msg %></span>
                 <% } %>
+                <span id="error-description" class='spanErrors'></span>
               </div>
               <div class="formBox">
                 <label for="nutritional_info" class="form-label"
@@ -109,10 +115,12 @@
                   name="nutritional_info"
                   id="nutritional_info"
                   class="form-input"
-                > <%= data && data.nutritional_info ? data.nutritional_info : '' %> </textarea>
+                  value="<%= data && data.nutritional_info ? data.nutritional_info : '' %>"
+                ></textarea>
                 <% if(errors && errors.nutritional_info) { %>
                   <span class="error"><%= errors.nutritional_info.msg %></span>
                 <% } %>
+                <span id="error-nutritional_info" class='spanErrors'></span>
               </div>
               <div class="formBox">
                 <label for="cooking" class="form-label">Modo de coccion:</label>
@@ -120,7 +128,8 @@
                   name="cooking"
                   id="cooking"
                   class="form-input"
-                > <%= data && data.cooking ? data.cooking : '' %> </textarea>
+                  value="<%= data && data.cooking ? data.cooking : '' %>"
+                ></textarea>
               </div>
             </div>
             <div class="box">
@@ -138,6 +147,7 @@
               <% if(errors && errors.fileImage) { %>
                 <span class="error"><%= errors.fileImage.msg %></span>
               <% } %>
+              <span id="error-fileImage" class='spanErrors'></span>
               <div class="formBox">
                 <label for="alt" class="form-label"
                   >Texto alternativo imagen:</label
@@ -146,12 +156,12 @@
                 name="alt" 
                 id="alt" 
                 class="form-input"
-                >
-                <%= data && data.alt ? data.alt : '' %>
-              </textarea>
+                value="<%= data && data.alt ? data.alt : '' %>"
+                ></textarea>
                 <% if(errors && errors.alt) { %>
                   <span class="error"><%= errors.alt.msg %></span>
                 <% } %>
+                <span id="error-alt" class='spanErrors'></span>
               </div>
             </div>
             <div class="formBox">

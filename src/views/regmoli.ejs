@@ -25,7 +25,7 @@
                     <% if(errors && errors.name) { %>
                       <span class="error"><%= errors.name.msg %></span>
                     <% } %>
-                    <span id="error-name" class=''></span>
+                    <span id="error-name" class='spanErrors'></span>
                 </div>   
                 <div class="formBox"> 
                     <label for="lastName" class="form-label"> Apellido </label>
@@ -41,6 +41,7 @@
                       <span class="error"><%= errors.lastname.msg %></span>
                     <% } %>
                 </div>
+                <span id="error-lastname" class='spanErrors'></span>
                 <div class="formBox"> 
                     <label for="user" class="form-label"> Usuario</label>
                     <input
@@ -54,6 +55,7 @@
                     <% if(errors && errors.email) { %>
                       <span class="error"><%= errors.email.msg %></span>
                     <% } %>
+                    <span id="error-user" class='spanErrors'></span>
                 </div>
                 <div class="box">
                   <div class="formBox">
@@ -70,6 +72,7 @@
                     <% if(errors && errors.profileImage) { %>
                       <span class="error"><%= errors.profileImage.msg %></span>
                     <% } %>
+                    <span id="error-profileImage" class='spanErrors'></span>
                   </div>    
                 <div class="formBox"> 
                     <label id="email" class="form-label"> Contraseña </label>
@@ -84,6 +87,7 @@
                     <% if(errors && errors.password) { %>
                       <span class="error"><%= errors.password.msg %></span>
                     <% } %>
+                    <span id="error-password" class='spanErrors'></span>
                 </div>    
                 <div class="formBox"> 
                     <label id="email" class="form-label"> Repetir contraseña </label>
@@ -98,6 +102,7 @@
                     <% if(errors && errors.pass_confirm) { %>
                       <span class="error"><%= errors.pass_confirm.msg %></span>
                     <% } %>
+                    <span id="error-pass_confirm" class='spanErrors'></span>
                 </div>    
             </div>
             <div class="formBox">

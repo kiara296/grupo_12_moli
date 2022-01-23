@@ -1,171 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('./partials/head', { stylesFile: 'forms.css', jsFile: ''}) %>
+  <%- include ('./partials/head', { stylesFile: 'forms.css', jsFile:
+  'validateFrontProduct.js'}) %>
 
-    <body>
-      <%- include ('./partials/header') %>
-        <main>
-          <div class="containerForm">
-            <div>
-              <h2 class="form-title">Formulario de edicion de productos</h2>
+  <body>
+    <%- include ('./partials/header') %>
+    <main>
+      <div class="containerForm">
+        <div>
+          <h2 class="form-title">Formulario de edicion de productos</h2>
+        </div>
+        <form
+          action="/products/<%= productToEdit.id %>/update?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+          id='form'
+        >
+          <div class="box">
+            <div class="formBox">
+              <label for="name" class="form-label">Nombre del producto:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Ej: Nombre del plato"
+                class="form-input"
+                value="<%= productToEdit && productToEdit.name ? productToEdit.name : '' %>"
+              />
+              <% if(errors && errors.name) { %>
+              <span class="error"><%= errors.name.msg %></span>
+              <% } %>
+              <span id="error-name" class="spanErrors"></span>
             </div>
-            <form action="/products/<%= productToEdit.id %>/update?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div class="box">
-                  <div class="formBox">
-                    <label for="name" class="form-label"
-                      >Nombre del producto:</label
-                    >
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Ej: Nombre del plato"
-                      class="form-input"
-                      value="<%= productToEdit && productToEdit.name ? productToEdit.name : '' %>"
-                    />
-                    <% if(errors && errors.name) { %>
-                      <span class="error"><%= errors.name.msg %></span>
-                    <% } %>
-                  </div>
-                  <div class="formBox">
-                    <label for="price" class="form-label"
-                      >Precio del producto:</label
-                    >
-                    <input
-                      type="text"
-                      id="price"
-                      name="price"
-                      placeholder="Ej: 5678"
-                      class="form-input"
-                      value="<%= productToEdit && productToEdit.price ? productToEdit.price : '' %>"
-                    />
-                    <% if(errors && errors.price) { %>
-                      <span class="error"><%= errors.price.msg %></span>
-                    <% } %>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="formBox">
-                    <label for="discount" class="form-label">Descuento:</label>
-                    <input
-                      type="text"
-                      id="discount"
-                      name="discount"
-                      placeholder="Ej: 15"
-                      class="form-input"
-                      value="<%= productToEdit && productToEdit.discount ? productToEdit.discount : '' %>"
-                    />
-                  </div>
-                  <div class="formBox">
-                    <label for="category" class="form-label">Categoría:</label>
-                      <select
-                          name="category"
-                          id="category"
-                          class="form-input"
-                          required
-                          value="<%= data && data.category ? data.category : '' %>"
-                        >
-                      <% category.forEach(c => { %>
-                        <option value="<%= c.id %>">
-                          <%= c.name %>
-                        </option>
-                      <% }) %>
-                      </select>
-                  </div>
-                </div>
-                <div class="box-textarea">
-                  <div class="formBox">
-                    <label for="description" class="form-label">Descripción:</label>
-                    <textarea
-                      name="description"
-                      id="description"
-                      class="form-input"
-                    > <%= productToEdit && productToEdit.description ? productToEdit.description : '' %> </textarea>
-                    <% if(errors && errors.description) { %>
-                      <span class="error"><%= errors.description.msg %></span>
-                    <% } %>
-                  </div>
-                  <div class="formBox">
-                    <label for="ingredients" class="form-label">Ingredientes:</label>
-                    <textarea
-                      name="ingredients"
-                      id="ingredients"
-                      class="form-input"
-                    ><%= productToEdit && productToEdit.ingredients ?  productToEdit.ingredients : '' %></textarea>
-                    <% if(errors && errors.ingredients) { %>
-                      <span class="error"><%= errors.ingredients.msg %></span>
-                    <% } %>
-                  </div>
-                  <div class="formBox">
-                    <label for="nutritional_info" class="form-label"
-                      >Informacion nutricional:</label
-                    >
-                    <textarea
-                      name="nutritional_info"
-                      id="nutritional_info"
-                      class="form-input"
-                    > <%= productToEdit && productToEdit.nutritional_info ?  productToEdit.nutritional_info : '' %></textarea>
-                    <% if(errors && errors.nutritional_info) { %>
-                      <span class="error"><%= errors.nutritional_info.msg %></span>
-                    <% } %>
-                  </div>
-                  <div class="formBox">
-                    <label for="cooking" class="form-label">Modo de coccion:</label>
-                    <textarea
-                      name="cooking"
-                      id="cooking"
-                      class="form-input"
-                    ><%= productToEdit && productToEdit.cooking ?  productToEdit.cooking : '' %></textarea>
-                  </div>
-                </div>
-                <div class="formBox">
-                  <label for="alt" class="form-label"
-                    >Texto alternativo imagen:</label
-                  >
-                  <textarea name="alt" id="alt" class="form-input">
-                    <%= productToEdit && productToEdit.alt ?  productToEdit.alt : '' %>
-                  </textarea>
-                  <% if(errors && errors.alt) { %>
-                    <span class="error"><%= errors.alt.msg %></span>
-                  <% } %>
-                </div>
-                <div class="box">
-                  <div class="formBox">
-                    <label for="fileImage" class="form-label"
-                      >Imagen del producto:</label
-                    >
-                    <img src="/images/<%=productToEdit.image%>" alt="<%=productToEdit.alt%>" class="imagenProducto formImage">
-                    <input type="hidden"  name="oldImage"  value="<%= productToEdit.image%>">
-                    <input
-                      type="file"
-                      name="fileImage"
-                      id="fileImage"
-                      class="form-input"
-                      value="/images/<%=productToEdit.image%>"
-                      width="50%"
-                    />
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="formBox">
-                    <div class="buttonForm">
-                      <button type="submit" class="button-general">
-                        Guardar cambios
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <div class="formBox">
-                <form action="/products/<%=productToEdit.id%>?_method=DELETE" method="POST">
-                  <button type="submit" class="button-general">
-                    Eliminar producto
-                  </button>
-                </form>
-              </div>
+            <div class="formBox">
+              <label for="price" class="form-label">Precio del producto:</label>
+              <input
+                type="text"
+                id="price"
+                name="price"
+                placeholder="Ej: 5678"
+                class="form-input"
+                value="<%= productToEdit && productToEdit.price ? productToEdit.price : '' %>"
+              />
+              <% if(errors && errors.price) { %>
+              <span class="error"><%= errors.price.msg %></span>
+              <% } %>
+              <span id="error-price" class="spanErrors"></span>
+            </div>
           </div>
-        </main>
-      <%- include ('./partials/footer.ejs') %>
-    </body>
-
+          <div class="box">
+            <div class="formBox">
+              <label for="discount" class="form-label">Descuento:</label>
+              <input
+                type="text"
+                id="discount"
+                name="discount"
+                placeholder="Ej: 15"
+                class="form-input"
+                value="<%= productToEdit && productToEdit.discount ? productToEdit.discount : '' %>"
+              />
+            </div>
+            <div class="formBox">
+              <label for="category" class="form-label">Categoría:</label>
+              <select
+                name="category"
+                id="category"
+                class="form-input"
+                required
+                value="<%= data && data.category ? data.category : '' %>"
+              >
+                <% category.forEach(c => { %>
+                <option value="<%= c.id %>"><%= c.name %></option>
+                <% }) %>
+              </select>
+            </div>
+          </div>
+          <div class="box-textarea">
+            <div class="formBox">
+              <label for="description" class="form-label">Descripción:</label>
+              <textarea
+                name="description"
+                id="description"
+                class="form-input"
+                value="<%= productToEdit && productToEdit.description ? productToEdit.description : '' %>"
+              ><%= productToEdit && productToEdit.description ? productToEdit.description : '' %></textarea>
+              <% if(errors && errors.description) { %>
+              <span class="error"><%= errors.description.msg %></span>
+              <% } %>
+              <span id="error-description" class="spanErrors"></span>
+            </div>
+            <div class="formBox">
+              <label for="ingredients" class="form-label">Ingredientes:</label>
+              <textarea
+                name="ingredients"
+                id="ingredients"
+                class="form-input"
+                value="<%= productToEdit && productToEdit.ingredients ?  productToEdit.ingredients : '' %>"
+              ><%= productToEdit && productToEdit.ingredients ?  productToEdit.ingredients : '' %></textarea>
+              <% if(errors && errors.ingredients) { %>
+              <span class="error"><%= errors.ingredients.msg %></span>
+              <% } %>
+              <span id="error-ingredients" class="spanErrors"></span>
+            </div>
+            <div class="formBox">
+              <label for="nutritional_info" class="form-label"
+                >Informacion nutricional:</label
+              >
+              <textarea
+                name="nutritional_info"
+                id="nutritional_info"
+                class="form-input"
+                value="<%= productToEdit && productToEdit.nutritional_info ?  productToEdit.nutritional_info : '' %>"
+              ><%= productToEdit && productToEdit.nutritional_info ?  productToEdit.nutritional_info : '' %></textarea>
+              <% if(errors && errors.nutritional_info) { %>
+              <span class="error"><%= errors.nutritional_info.msg %></span>
+              <% } %>
+              <span id="error-ingredients" class="spanErrors"></span>
+            </div>
+            <div class="formBox">
+              <label for="cooking" class="form-label">Modo de coccion:</label>
+              <textarea
+                name="cooking"
+                id="cooking"
+                class="form-input"
+                value="<%= productToEdit && productToEdit.cooking ?  productToEdit.cooking : '' %>"
+              ><%= productToEdit && productToEdit.cooking ?  productToEdit.cooking : '' %></textarea>
+            </div>
+          </div>
+          <div class="formBox">
+            <label for="alt" class="form-label"
+              >Texto alternativo imagen:</label
+            >
+            <textarea
+              name="alt"
+              id="alt"
+              class="form-input"
+              value="<%= productToEdit && productToEdit.alt ?  productToEdit.alt : '' %>"
+            ><%= productToEdit && productToEdit.alt ?  productToEdit.alt : '' %></textarea>
+            <% if(errors && errors.alt) { %>
+            <span class="error"><%= errors.alt.msg %></span>
+            <% } %>
+            <span id="error-alt" class="spanErrors"></span>
+          </div>
+          <div class="box">
+            <div class="formBox">
+              <label for="fileImage" class="form-label"
+                >Imagen del producto:</label
+              >
+              <img
+                src="/images/<%=productToEdit.image%>"
+                alt="<%=productToEdit.alt%>"
+                class="imagenProducto formImage"
+              />
+              <input
+                type="hidden"
+                name="oldImage"
+                value="<%= productToEdit.image%>"
+              />
+              <input
+                type="file"
+                name="fileImage"
+                id="fileImage"
+                class="form-input"
+                value="/images/<%=productToEdit.image%>"
+                width="50%"
+              />
+              <span id="error-fileImage" class="spanErrors"></span>
+            </div>
+          </div>
+          <div class="box">
+            <div class="formBox">
+              <div class="buttonForm">
+                <button type="submit" class="button-general">
+                  Guardar cambios
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="formBox">
+          <form
+            action="/products/<%=productToEdit.id%>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit" class="button-general">
+              Eliminar producto
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+  </body>
 </html>
