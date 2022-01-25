@@ -10,7 +10,30 @@ window.addEventListener("load", () => {
 
   let formulario = document.querySelector("#form");
 
-  formulario.addEventListener("submit", function (evento) {
+  let errores = document.querySelectorAll('.spanErrors')
+
+  console.log(errores)
+
+/*   let hayErrores = function (){
+    for (i=0; i < errores.length; i++) {
+      if(errores[i].value == '' ){
+        return true
+      }
+    }}
+
+    console.log(errores)
+
+    formulario.addEventListener("submit", function (evento) {
+        if(!hayErrores){
+        evento.preventDefault();
+        } else {
+        formulario.submit();
+      }
+    }); */
+
+   
+
+    formulario.addEventListener("submit", function (evento) {
     if (!validaciones(evento)) {
       evento.preventDefault();
     } else {
@@ -69,7 +92,7 @@ window.addEventListener("load", () => {
         return true;
       }
     }
-  });
+  });  
 
   name.addEventListener("blur", function (e) {
     if (e.target.value == "") {

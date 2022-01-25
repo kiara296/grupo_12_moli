@@ -8,28 +8,46 @@ window.addEventListener("load", () => {
   name.focus();
 
   let formulario = document.querySelector("#form");
-
-  formulario.addEventListener("submit", function (evento) {
-    if (!validaciones(evento)) {
-      evento.preventDefault();
-    } else {
-      formulario.submit();
-    }
-
-    function validaciones(evento) {
-      if (name.value == "") {
-        document.querySelector("#error-name").innerHTML =
-          "&nbsp; &nbsp; &nbsp; * El nombre es obligatorio";
+ 
+ /* opcion 2 para prevent default */
+  /* let errores = document.querySelectorAll('.spanErrors') 
+ 
+  console.log(errores)
+  let hayErrores = function (){
+    for (i=0; i < errores.length; i++) {
+      if(errores[i].innerHTML = '' ){
+        return true
       }
+    }}
+
+    console.log(errores)
+
+    formulario.addEventListener("submit", function (evento) {
+        if(hayErrores){
+        evento.preventDefault();
+        }else {
+        formulario.submit();
+      }
+    });  */
+
+  
+  formulario.addEventListener("submit", function (evento) {
+  
+
+    
+       if (name.value == "") {
+        errores.push('El nombre es obligatorio');
+      } 
       if (lastname.value == "") {
-        document.querySelector("#error-lastname").innerHTML =
-          "&nbsp; &nbsp; &nbsp; * El apellido es obligatorio";
+        errores.push('El apellido es obligatorio')
       }
       if (user.value == "") {
+      
         document.querySelector("#error-user").innerHTML =
           "&nbsp; &nbsp; &nbsp; * El email es obligatorio.";
       }
       if (password.value == "") {
+        errores.push('El contraseña es obligatorio')
         document.querySelector("#error-password").innerHTML =
           "&nbsp; &nbsp; &nbsp; * La contraseña es obligatorio.";
       }
@@ -42,23 +60,39 @@ window.addEventListener("load", () => {
           "&nbsp; &nbsp; &nbsp; * La imagen es obligatoria";
       } else {
         return true;
+      } 
+      let errores = [];
+      console.log(errores)
+
+      if (errores.length > 0) {
+        evento.preventDefault();
+        errores = [];
+      } else {
+        formulario.submit();
       }
-    }
+  
   });
+
+ 
+
   name.addEventListener("blur", function (e) {
     if (e.target.value == "") {
       document.querySelector("#error-name").innerHTML =
         "&nbsp; &nbsp; &nbsp; * El nombre es obligatorio";
+        
     } else if (e.target.value.length >= 1 && e.target.value.length < 5) {
       document.querySelector("#error-name").innerHTML =
         "&nbsp; &nbsp; &nbsp; * Debe tener al menos 5 caracteres.";
+     
     } else {
       document.querySelector("#error-name").innerHTML = "";
+
     }
   });
 
   lastname.addEventListener("blur", function (e) {
     if (e.target.value == "") {
+      
       document.querySelector("#error-lastname").innerHTML =
         "&nbsp; &nbsp; &nbsp; * El apellido es obligatorio";
     } else if (e.target.value.length >= 1 && e.target.value.length < 5) {
@@ -73,6 +107,7 @@ window.addEventListener("load", () => {
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (e.target.value == "") {
+     
       document.querySelector("#error-user").innerHTML =
         "&nbsp; &nbsp; &nbsp; * El email es obligatorio.";
     } else if (!reEmail.test(e.target.value)) {
@@ -86,6 +121,7 @@ window.addEventListener("load", () => {
     let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     if (e.target.value == "") {
+  
       document.querySelector("#error-password").innerHTML =
         "&nbsp; &nbsp; &nbsp; * La contraseña es obligatorio.";
     } else if (!rePassword.test(e.target.value)) {
