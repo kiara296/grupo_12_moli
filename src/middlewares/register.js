@@ -7,10 +7,11 @@ const validations = [
     check("lastname").trim().notEmpty().withMessage("* Apellido requerido").isLength({min:5}).withMessage("* Debe tener al menos 5 caracteres"),
     check("email").trim().notEmpty().withMessage("* Email requerido").bail().isEmail().withMessage("* Debes escribir un correo electrónico válido")
     .custom(async (email, {req}) => {
-        const existingUser = 
-            await usersService.findByEmail(req.body.email)
+        const existingUser = await usersService.findByEmail(req.body.email)
         if (!existingUser) {
-            throw new Error('Direccion de correo ya registrado')
+            return false
+        } else {
+            throw new Error('Direccion de correo ya registrado') 
         }
     }),
     check("password").trim().notEmpty().withMessage("* Contraseña requerida").bail().isLength({min:8}).withMessage("* Debe tener al menos 8 caracteres"),

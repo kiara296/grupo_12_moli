@@ -8,73 +8,89 @@ window.addEventListener("load", () => {
   name.focus();
 
   let formulario = document.querySelector("#form");
- 
- /* opcion 2 para prevent default */
-  /* let errores = document.querySelectorAll('.spanErrors') 
- 
-  console.log(errores)
-  let hayErrores = function (){
-    for (i=0; i < errores.length; i++) {
-      if(errores[i].innerHTML = '' ){
-        return true
-      }
-    }}
-
-    console.log(errores)
-
-    formulario.addEventListener("submit", function (evento) {
-        if(hayErrores){
-        evento.preventDefault();
-        }else {
-        formulario.submit();
-      }
-    });  */
-
   
+  let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  let reEmail =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+ 
   formulario.addEventListener("submit", function (evento) {
+    if (!validaciones(evento)) {
+      evento.preventDefault();
+    } else {
+      formulario.submit();
+    }
   
-
-    
+    function validaciones(evento) {
+      /* validacion nombre */
        if (name.value == "") {
-        errores.push('El nombre es obligatorio');
+        document.querySelector("#error-name").innerHTML =
+        "&nbsp; &nbsp; &nbsp; * El nombre es obligatorio";
       } 
-      if (lastname.value == "") {
-        errores.push('El apellido es obligatorio')
+       else if (name.value.length >= 1 && name.value.length < 5) {
+      document.querySelector("#error-name").innerHTML =
+        "&nbsp; &nbsp; &nbsp; * Debe tener al menos 5 caracteres.";
+      } 
+
+       /* validacion apellido */
+      else if (lastname.value == "") {
+        document.querySelector("#error-lastname").innerHTML =
+          "&nbsp; &nbsp; &nbsp; * El apellido es obligatorio";
+      } 
+      else if (lastname.value.length >= 1 && lastname.value.length < 5) {
+        document.querySelector("#error-lastname").innerHTML =
+          "&nbsp; &nbsp; &nbsp; * Debe tener al menos 5 caracteres.";
       }
-      if (user.value == "") {
-      
+
+      /* validacion email */
+      else if (user.value == "") {
         document.querySelector("#error-user").innerHTML =
           "&nbsp; &nbsp; &nbsp; * El email es obligatorio.";
       }
-      if (password.value == "") {
+      else if (!reEmail.test(user.value)) {
+      document.querySelector("#error-user").innerHTML =
+        "&nbsp; &nbsp; &nbsp; * El email es invalido";
+      }
+      
+      /* validacion contraseña */
+      else if (password.value == "") {
         errores.push('El contraseña es obligatorio')
         document.querySelector("#error-password").innerHTML =
           "&nbsp; &nbsp; &nbsp; * La contraseña es obligatorio.";
       }
-      if (pass_confirm.value == "") {
+
+     else if (!rePassword.test(e.target.value)) {
+      document.querySelector("#error-password").innerHTML =
+        "&nbsp; &nbsp; &nbsp; * La contraseña como mínimo debe tener seis caracteres, al menos una letra y un número";
+      }
+
+      /* validacion confirmacion contraseña */
+      
+
+      else if (pass_confirm.value == "") {
         document.querySelector("#error-pass_confirm").innerHTML =
           "&nbsp; &nbsp; &nbsp; * La confirmación de la contraseña no puede estar vacia";
       }
-      if (profileImage.value == "") {
+      else if (password.value != pass_confirm.value && pass_confirm != "") {
+      document.querySelector("#error-pass_confirm").innerHTML =
+        "&nbsp; &nbsp; &nbsp; * Las contraseñas deben ser iguales";
+      }
+
+
+      /* validacion imagen */
+      else if (profileImage.value == "") {
         document.querySelector("#error-profileImage").innerHTML =
           "&nbsp; &nbsp; &nbsp; * La imagen es obligatoria";
-      } else {
+      } 
+      
+      else {
         return true;
       } 
-      let errores = [];
-      console.log(errores)
-
-      if (errores.length > 0) {
-        evento.preventDefault();
-        errores = [];
-      } else {
-        formulario.submit();
-      }
+    }
   
   });
 
  
-
   name.addEventListener("blur", function (e) {
     if (e.target.value == "") {
       document.querySelector("#error-name").innerHTML =
@@ -92,7 +108,6 @@ window.addEventListener("load", () => {
 
   lastname.addEventListener("blur", function (e) {
     if (e.target.value == "") {
-      
       document.querySelector("#error-lastname").innerHTML =
         "&nbsp; &nbsp; &nbsp; * El apellido es obligatorio";
     } else if (e.target.value.length >= 1 && e.target.value.length < 5) {

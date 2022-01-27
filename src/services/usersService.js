@@ -78,9 +78,10 @@ const usersService = {
       },
 
       findByEmail: async(email) => {
-        await userDao.findByEmail(email);
+        
+       return await userDao.findByEmail(email);
+    
       }
-
 }
 const mapDataToUsers = (data) => {
     return data.map(p => {

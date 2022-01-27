@@ -10,29 +10,6 @@ window.addEventListener("load", () => {
 
   let formulario = document.querySelector("#form");
 
-  let errores = document.querySelectorAll('.spanErrors')
-
-  console.log(errores)
-
-/*   let hayErrores = function (){
-    for (i=0; i < errores.length; i++) {
-      if(errores[i].value == '' ){
-        return true
-      }
-    }}
-
-    console.log(errores)
-
-    formulario.addEventListener("submit", function (evento) {
-        if(!hayErrores){
-        evento.preventDefault();
-        } else {
-        formulario.submit();
-      }
-    }); */
-
-   
-
     formulario.addEventListener("submit", function (evento) {
     if (!validaciones(evento)) {
       evento.preventDefault();
@@ -47,44 +24,43 @@ window.addEventListener("load", () => {
       }else if (name.value.length >= 1 && name.value.length < 5) {
         document.querySelector("#error-name").innerHTML =
           "&nbsp; &nbsp; &nbsp; * Debe tener al menos 5 caracteres.";
-      }
-      if (price.value == "") {
+      } else if (price.value == "") {
         document.querySelector("#error-price").innerHTML =
           "&nbsp; &nbsp; &nbsp; * El precio es obligatorio";
       }
-      if (ingredients.value == "") {
+      else if (ingredients.value == "") {
         document.querySelector("#error-ingredients").innerHTML =
           "&nbsp; &nbsp; &nbsp; * Los ingredientes son obligatorios.";
       } 
-      if (ingredients.value.length >= 1 && ingredients.value.length < 5) {
+      else if (ingredients.value.length >= 1 && ingredients.value.length < 5) {
         document.querySelector("#error-ingredients").innerHTML =
           "&nbsp; &nbsp; &nbsp; * Debe tener al menos 5 caracteres.";
       }
-      if (description.value == "") {
+      else if (description.value == "") {
         document.querySelector("#error-description").innerHTML =
           "&nbsp; &nbsp; &nbsp; * La descripcion es obligatoria.";
       }
-      if (description.value.length >= 1 && description.value.length < 20) {
+      else if (description.value.length >= 1 && description.value.length < 20) {
         document.querySelector("#error-description").innerHTML =
           "&nbsp; &nbsp; &nbsp; * Debe tener al menos 20 caracteres.";
       }
-      if (nutritional_info.value == "") {
+      else if (nutritional_info.value == "") {
         document.querySelector("#error-nutritional_info").innerHTML =
           "&nbsp; &nbsp; &nbsp; * La informacion nutricional es obligatoria";
       }
-      if (nutritional_info.value.length >= 1 && nutritional_info.value.length < 20) {
+      else if (nutritional_info.value.length >= 1 && nutritional_info.value.length < 20) {
         document.querySelector("#error-nutritional_info").innerHTML =
           "&nbsp; &nbsp; &nbsp; * Debe tener al menos 20 caracteres.";
       }
-      if (fileImage.value == "") {
+      else if (fileImage.value == "") {
         document.querySelector("#error-fileImage").innerHTML =
           "&nbsp; &nbsp; &nbsp; * La imagen es obligatoria";
       } 
-      if (!/\.(jpg|png|gif)$/i.test(fileImage.value)) {
+      else if (!/\.(jpg|png|gif)$/i.test(fileImage.value)) {
         document.querySelector("#error-fileImage").innerHTML =
           "&nbsp; &nbsp; &nbsp; *Formato invalido";
       }
-      if (alt.value == "") {
+      else if (alt.value == "") {
         document.querySelector("#error-alt").innerHTML =
           "&nbsp; &nbsp; &nbsp; * El texto alternativo es obligatorio";
       } 
@@ -114,7 +90,6 @@ window.addEventListener("load", () => {
       document.querySelector("#error-price").innerHTML = "";
     }
   });
-  console.log(ingredients.value.length)
   ingredients.addEventListener("blur", function (e) {
     if (e.target.value == "") {
       document.querySelector("#error-ingredients").innerHTML =

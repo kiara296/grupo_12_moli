@@ -27,12 +27,14 @@ const userDao = {
   },
 
   findByEmail: (email) => {
-    db.User.findOne({
+    return db.User.findOne({
       where: {
         username: email
       }
     });
   }
+
+
 
 }
 
