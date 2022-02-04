@@ -15,7 +15,10 @@ const productController = {
         userLogged: req.session.userLogged,
         
       }); */
+            
       return res.status(200).json({
+        totalOffer: offerProducts.length,
+        totalRecommended: recommendedProducts.length,
         offerProducts: offerProducts,
         recommendedProducts: recommendedProducts,
         userLogged: req.session.userLogged,
@@ -31,19 +34,22 @@ const productController = {
   catalog: async (req, res) => {
     try {
       const products = await productsService.getProducts();
-      res.render("catalog", { products, userLogged: req.session.userLogged, valueSearch: undefined });
+     
+      // res.render("catalog", { products, userLogged: req.session.userLogged, valueSearch: undefined });
+     
+     return res.status(200).json({
+      total: products.length,
+      products: products,
+      userLogged: req.session.userLogged,
+      valueSearch:undefined,
+      status: 200
+      })
     } catch(e) {
       console.log("\nOcurrio un error al intentar cargar el catalogo de productos\n", e);
     }
   },
 
-  /* Carrito de compra */
-  carrito: (req, res) => {
-  
-    res.render("carrito", { carrito: productsService.getCarrito(), userLogged: req.session.userLogged });
-  },
-
-  /* Detalle de un producto  */
+    /* Detalle de un producto  */
   detail: async (req, res) => {
     
     try {
@@ -51,7 +57,12 @@ const productController = {
       if (validatorService.isNullOrUndefined(productToShow)) {
         res.redirect("/products/" + req.params.id + "/notFound");
       } else {
-        res.render("detail", { productToShow, userLogged: req.session.userLogged });
+        //res.render("detail", { productToShow, userLogged: req.session.userLogged });
+        return res.status(200).json({
+          productToShow: productToShow,
+          userLogged: req.session.userLogged,
+          status: 200
+          })
       }
     } catch(e) {
       console.log(e);

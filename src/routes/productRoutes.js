@@ -19,7 +19,6 @@ if (!file){
  */
 
 /* Carrito producto */
-router.get('/carrito', productController.carrito);
 router.delete('/:id/carrito', productController.carritoDelete);
 
 /* Detalle producto */

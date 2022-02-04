@@ -60,9 +60,7 @@ const productsService = {
     await productDao.delete(id);
   },
   
-  getCarrito: () => {
-
-  },
+ 
 
 };
 
