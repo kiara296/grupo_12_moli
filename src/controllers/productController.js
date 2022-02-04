@@ -9,14 +9,19 @@ const productController = {
     try {
       const offerProducts = await productsService.getOffer();
       const recommendedProducts = await productsService.getRecommended();
-      
-      res.render("index", {
+      /* res.render("index", {
         offerProducts,
         recommendedProducts,
         userLogged: req.session.userLogged,
         
-      },
-      );
+      }); */
+      return res.status(200).json({
+        offerProducts: offerProducts,
+        recommendedProducts: recommendedProducts,
+        userLogged: req.session.userLogged,
+        status: 200
+        })
+
     } catch(e) {
       console.log("\nOcurrio un error al intentar cargar la home\n", e);
     }
@@ -24,7 +29,6 @@ const productController = {
 
   /* Catalogo todos los productos */
   catalog: async (req, res) => {
- 
     try {
       const products = await productsService.getProducts();
       res.render("catalog", { products, userLogged: req.session.userLogged, valueSearch: undefined });
