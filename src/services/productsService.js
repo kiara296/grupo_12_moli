@@ -25,8 +25,8 @@ const productsService = {
     return productsMapped;
   },
 
-  getProducts: async () => {
-    const dataFetched = await productDao.getProducts();
+  getPage: async (page) => {
+    const dataFetched = await productDao.getPage(page);
 
     const productsMapped = mapDataToProducts(dataFetched);
 
@@ -74,6 +74,10 @@ const productsService = {
 
   getProductsWithUrlDetail: (products) => {
     return products.map(product => getProductWithUrl(product));
+  },
+
+  countTotalProducts: async() => {
+    return await productDao.countTotalProducts();
   },
 };
 

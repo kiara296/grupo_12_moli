@@ -4,9 +4,13 @@ const db = require('../../database/models');
 const { Op } = require("sequelize");
 
 const productDao = {
-    getProducts: async() => {
+    getPage: async(page) => {
+      const limit = 10;
+      const offset = page * limit;
         return await db.Product.findAll({
-          include: [{ association: "product_category" }]
+          limit,
+          offset,
+          include: [{ association: "product_category" }],
         });
       },
 
@@ -60,6 +64,10 @@ const productDao = {
             id: paramId
           }
         });
+      },
+
+      countTotalProducts: () => {
+        return db.Product.count();
       },
 }
 
