@@ -9,22 +9,13 @@ const productController = {
     try {
       const offerProducts = await productsService.getOffer();
       const recommendedProducts = await productsService.getRecommended();
-      /* res.render("index", {
+       res.render("index", {
         offerProducts,
         recommendedProducts,
         userLogged: req.session.userLogged,
         
-      }); */
-            
-      return res.status(200).json({
-        totalOffer: offerProducts.length,
-        totalRecommended: recommendedProducts.length,
-        offerProducts: offerProducts,
-        recommendedProducts: recommendedProducts,
-        userLogged: req.session.userLogged,
-        status: 200
-        })
-
+      }); 
+         
     } catch(e) {
       console.log("\nOcurrio un error al intentar cargar la home\n", e);
     }
@@ -35,15 +26,8 @@ const productController = {
     try {
       const products = await productsService.getProducts();
      
-      // res.render("catalog", { products, userLogged: req.session.userLogged, valueSearch: undefined });
+      res.render("catalog", { products, userLogged: req.session.userLogged, valueSearch: undefined });
      
-     return res.status(200).json({
-      total: products.length,
-      products: products,
-      userLogged: req.session.userLogged,
-      valueSearch:undefined,
-      status: 200
-      })
     } catch(e) {
       console.log("\nOcurrio un error al intentar cargar el catalogo de productos\n", e);
     }
@@ -57,12 +41,8 @@ const productController = {
       if (validatorService.isNullOrUndefined(productToShow)) {
         res.redirect("/products/" + req.params.id + "/notFound");
       } else {
-        //res.render("detail", { productToShow, userLogged: req.session.userLogged });
-        return res.status(200).json({
-          productToShow: productToShow,
-          userLogged: req.session.userLogged,
-          status: 200
-          })
+        res.render("detail", { productToShow, userLogged: req.session.userLogged });
+        
       }
     } catch(e) {
       console.log(e);
