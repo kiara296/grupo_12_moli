@@ -4,6 +4,7 @@ const app = express();
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const shoppingCartRoutes = require('./routes/shoppingCart');
+const productRoutesApi = require('./routes/productRoutesApi');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -16,7 +17,7 @@ app.use(cookieAuth);
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
-
+app.use('/api/products', productRoutesApi);
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 app.use('/shoppingCart', shoppingCartRoutes);

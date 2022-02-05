@@ -60,16 +60,35 @@ const productsService = {
     await productDao.delete(id);
   },
   
- 
+  countByCategory: (products) => {
+    const offer = lengthByCategory(products, 'OFFER');
+    const recommended = lengthByCategory(products, 'RECOMMENDED');
+    const others = lengthByCategory(products, 'ALL');
 
+    return {
+      countOffer: offer,
+      countRecommended: recommended,
+      countOthers: others
+    }
+  },
+
+  getProductsWithUrlDetail: (products) => {
+    return products.map(product => getProductWithUrl(product));
+  },
 };
 
- 
+const getProductWithUrl = (product) => {
+  return {...product, urlDetail: `/api/products/${product.id}/detail`}
+}
+
+const lengthByCategory = (products, category) => {
+  return products.filter(product => product.product_category == category).length;
+}
 
 const mapDataToProducts = (data) => {
-return data.map(p => {
-  return {...p.dataValues, product_category: p.product_category.dataValues.name}
-});
+  return data.map(p => {
+    return {...p.dataValues, product_category: p.product_category.dataValues.name}
+  });
 }
 
 module.exports = productsService;
