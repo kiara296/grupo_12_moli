@@ -21,14 +21,12 @@ const usersService = {
           return user;
         },
 
-        getByIdApi: async (id) => {
-            const dataFetched = await userDao.getById(id);
-            const user = {...dataFetched.dataValues, password: null, category_user: null}
-            return user;
-          },
+    getByIdApi: async (id) => {
+        const dataFetched = await userDao.getById(id);
+        const user = {...dataFetched.dataValues, password: null, category_user: null}
+        return user;
+        },
     
-
-
     auth: async (userName, pssw) => {
         try {
             const dataFetched = await db.User.findAll({

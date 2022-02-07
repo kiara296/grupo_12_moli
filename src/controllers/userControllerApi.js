@@ -10,7 +10,6 @@ const userControllerApi = {
           const users = await usersService.getUsers();
           const userWithUrlDetail = usersService.getUsersWithUrlDetail(users);
           
-    
           return res.status(200).json({
           total: users.length,
           users: userWithUrlDetail,
@@ -27,8 +26,7 @@ const userControllerApi = {
         try{
                  
           const dataToEdit = await usersService.getByIdApi(req.params.id);
-          const userToEdit = {... dataToEdit
-            }   
+          const userToEdit = {... dataToEdit}   
             
             return res.status(200).json({
                 userToEdit: userToEdit,
