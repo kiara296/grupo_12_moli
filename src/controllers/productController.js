@@ -14,8 +14,8 @@ const productController = {
         recommendedProducts,
         userLogged: req.session.userLogged,
         
-      }); 
-         
+      });
+
     } catch(e) {
       console.log("\nOcurrio un error al intentar cargar la home\n", e);
     }

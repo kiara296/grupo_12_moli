@@ -38,6 +38,7 @@ const userController = {
       const data = null;
       
       const dataToEdit = await usersService.getById(req.params.id);
+      console.log(dataToEdit)
       const userToEdit = {... dataToEdit, password_confirm: dataToEdit.password
       }     
       res.render("editUserForm", {

@@ -20,9 +20,13 @@ const usersService = {
           const user = {...dataFetched.dataValues, category_user: dataFetched.category_user.dataValues.name}
           return user;
         },
+
+    getByIdApi: async (id) => {
+        const dataFetched = await userDao.getById(id);
+        const user = {...dataFetched.dataValues, password: null, category_user: null}
+        return user;
+        },
     
-
-
     auth: async (userName, pssw) => {
         try {
             const dataFetched = await db.User.findAll({
@@ -81,12 +85,18 @@ const usersService = {
         
        return await userDao.findByEmail(email);
     
+      },
+      getUsersWithUrlDetail: (user) => {
+        return user.map(user => getUserWithUrl(user));
       }
 }
 const mapDataToUsers = (data) => {
     return data.map(p => {
-      return {...p.dataValues, user_category: p.user_category.dataValues.name}
+      return {...p.dataValues}
     });
     }
 
+const getUserWithUrl = (user) => {
+    return {...user, urlDetail: `/api/users/${user.id}/detail`}
+      }
 module.exports = usersService;
