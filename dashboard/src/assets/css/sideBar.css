@@ -1,0 +1,9 @@
+.sidebar .sidebar-brand {
+    margin: 20%;
+}
+
+.bg-gradient-secondary {
+    background-color:  #96bf85 !important;
+    background-image: linear-gradient(180deg,#7ba569 10%,#638157 100%)!important;
+}
+

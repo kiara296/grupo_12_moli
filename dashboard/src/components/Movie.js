@@ -27,7 +27,7 @@ class Movies extends Component{
     return(
         <React.Fragment>
 				    {/*<!-- PRODUCTS LIST -->*/}
-					<h1 className="h3 mb-2 text-gray-800">All the movies in the Database</h1>
+					<h1 className="h3 mb-2 text-gray-800">Listado de todos los productos</h1>
 					
 					{/*<!-- DataTales Example -->*/}
 					<div className="card shadow mb-4">
@@ -37,19 +37,21 @@ class Movies extends Component{
 									<thead className='table-primary'>
 										<tr>
                                             <th>Id</th>
-                                            <th>Titulo</th>
-                                            <th>Calificación</th>
-                                            <th>Premios</th>
-                                            <th>Duración</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Descuento</th>
+                                            <th>Descripción</th>
+											<th>Ingredientes</th>
 										</tr>
 									</thead>
 									<tfoot>
 										<tr>
-                                            <th>Id</th>
-                                            <th>Titulo</th>
-                                            <th>Calificación</th>
-                                            <th>Premios</th>
-                                            <th>Duración</th>
+											<th>Id</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Descuento</th>
+                                            <th>Descripción</th>
+											<th>Ingredientes</th>
 										</tr>
 									</tfoot>
 									<tbody>
