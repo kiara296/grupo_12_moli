@@ -3,7 +3,7 @@ const app = express();
 
 const userRoutes = require('./routes/userRoutes');
 const userRoutesApi = require('./routes/userRoutesApi');
-const productRoutesApi= require('/routes/productRoutesApi');
+const productRoutesApi= require('./routes/productRoutesApi');
 const productRoutes = require('./routes/productRoutes');
 const shoppingCartRoutes = require('./routes/shoppingCart');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
