@@ -32,6 +32,14 @@ const productsService = {
 
     return productsMapped;
   },
+ 
+  getProducts: async () => {
+    const dataFetched = await productDao.getProducts();
+
+    const productsMapped = mapDataToProducts(dataFetched);
+
+    return productsMapped;
+  },
 
   create: async (body) => {
     const product = {

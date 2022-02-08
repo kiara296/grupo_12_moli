@@ -13,6 +13,12 @@ const productDao = {
           include: [{ association: "product_category" }],
         });
       },
+      
+      getProducts: async() => {
+        return await db.Product.findAll({
+          include: [{ association: "product_category" }]
+        });
+      },
 
     getRecommended: () => {
         return db.Product.findAll({

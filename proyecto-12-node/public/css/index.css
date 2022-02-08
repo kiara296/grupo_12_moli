@@ -1,5 +1,8 @@
 @import url("general-styles.css");
 
+html {
+  scroll-behavior: smooth;
+}
 /* H3 */
 
 body h3 {
