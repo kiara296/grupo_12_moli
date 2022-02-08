@@ -14,8 +14,7 @@ Paginas referentes:
 Tablero Trello
 https://trello.com/b/SGY03mtR/moli
 
-URL Api Products: 
-/api/products/catalog -> Devuelve todos los productos del catalogo 
+URL Api Products:
+/api/products/catalog -> Devuelve todos los productos del catalogo
 /api/products/:id/detail -> Devuelve el detalle de un producto por id
-
 
