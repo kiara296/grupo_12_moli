@@ -4,9 +4,9 @@ import '../assets/css/sideBar.css'
 
 /* //Aquí importo todos los componentes que voy a llamar
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
+import CategoryInDb from './CategoryInDb';
 import LastMovieInDb from './LastMovieInDb';
-import Movies from './ContentRowMovies';
+import Products from './ContentRowMovies';
 import Error404 from './Error404'; */
 
 function SideBar(){
@@ -67,9 +67,9 @@ function SideBar(){
              {/*Aquí armo mis rutas */}
             {/*  <Routes>
                 <Route exact path='/' element={<ContentWrapper/>} />
-                <Route exact path='/GenresInDb' element={<GenresInDb/>} /> 
+                <Route exact path='/CategoryInDb' element={<CategoryInDb/>} /> 
                 <Route exact path='/LastMovieInDb' element={<LastMovieInDb/>} />
-                <Route exact path='/Movies' element={<Movies/>} />
+                <Route exact path='/Products' element={<Products/>} />
                 <Route exact path='*' element={<Error404/>} />
             </Routes> */}
         </React.Fragment>
