@@ -26,8 +26,8 @@ app.use('/api/products',productRoutesApi);
 app.use('/shoppingCart', shoppingCartRoutes);
 app.use('/', productRoutes);
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
+app.listen(3001, () => {
+    console.log("Server running on port 3001");
 });
 
 
