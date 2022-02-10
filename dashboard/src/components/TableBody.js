@@ -6,10 +6,11 @@ function TableBody(props) {
       <tbody>
         <tr>
           <td>{props.id}</td>
-          <td>{props.title}</td>
-          <td>{props.rating}</td>
-          <td>{props.awards}</td>
-          <td>{props.length}</td>
+          <td>{props.name}</td>
+          <td>{props.category}</td>
+          <td>{props.price}</td>
+          <td>{props.discount}</td>
+          <td>{props.description}</td>
         </tr>
       </tbody>
     </>

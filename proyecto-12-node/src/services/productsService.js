@@ -73,11 +73,13 @@ const productsService = {
     const recommended = lengthByCategory(products, 'RECOMMENDED');
     const others = lengthByCategory(products, 'ALL');
 
-    return {
-      countOffer: offer,
-      countRecommended: recommended,
-      countOthers: others
-    }
+    return [
+     {name: 'Offer', count: offer},
+     {name: 'Recommended', count: recommended}, 
+     {name: 'Others', count: others} 
+    ]
+      
+    
   },
 
   getProductsWithUrlDetail: (products) => {

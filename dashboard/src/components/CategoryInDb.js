@@ -5,14 +5,21 @@ import {httpProductService} from "../service/httpProductService";
 function CategoryInDb() {
   const [categoriesList, setCategoriesList] = useState([]);
 
-  useEffect(async () => {
-    try {
-      const data = await httpProductService.getProducts()
+ const fetchProdcts = async()=>{
+   try{
+    const {countByCategory}= await httpProductService.getProducts()
 
-      setCategoriesList(data)
-      
-    } catch (e) {}
-  }, []);
+    setCategoriesList(countByCategory)
+    console.log(categoriesList)
+   } catch(e){console.log(e)}
+ }
+ 
+  
+  
+  useEffect(() => {
+    fetchProdcts()
+  },[]);
+
 
   return (
     <>
@@ -27,7 +34,7 @@ function CategoryInDb() {
           <div className="card-body">
             <div className="row">
             {categoriesList.map((category, index) => {
-                return <Category {...category} key={category + index} />;
+                return <Category category={category} key={category + index} />;
               })}
             </div>
           </div>
