@@ -5,17 +5,14 @@ import {httpProductService} from "../service/httpProductService";
 function CategoryInDb() {
   const [categoriesList, setCategoriesList] = useState([]);
 
- const fetchProdcts = async()=>{
+ const fetchProdcts = async() => {
    try{
-    const {countByCategory}= await httpProductService.getProducts()
+    const {countByCategory} = await httpProductService.getProducts(0);
 
     setCategoriesList(countByCategory)
-    console.log(categoriesList)
    } catch(e){console.log(e)}
  }
  
-  
-  
   useEffect(() => {
     fetchProdcts()
   },[]);
