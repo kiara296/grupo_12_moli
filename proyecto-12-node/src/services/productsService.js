@@ -89,6 +89,12 @@ const productsService = {
   countTotalProducts: async() => {
     return await productDao.countTotalProducts();
   },
+
+  getLastProductCreate: (products) => {
+    const idsProducts = products.map(product => product.id);
+     const maxId = Math.max(...idsProducts);
+    return products.filter(product => product.id == maxId).pop();
+  }
 };
 
 const getProductWithUrl = (product) => {

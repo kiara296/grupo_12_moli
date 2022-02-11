@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SmallCard from './SmallCard';
+import { httpProductService } from '../service/httpProductService'
 
-let productInDataBase = {
+/* let productInDataBase = {
     color:   "primary",
     titulo: "Total de Productos",
     valor: 21,
@@ -24,9 +25,28 @@ let user = {
 }
 
 let cardProps = [productInDataBase,amount,user];
+ */
+
+const ContentRowTop = () => {
+    const[countProducts, setCountProducts] = useState([]);
+    const[users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetchProdcts();
+    }, []);
+
+    const fetchProdcts = async() => {
+        try {
+            const products = await httpProductService.getProducts(0);
+            const {total} = products;
+            const {countByCategory} = products;
+            const totalCategories = countByCategory.length;
 
 
-function ContentRowTop(){
+         setCountProducts(total);
+        } catch(e){console.log(e)}
+    }
+
     return (
         <React.Fragment>
         {/*<!-- Content Row -->*/}

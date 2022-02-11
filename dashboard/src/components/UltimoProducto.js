@@ -3,13 +3,13 @@ import { httpProductService } from "../service/httpProductService";
 
 function UltimoProducto() {
   const [productList, setProductList] = useState([]);
+  
   useEffect(() => {
     (async function () {
       try {
-        const { products } = await httpProductService.getProducts();
-        const lastProduct =  products.slice(-1)[0];
+        const { lastProduct } = await httpProductService.getProducts(0);
+        console.log(lastProduct)
         setProductList(lastProduct);
-        console.log(products, "+++++++");
       } catch (e) {
         console.error(e);
       }
