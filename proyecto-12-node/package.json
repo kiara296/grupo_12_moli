@@ -30,5 +30,6 @@
     "mysql2": "^2.3.3",
     "run": "^1.4.0",
     "sequelize": "^6.12.4"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
