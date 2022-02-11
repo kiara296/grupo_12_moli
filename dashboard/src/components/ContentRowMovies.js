@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import SmallCard from './SmallCard';
-import { httpProductService } from '../service/httpProductService'
+import React, { useEffect, useState } from "react";
+import SmallCard from "./SmallCard";
+import { httpProductService } from "../service/httpProductService";
 
 /* let productInDataBase = {
     color:   "primary",
@@ -28,36 +28,39 @@ let cardProps = [productInDataBase,amount,user];
  */
 
 const ContentRowTop = () => {
-    const[countProducts, setCountProducts] = useState([]);
-    const[users, setUsers] = useState([]);
+  const [countProducts, setCountProducts] = useState([]);
+  const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        fetchProdcts();
-    }, []);
+  useEffect(() => {
+    fetchProdcts();
+  }, []);
 
-    const fetchProdcts = async() => {
-        try {
-            const products = await httpProductService.getProducts(0);
-            const {total} = products;
-            const {countByCategory} = products;
-            const totalCategories = countByCategory.length;
+  const fetchProdcts = async () => {
+    try {
+      const products = await httpProductService.getProducts(0);
+        const users = await httpProductService.getUsers(0);
 
+        const {totalUsers} = users
+        
+      const { totalProducts } = products;
+      const { countByCategory } = products;
+      const totalCategories = countByCategory.length;
 
-         setCountProducts(total);
-        } catch(e){console.log(e)}
+      setCountProducts(total);
+    } catch (e) {
+      console.log(e);
     }
+  };
 
-    return (
-        <React.Fragment>
-        {/*<!-- Content Row -->*/}
-        <div className="row">
-            {
-                cardProps.map((producto,index)=>{
-                    return <SmallCard  {...producto}  key= {index}/>
-                })
-            }      
-        </div>
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      {/*<!-- Content Row -->*/}
+      <div className="row">
+        {cardProps.map((producto, index) => {
+          return <SmallCard {...producto} key={index} />;
+        })}
+      </div>
+    </React.Fragment>
+  );
+};
 export default ContentRowTop;

@@ -3,11 +3,12 @@ import axios from "axios";
 
 export const httpProductService = {
     getUsers: async () => {
-      const { data } = await axios.get(`${REST_SERVER_URL}/api/users/allUsers`);
+      const { data } = await axios.get(`api/users/allUsers`);
       return data;
     },
+
     getUserDetail: async (id) => {
-      const { data } = await axios.get(`${REST_SERVER_URL}/api/users/${id}/detail`);
+      const { data } = await axios.get(`api/users/${id}/detail`);
       return data;
     },
   };

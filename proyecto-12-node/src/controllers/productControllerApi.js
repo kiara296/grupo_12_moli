@@ -17,7 +17,7 @@ const productControllerApi = {
       const countByCategory = productsService.countByCategory(allProducts);
 
       return res.status(200).json({
-      total: productsCount,
+      totalProducts: productsCount,
       countByCategory: countByCategory,
       products: productsWithUrlDetail,
       lastProduct: lastProduct,

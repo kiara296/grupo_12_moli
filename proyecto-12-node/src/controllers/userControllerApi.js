@@ -11,7 +11,7 @@ const userControllerApi = {
           const userWithUrlDetail = usersService.getUsersWithUrlDetail(users);
           
           return res.status(200).json({
-          total: users.length,
+          totalUsers: users.length,
           users: userWithUrlDetail,
           userLogged: req.session.userLogged,
           valueSearch:undefined,
