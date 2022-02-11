@@ -4,7 +4,7 @@ import { constants } from "../constants/constants";
 
 export const httpProductService = {
   getProducts: async (page) => {
-    const { data } = await axios.get(`http://localhost:3001/api/products/catalog?page=${page}`);
+    const { data } = await axios.get(`api/products/catalog?page=${page}`);
     console.log(data);
     return data;
   },
