@@ -9,10 +9,10 @@ const productControllerApi = {
   /* Catalogo todos los productos */
   catalog: async (req, res) => {
     try {
-      const pageProducts = await productsService.getPage(req.query.page);
+     /*  const pageProducts = await productsService.getPage(req.query.page); */
       const allProducts = await productsService.getProducts();
       const productsCount = await productsService.countTotalProducts();
-      const productsWithUrlDetail = productsService.getProductsWithUrlDetail(pageProducts);
+      const productsWithUrlDetail = productsService.getProductsWithUrlDetail(allProducts);
       const countByCategory = productsService.countByCategory(allProducts);
 
       return res.status(200).json({

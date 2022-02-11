@@ -1,5 +1,5 @@
 import React from "react";
-import error from '../assets/images/error404.jpg';
+import error from '../assets/images/error404-moli.jpeg';
 
 function Error404(){
     return(

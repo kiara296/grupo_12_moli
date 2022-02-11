@@ -15,7 +15,7 @@ const Products = () => {
               className="table table-bordered table-striped table-hover"
               id="dataTable"
               width="100%"
-              cellspacing="0"
+              cellSpacing="0"
             >
               <TableHead />
               <TableBody />
