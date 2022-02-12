@@ -8,7 +8,6 @@ function UltimoProducto() {
     (async function () {
       try {
         const { lastProduct } = await httpProductService.getProducts(0);
-        console.log(lastProduct)
         setProductList(lastProduct);
       } catch (e) {
         console.error(e);

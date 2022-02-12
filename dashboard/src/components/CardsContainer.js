@@ -1,8 +1,9 @@
 import React from "react";
 import CategoryInDb from "./CategoryInDb";
 import UltimoProducto from "./UltimoProducto";
-import ContentRowMovies from "./ContentRowMovies";
-function ContentRowTop() {
+import CardsTotalsContainer from "./CardsTotalsContainer";
+
+function CardsContainer() {
   return (
     <>
       {/*<!-- Content Row Top -->*/}
@@ -12,7 +13,7 @@ function ContentRowTop() {
         </div>
 
         {/*<!-- Content Row Movies-->*/}
-        <ContentRowMovies />
+        <CardsTotalsContainer />
         {/*<!-- End movies in Data Base -->*/}
 
         {/*<!-- Content Row Last Movie in Data Base -->*/}
@@ -33,4 +34,4 @@ function ContentRowTop() {
     </>
   );
 }
-export default ContentRowTop;
+export default CardsContainer;

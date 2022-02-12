@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export const httpProductService = {
+export const httpUserService = {
     getUsers: async () => {
       const { data } = await axios.get(`api/users/allUsers`);
       return data;
