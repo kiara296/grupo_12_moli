@@ -35,7 +35,7 @@ const productsService = {
   },
 
   getTotalPages: (products) => {
-     return  Math.ceil(products.length/pageLimit.limit);
+     return  Math.ceil(products.length/pageLimit.limit)-1;
   },
  
   getProducts: async () => {

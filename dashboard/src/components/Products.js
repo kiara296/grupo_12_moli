@@ -15,6 +15,7 @@ let headValues = {
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
+  const [allPages, setAllPages] = useState([]);
   const [page, setPage] = useState(0);
 
   useEffect(() => {
@@ -24,10 +25,12 @@ const Products = () => {
   useEffect(() => {
     fetchData();
   }, [page]);
-
+ 
   const nextPage = () => {
    
-    setPage( page +1)
+    setPage(page +1 > allPages ? page : page +1)
+    console.log(page , '+++++++++++')
+    /* 3 +1 = 4 > 3 ? 3 : 4 */
   }
   
   const previousPage = () => {
@@ -40,8 +43,10 @@ const Products = () => {
       const totalProducts = await httpProductService.getProducts(page);
 
       const { products } = totalProducts;
+      const { totalPages } = totalProducts ;
 
       setAllProducts(products);
+      setAllPages(totalPages);
       
     } catch (e) {
       console.log(e);

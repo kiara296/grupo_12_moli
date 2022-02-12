@@ -59,7 +59,6 @@ function UltimoProducto() {
           </a>
         </div>
       </div>
-      ;
     </>
   );
 }
