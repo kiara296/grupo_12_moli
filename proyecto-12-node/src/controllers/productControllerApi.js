@@ -10,11 +10,13 @@ const productControllerApi = {
   catalog: async (req, res) => {
     try {
       const pageProducts = await productsService.getPage(req.query.page);
+      const page = pageProducts == 0 ? productsService.getPage(req.query.page-1) : pageProducts;
       const allProducts = await productsService.getProducts();
       const lastProduct = productsService.getLastProductCreate(allProducts);
       const productsCount = await productsService.countTotalProducts();
-      const productsWithUrlDetail = productsService.getProductsWithUrlDetail(pageProducts);
+      const productsWithUrlDetail = productsService.getProductsWithUrlDetail(page);
       const countByCategory = productsService.countByCategory(allProducts);
+
 
       return res.status(200).json({
       totalProducts: productsCount,

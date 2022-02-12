@@ -1,16 +1,16 @@
 import React from "react";
 
-function TableHead(props) {
+function TableHead({headValues}) {
   return (
     <>
       <thead className="table-primary">
         <tr>
-          <td>{props.id}</td>
-          <td>{props.name}</td>
-          <td>{props.category}</td>
-          <td>{props.price}</td>
-          <td>{props.discount}</td>
-          <td>{props.description}</td>
+          <td>{headValues.id}</td>
+          <td>{headValues.name}</td>
+          <td>{headValues.category}</td>
+          <td>{headValues.price}</td>
+          <td>{headValues.discount}</td>
+          <td>{headValues.description}</td>
         </tr>
       </thead>
     </>

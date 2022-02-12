@@ -3,26 +3,46 @@ import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 import { httpProductService } from "../service/httpProductService";
 
+let headValues = {
+  id: "id",
+  name: "Nombre",
+  category: "Categoría",
+  price: "Precio",
+  discount: "Descuento",
+  description: "Descripcion",
+};
+
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
- 
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
-    
     fetchData();
   }, []);
+  
+  useEffect(() => {
+    fetchData();
+  }, [page]);
+
+  const nextPage = () => {
+    
+    setPage( page +1)
+  }
+  
+  const previousPage = () => {
+    const numPage = page -1
+    setPage(numPage < 0 ? 0 : numPage )
+  }
 
   const fetchData = async () => {
     try {
-      const totalProducts = await httpProductService.getProducts(0);
-      
+      const totalProducts = await httpProductService.getProducts(page);
+
       const { products } = totalProducts;
-      
-      
+
       setAllProducts(products);
-      console.log(allProducts)
-      
+      console.log(allProducts);
     } catch (e) {
       console.log(e);
     }
@@ -41,10 +61,42 @@ const Products = () => {
               width="100%"
               cellSpacing="0"
             >
-              <TableHead />
-              <TableBody />
+              <TableHead headValues={headValues} />
+              {allProducts.map((producto, index) => {
+                return <TableBody {...producto} key={index} />;
+              })}
             </table>
           </div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <button onClick={previousPage} class="page-link" href="#">
+                  Previous
+                </button>
+              </li>
+              <li class="page-item">
+                <button onClick={nextPage} class="page-link" href="#">
+                  Next
+                </button>
+           {/*    <li class="page-item">
+                <a class="page-link" href="#">
+                  1
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">
+                  2
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">
+                  3
+                </a>
+              </li> */}
+              
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </>

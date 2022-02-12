@@ -7,7 +7,7 @@ function TableBody(props) {
         <tr>
           <td>{props.id}</td>
           <td>{props.name}</td>
-          <td>{props.category}</td>
+          <td>{props.product_category}</td>
           <td>{props.price}</td>
           <td>{props.discount}</td>
           <td>{props.description}</td>
