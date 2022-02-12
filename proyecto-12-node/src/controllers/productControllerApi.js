@@ -1,7 +1,5 @@
 const productsService = require("../services/productsService");
 const validatorService = require("../services/validatorService");
-const pageLimit = require('../constants/pageLimit');
-
 
 const productControllerApi = {
   
@@ -11,6 +9,7 @@ const productControllerApi = {
       const pageProducts = await productsService.getPage(req.query.page);
       const allProducts = await productsService.getProducts();
       const totalPages = productsService.getTotalPages(allProducts);
+      console.log(totalPages);
       const lastProduct = productsService.getLastProductCreate(allProducts);
       const productsCount = await productsService.countTotalProducts();
       const productsWithUrlDetail = productsService.getProductsWithUrlDetail(pageProducts);

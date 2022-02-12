@@ -1,6 +1,7 @@
 // BUSINESS LAYER
 
 const productDao = require('../dao/productDao');
+const pageLimit = require('../constants/pageLimit');
 
 const productsService = {
   getById: async (id) => {
@@ -33,8 +34,8 @@ const productsService = {
     return productsMapped;
   },
 
-  getTotalPages: async (products) => {
-     return  Math.ceil(allProducts.length/pageLimit.limit);
+  getTotalPages: (products) => {
+     return  Math.ceil(products.length/pageLimit.limit);
   },
  
   getProducts: async () => {
