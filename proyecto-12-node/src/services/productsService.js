@@ -32,6 +32,10 @@ const productsService = {
 
     return productsMapped;
   },
+
+  getTotalPages: async (products) => {
+     return  Math.ceil(allProducts.length/pageLimit.limit);
+  },
  
   getProducts: async () => {
     const dataFetched = await productDao.getProducts();

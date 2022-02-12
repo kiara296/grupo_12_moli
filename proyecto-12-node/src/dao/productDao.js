@@ -2,10 +2,11 @@
 
 const db = require('../../database/models');
 const { Op } = require("sequelize");
+const pageLimit = require('../constants/pageLimit');
 
 const productDao = {
     getPage: async(page) => {
-      const limit = 10;
+      const limit = pageLimit.limit;
       const offset = page * limit;
         return await db.Product.findAll({
           limit,

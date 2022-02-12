@@ -26,7 +26,7 @@ const Products = () => {
   }, [page]);
 
   const nextPage = () => {
-    
+   
     setPage( page +1)
   }
   
@@ -42,7 +42,7 @@ const Products = () => {
       const { products } = totalProducts;
 
       setAllProducts(products);
-      console.log(allProducts);
+      
     } catch (e) {
       console.log(e);
     }
