@@ -8,21 +8,21 @@ const validateNotUserInSessionMiddleware = require('../middlewares/validateNotUs
 const validateUserInSessionMiddleware = require('../middlewares/validateUserInSessionMiddleware');
 
 
-router.get ('/login', validateNotUserInSessionMiddleware, userController.login);
+router.get ('/login',/*  validateNotUserInSessionMiddleware, */ userController.login);
 
-router.get ('/:id/edit', validateUserInSessionMiddleware,  userController.edit);
+router.get ('/:id/edit', /* validateUserInSessionMiddleware, */  userController.edit);
 
-router.put ('/:id', [upload.single('profileImage'), validateUserInSessionMiddleware],  userController.update);
+router.put ('/:id', [upload.single('profileImage')/* , validateUserInSessionMiddleware */],  userController.update);
 
-router.delete ('/:id', validateUserInSessionMiddleware,  userController.delete);
+router.delete ('/:id', /* validateUserInSessionMiddleware, */  userController.delete);
 
 router.post('/logout', upload.none(), userController.logout);
 
-router.get ('/regmoli', validateNotUserInSessionMiddleware, userController.regmoli);
+router.get ('/regmoli', /* validateNotUserInSessionMiddleware, */ userController.regmoli);
 
 router.post('/register', [upload.single('profileImage'), ...validations], userController.register);
 
-router.post('/addTransaction', [upload.none(), validateUserInSessionMiddleware], userController.addTransaction);
+router.post('/addTransaction', [upload.none()/* , validateUserInSessionMiddleware */], userController.addTransaction);
 
 router.post('/auth', [upload.none(), auth], userController.auth);
 

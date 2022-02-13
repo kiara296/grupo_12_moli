@@ -1,6 +1,6 @@
 <header>
   <div class="topBar">Envios gratis desde $1.000</div>
-  <% if(userLogged) { %>
+  <% if(userLogged && userLogged.name && userLogged.lastname) { %>
     <div class="bienvenido" >HOLA <%= userLogged.name.toUpperCase() + " " + userLogged.lastname.toUpperCase() + ", " %> BIENVENID@!</div>
   <% } %>
   <img src="/images/logo-moli.png" alt="Logo Moli" />
