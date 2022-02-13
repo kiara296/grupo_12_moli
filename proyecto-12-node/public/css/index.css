@@ -209,7 +209,7 @@ main section article i:hover {
   }
 
   footer {
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;

@@ -5,59 +5,8 @@
 
 <body>
     <!-- Header -->
-    <header>
-      <div class="topBar">Envios gratis desde $1.000</div>
-      <% if(userLogged) { %>
-        <div class="bienvenido" >HOLA <%= userLogged.name.toUpperCase() + " " + userLogged.lastname.toUpperCase() + ", " %> BIENVENID@!</div>
-      <% } %>
-      <img src="/images/logo-moli.png" alt="Logo Moli" />
-    
-      <nav>
-        <ul class="nav1">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/products/catalog">Productos</a></li>
-          <li><a href="/#recommended">Recomendados</a></li>
-          <li><a href="/#offers">Ofertas</a></li>
-          <% if(userLogged) { %>
-          <li><a href="/users/<%= userLogged.id%>/edit">Mi perfil</a></li>
-          <% }else {%>
-          <% } %>
-          <% if(userLogged && userLogged.category_id === 1) { %>
-            <li><a href="/admin">Administrar productos</a></li>
-          <% }else {%>
-            <li style="display: none;"><a href="/admin">Administrar productos</a></li>
-          <% } %>
-        </ul>
+    <%- include ('./partials/header') %>
        
-            <ul class="nav2">
-              <li>
-                <form action="/products/search" method="GET" class="searchBar">
-                  <input type="text" name="valueSearch" id="search" placeholder="Buscar por nombre" value="<%= valueSearch != undefined ? valueSearch : '' %>"/>
-                  <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-              </li>
-              <li>
-                <a href="/products/carrito"><i class="fas fa-shopping-basket"></i></a>
-              </li>
-    
-              <% if(userLogged) { %>
-                <li>
-                  <form action="/users/logout" method="POST" enctype="multipart/form-data">
-                    <button type="submit" id="button-general">Logout</button><i class="fas fa-sign-in-alt"></i>
-                  </form>
-                </li>
-                <% }else {%>
-                  <li>
-                    <a href="/users/login">Login</a><i class="fas fa-sign-in-alt"></i>
-                  </li>
-                  <% } %>
-            </ul>
-      </nav>
-      <div class="hambMenu">
-        <i class="fas fa-bars"></i>
-      </div>
-    </header>
-    
     <main>
       <section class="recomendados">
         <h1 class='title-page'>Nuestros productos</h1>

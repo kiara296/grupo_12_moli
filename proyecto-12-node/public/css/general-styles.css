@@ -29,6 +29,7 @@
 body {
   font-family: "Nunito", sans-serif;
   background-color: #e0e7e7;
+
 }
 body h3 {
   font-size: 24px;
@@ -58,6 +59,8 @@ a:active {
 
 .bienvenido {
   display: block;
+  position: absolute;
+  top: 40px;
   width: 100%;
   margin-top: 10px;
   padding: 5px;
@@ -69,6 +72,16 @@ a:active {
   font-weight: bold;
   letter-spacing: 1px;
   word-spacing: 1px;
+}
+
+#logout {
+    background-color: var(--primary-gray); 
+    display: inherit;
+    flex-wrap: auto;
+    flex-direction: auto;
+    width: auto;
+    padding: auto; 
+    border-radius: auto; 
 }
 
 .error {
@@ -123,6 +136,13 @@ a:active {
 .fa-bars {
   color: wheat;
 }
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-gray)
+ /*  display: none; */
+}
 
 #button-general {
   background-image: linear-gradient(-180deg, #96bf85 0%, #93be81 100%);
@@ -162,28 +182,27 @@ a:active {
 }
 
 header {
-  display: flex;
+  display: flex !important;
   flex-wrap: wrap;
   justify-content: space-between;
   font-family: "Nunito", sans-serif;
   background-color: #96bf85;
-  height: 120px;
-  /* position: fixed;
-  z-index: 1; */
+  height: 125px;
   width: 100%;
 }
 
-header img,
-nav {
-  margin: 0px 20px 0px 20px;
+.navbar-nav {
+  margin-bottom: auto;
 }
+
+
 
 /* Header logo */
 
-header img {
+.imagen-logo {
   position: relative;
   top: 10px;
-  width: 75px;
+  width: 95px;
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
@@ -223,6 +242,10 @@ header li a {
   margin: 10% 0% 2%;
   width: 100%;
 }
+
+
+
+
 
 /* Hamburger */
 
@@ -404,4 +427,6 @@ html {
   nav ul li {
     padding: 10px;
   }
+
+
 }
