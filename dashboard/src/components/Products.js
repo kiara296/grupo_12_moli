@@ -29,7 +29,7 @@ const Products = () => {
   const nextPage = () => {
    
     setPage(page +1 > allPages ? page : page +1)
-    console.log(page , '+++++++++++')
+  
     /* 3 +1 = 4 > 3 ? 3 : 4 */
   }
   
