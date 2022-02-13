@@ -107,7 +107,7 @@
                     />
                   </div>
                 </div>
-                <div class="box">
+                  <div class="box">
                   <div class="formBox">
                     <div class="buttonForm">
                       <button type="submit" class="button-general">
@@ -115,12 +115,9 @@
                       </button>
                     </div>
                   </div>
-                  
-                </div>
-              </form>
-              <div class="formBox">
-                <form action="/users/<%=userToEdit.id%>?_method=DELETE" method="POST">
-                  <button type="submit" class="button-general">
+                 <!--  </form> -->
+                <form id="form-delete"  action="/users/<%=userToEdit.id%>?_method=DELETE" method="POST">
+                  <button  type="submit" class="button-general">
                     Eliminar usuario
                   </button>
                 </form>

@@ -7,7 +7,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+#form-delete{
+  padding: 0px;
+}
 form {
     background-color: white;
     display: flex;

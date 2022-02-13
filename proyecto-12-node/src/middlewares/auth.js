@@ -8,7 +8,7 @@ const auth = async (req, res, next) => {
 
   if (validator.isNullOrUndefined(req.session.userLogged)) {
     req.session.userLogged = await usersService.auth(userName, pssw);
-    
+    console.log(req.session.userLogged,  '+++++++++')
     if (validator.isNullOrUndefined(req.session.userLogged)) {
       const message = "* Usuario o contraseña invalidos";
       res.redirect(`/users/login?userName=${userName}&message=${message}`);

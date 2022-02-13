@@ -14,7 +14,7 @@
           action="/products/<%= productToEdit.id %>/update?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
-          id='form'
+          id="form"
         >
           <div class="box">
             <div class="formBox">
@@ -83,7 +83,9 @@
                 id="description"
                 class="form-input"
                 value="<%= productToEdit && productToEdit.description ? productToEdit.description : '' %>"
-              ><%= productToEdit && productToEdit.description ? productToEdit.description : '' %></textarea>
+              >
+<%= productToEdit && productToEdit.description ? productToEdit.description : '' %></textarea
+              >
               <% if(errors && errors.description) { %>
               <span class="error"><%= errors.description.msg %></span>
               <% } %>
@@ -96,7 +98,9 @@
                 id="ingredients"
                 class="form-input"
                 value="<%= productToEdit && productToEdit.ingredients ?  productToEdit.ingredients : '' %>"
-              ><%= productToEdit && productToEdit.ingredients ?  productToEdit.ingredients : '' %></textarea>
+              >
+<%= productToEdit && productToEdit.ingredients ?  productToEdit.ingredients : '' %></textarea
+              >
               <% if(errors && errors.ingredients) { %>
               <span class="error"><%= errors.ingredients.msg %></span>
               <% } %>
@@ -111,7 +115,9 @@
                 id="nutritional_info"
                 class="form-input"
                 value="<%= productToEdit && productToEdit.nutritional_info ?  productToEdit.nutritional_info : '' %>"
-              ><%= productToEdit && productToEdit.nutritional_info ?  productToEdit.nutritional_info : '' %></textarea>
+              >
+<%= productToEdit && productToEdit.nutritional_info ?  productToEdit.nutritional_info : '' %></textarea
+              >
               <% if(errors && errors.nutritional_info) { %>
               <span class="error"><%= errors.nutritional_info.msg %></span>
               <% } %>
@@ -124,7 +130,9 @@
                 id="cooking"
                 class="form-input"
                 value="<%= productToEdit && productToEdit.cooking ?  productToEdit.cooking : '' %>"
-              ><%= productToEdit && productToEdit.cooking ?  productToEdit.cooking : '' %></textarea>
+              >
+<%= productToEdit && productToEdit.cooking ?  productToEdit.cooking : '' %></textarea
+              >
             </div>
           </div>
           <div class="formBox">
@@ -136,7 +144,9 @@
               id="alt"
               class="form-input"
               value="<%= productToEdit && productToEdit.alt ?  productToEdit.alt : '' %>"
-            ><%= productToEdit && productToEdit.alt ?  productToEdit.alt : '' %></textarea>
+            >
+<%= productToEdit && productToEdit.alt ?  productToEdit.alt : '' %></textarea
+            >
             <% if(errors && errors.alt) { %>
             <span class="error"><%= errors.alt.msg %></span>
             <% } %>
@@ -178,16 +188,15 @@
             </div>
           </div>
         </form>
-        <div class="formBox">
-          <form
-            action="/products/<%=productToEdit.id%>?_method=DELETE"
-            method="POST"
-          >
-            <button type="submit" class="button-general">
-              Eliminar producto
-            </button>
-          </form>
-        </div>
+        <form
+          id="form-delete"
+          action="/products/<%=productToEdit.id%>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit" class="button-general">
+            Eliminar producto
+          </button>
+        </form>
       </div>
     </main>
     <%- include ('./partials/footer.ejs') %>

@@ -5,10 +5,11 @@ const db = require('../../database/models');
 
 const userController = {
   login: (req, res) => {
-       const message = req.query && req.query.message ? req.query.message : null;
+    const message = req.query && req.query.message ? req.query.message : null;
     const userName = req.query && req.query.userName ? req.query.userName : null;
     const pssw = null;
     res.render("login", { message, userName, pssw, userLogged: req.session.userLogged});
+
  },
 
  logout: (req, res) => {

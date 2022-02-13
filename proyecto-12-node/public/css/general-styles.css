@@ -223,6 +223,10 @@ nav {
   flex-grow: 2;
 }
 
+.nav2{
+ margin-left: 35%;
+} 
+
 /* Estilo listas header */
 header li {
   list-style-type: none;
@@ -324,17 +328,7 @@ html {
   font-family: var(--header-typography);
 }
 
-/* button {
-  width: 25%;
-  border-color: var(--primary-gray);
-  background-color: var(--primary-gray);
-  color: white;
-  font-weight: bold;
-  border: outset;
-  border-radius: 10%;
-  height: 40px;
-  font-size: 20px;
-} */
+
 
 .button-submit {
   margin-top: 1rem;
@@ -359,14 +353,14 @@ html {
 
 /* Tablet: 361 - 769*/
 @media (min-width: 361px) {
-  header img {
+  /* header img {
     position: relative;
     top: 10px;
     width: 10%;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  }
+  } */
 
-  nav {
+  /* nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -381,9 +375,9 @@ html {
 
   nav ul li {
     padding: 5px;
-  }
+  } */
 
-  .hambMenu {
+ /*  .hambMenu {
     display: none;
   }
 
@@ -396,7 +390,7 @@ html {
 
   .headerTop p {
     width: auto;
-  }
+  } */
 }
 
 /* Desktop: 769 - infinito */
@@ -412,7 +406,7 @@ html {
     width: 25%;
   }
 
-  nav {
+ /*  nav {
     display: flex;
     flex-wrap: wrap;
   }
@@ -427,6 +421,6 @@ html {
   nav ul li {
     padding: 10px;
   }
-
+ */
 
 }
