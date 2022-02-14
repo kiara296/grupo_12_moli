@@ -6,32 +6,26 @@ const pageLimit = require('../constants/pageLimit');
 const productsService = {
   getById: async (id) => {
     const dataFetched = await productDao.getById(id);
-    const product = {...dataFetched.dataValues, product_category: dataFetched.product_category.dataValues.name}
-    return product;
+    return {...dataFetched.dataValues, product_category: dataFetched.product_category.dataValues.name}
   },
 
   getOffer: async() => {
     const dataFetched = await productDao.getOffer();
 
-    const productsMapped = mapDataToProducts(dataFetched);
+    return mapDataToProducts(dataFetched);
 
-    return productsMapped;
   },
 
   getRecommended: async () => {
     const dataFetched = await productDao.getRecommended();
 
-    const productsMapped = mapDataToProducts(dataFetched);
-
-    return productsMapped;
+    return mapDataToProducts(dataFetched);
   },
 
   getPage: async (page) => {
     const dataFetched = await productDao.getPage(page);
 
-    const productsMapped = mapDataToProducts(dataFetched);
-
-    return productsMapped;
+    return mapDataToProducts(dataFetched);
   },
 
   getTotalPages: (products) => {
@@ -41,9 +35,7 @@ const productsService = {
   getProducts: async () => {
     const dataFetched = await productDao.getProducts();
 
-    const productsMapped = mapDataToProducts(dataFetched);
-
-    return productsMapped;
+    return mapDataToProducts(dataFetched);
   },
 
   create: async (body) => {
@@ -65,8 +57,7 @@ const productsService = {
 
   search: async (value) => {
     const dataFetched = await productDao.search(value);
-    const products = mapDataToProducts(dataFetched);
-    return products;
+    return mapDataToProducts(dataFetched);
   },
 
   delete: async (id) => {

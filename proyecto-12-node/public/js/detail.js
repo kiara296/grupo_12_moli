@@ -11,6 +11,6 @@ window.addEventListener('load', function() {
     document.querySelector('#addProduct-button').addEventListener('click', function(e) {
         e.preventDefault();
         localStorage.setItem(id, JSON.stringify(product));
-        window.location.replace("http://localhost:3000/products/carrito");
+        window.location.replace("http://localhost:3001/shoppingCart/cart");
     });
 });

@@ -42,13 +42,13 @@ window.addEventListener('load', function() {
 
     document.querySelector('#continue').addEventListener('click', function(e) {
         e.preventDefault();
-        window.location.replace("http://localhost:3000/products/catalog");
+        window.location.replace("http://localhost:3001/catalog");
     });
 
     document.querySelector('#reset').addEventListener('click', function(e) {
         e.preventDefault();
         window.localStorage.clear();
-        window.location.replace("http://localhost:3000/products/carrito");
+        window.location.replace("http://localhost:3001/shoppingCart/cart");
     });
 
     let deleteButtons = document.querySelectorAll('.delete-button');
@@ -60,7 +60,7 @@ window.addEventListener('load', function() {
             window.localStorage.removeItem(e.target.value);
         }
 
-        window.location.replace("http://localhost:3000/products/carrito");
+        window.location.replace("http://localhost:3001/shoppingCart/cart");
     }));
 
     // TODO: Aqui hay que utilizar fetch o axios para hacer la llamada por post al endpoint de la api
@@ -69,7 +69,7 @@ window.addEventListener('load', function() {
         e.preventDefault();
         if(confirm("Confirmar el pago")) {
             window.localStorage.clear();
-            window.location.replace("http://localhost:3000/products/carrito");
+            window.location.replace("http://localhost:3001");
         }
     });
     

@@ -5,6 +5,10 @@ const shoppingCartController = {
         shoppingCartService.addProduct(req.query.idProduct);
         res.redirect("/products/catalog");
     },
+
+    cart: (req, res) => {
+        res.render('carrito', {userLogged: req.session.userLogged});
+    }
 }
 
 module.exports = shoppingCartController;
