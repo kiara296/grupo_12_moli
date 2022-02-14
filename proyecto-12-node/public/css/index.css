@@ -123,6 +123,11 @@ article div.descripcionAritculo {
   padding: 2px;
 }
 
+.descuento{
+  color: red;
+  font-size: 12px
+}
+
 /* Icono camion */
 
 main section article i {
@@ -131,7 +136,7 @@ main section article i {
   padding: 5px;
   width: 30px;
   height: 30px;
-  border: 1px solid #39b54a;
+  border: 1px solid var(--primary-gray);
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
@@ -144,7 +149,7 @@ main section article i:hover {
   transform: rotate(-90deg);
 }
 
-.fa-truck:before {
+.fa-cart-plus:before {
   color: var(--primary-gray);
 }
 /* Media queries */
