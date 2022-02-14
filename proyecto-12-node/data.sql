@@ -1,4 +1,3 @@
-
 # INSERT categoriesProducts
 insert into categoriesProducts() values(1, 'OFFER');
 insert into categoriesProducts() values(2, 'RECOMMENDED');
@@ -10,91 +9,91 @@ insert into categoriesUsers() values(2, 'GUEST');
 
 #INSERT products
 insert into products() values(
-	1,
-	'Frambuesas x 500gr',
-	1550,
-	20,
-	'Frambuesas enteras IQF x 500gr. 100% natural',
-	'frambuesas.png',
-	'imagen de frambuesas',
-	'Frambuesas naturales.',
-	'Idealmente dejar descongelar en la heladera. De no ser posible se puede descongelar en el microondas.',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	1
+    1,
+    'Mix de frutos rojos x 500gr',
+    1550,
+    20,
+    'Mix de frutos rojos IQF x 500gr. 100% natural',
+    'frambuesas.png',
+    'imagen de Mix de frutos rojos',
+    'Mix de frutos rojos.',
+    'Idealmente dejar descongelar en la heladera. De no ser posible se puede descongelar en el microondas.',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    1
 );
 insert into products() values( 
-	 2,
+     2,
     'Pain au chocolat x 6 uni',
-    '400',
-    '12',
+    400,
+    10,
     'Pan de chocolate 100% artesanal x 6 unidades',
     'painChoco.png',
     'imagen pain au chocolat',
-	'Precalienta tu horno a 180 ° C. Coloque los pains au chocolat en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.',
+    'Precalienta tu horno a 180 ° C. Coloque los pains au chocolat en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.',
     '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
     'Harina de trigo  41,9%harina de trigo (gluten), gluten de trigo], agua , mantequilla  (leche) 16%, chocolate 11% , azúcar  3,8%, levadura , huevo , sal , gluten de trigo .',
     1
 );
 
 insert into products() values(
-	3,
-	'Tarta de espinaca grande',
-	600,
-	15,
-	'Tarta casera de espinaca. 8 porciones. 100% natural',
-	'tartaProducto.png',
-	'imagen de tarta de espinaca',
-	'Espinaca 26,2%, harina de trigo (gluten), crème fraîche líquida 14,5% (leche), leche desnatada, mantequilla 8,4% (leche), huevo de gallina de corral (líquido, pasteurizado), agua, Parmigiano Reggiano DOP * 4,2% (contiene leche), piñones 4%, almidón y harina de arroz, sal, pimienta.',
-	'Se puede descongelar previamente o sacar del freezer directo al horno bajo. ',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	2
+    3,
+    'Tarta de espinaca grande',
+    600,
+    null,
+    'Tarta casera de espinaca. 8 porciones. 100% natural',
+    'tartaProducto.png',
+    'imagen de tarta de espinaca',
+    'Espinaca 26,2%, harina de trigo (gluten), crème fraîche líquida 14,5% (leche), leche desnatada, mantequilla 8,4% (leche), huevo de gallina de corral (líquido, pasteurizado), agua, Parmigiano Reggiano DOP * 4,2% (contiene leche), piñones 4%, almidón y harina de arroz, sal, pimienta.',
+    'Se puede descongelar previamente o sacar del freezer directo al horno bajo. ',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    2
 );
 
 insert into products() values(
-	4,
-	'Papas baston x 500gr',
-	270,
-	15,
-	'Papas baston IQF x 500gr. 100% natural',
-	'papas.png',
-	'imagen de papas baston',
-	'Papa natural 100%',
-	'Cocinar al horno directo o en una sarten. ',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	3
+    4,
+    'Papas baston x 500gr',
+    270,
+    null,
+    'Papas baston IQF x 500gr. 100% natural',
+    'papas.png',
+    'imagen de papas baston',
+    'Papa natural 100%',
+    'Cocinar al horno directo o en una sarten. ',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    2
 );
 
 insert into products() values(
-	5,
-	'Wok de verduras x 500gr',
-	400,
-	15,
-	'Verduras cortadas en juliana IQF. 100% natural',
-	'wokPlato.png',
-	'imagen de wok de verduras',
-	'Morron rojo, Cebolla, Brocoli, Choclo, Zanahoria. 100% natural',
-	'Descongelar en la heladera, el dia anterior a consumir. Tambien se puede cocinar directo al fuego sin descongelar. ',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	1
+    5,
+    'Wok de verduras x 500gr',
+    400,
+    15,
+    'Verduras cortadas en juliana IQF. 100% natural',
+    'wokPlato.png',
+    'imagen de wok de verduras',
+    'Morron rojo, Cebolla, Brocoli, Choclo, Zanahoria. 100% natural',
+    'Descongelar en la heladera, el dia anterior a consumir. Tambien se puede cocinar directo al fuego sin descongelar. ',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    1
 );
 
 insert into products() values(
-	6,
-	'Ravioles x 500gr',
-	500,
-	15,
-	'Ravioles de hongos patagonicos. 100% natural',
-	'raviol.jpg',
-	'imagen de ravioles',
-	'Sémola de trigo duro (gluten), ricotta 11,9%suero (leche), leche, nata (leche), sal, regulador de acidez: ácido cítrico], agua, huevo , cebolla asada, mozzarella al 3,3% (leche, sal, fermentos lácticos, coagulante, regulador de acidez: ácido cítrico), espinaca 3%, cebolla. ',
-	'Hervir agua. Salar el agua a gusto. Cocinar durante 6 a 7 minutos. Sacar inmediatamente.',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	2
+    6,
+    'Ravioles x 500gr',
+    500,
+    null,
+    'Ravioles de hongos patagonicos. 100% natural',
+    'raviol.jpg',
+    'imagen de ravioles',
+    'Sémola de trigo duro (gluten), ricotta 11,9%suero (leche), leche, nata (leche), sal, regulador de acidez: ácido cítrico], agua, huevo , cebolla asada, mozzarella al 3,3% (leche, sal, fermentos lácticos, coagulante, regulador de acidez: ácido cítrico), espinaca 3%, cebolla. ',
+    'Hervir agua. Salar el agua a gusto. Cocinar durante 6 a 7 minutos. Sacar inmediatamente.',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    2
 );
 
 insert into products() values(
-	7,
-	'Zapallo x 500gr',
+    7,
+    'Zapallo x 500gr',
     500,
     15,
     'Zapallo en cubos IQF. 100% natural',
@@ -102,97 +101,97 @@ insert into products() values(
     'imagen de zapallo',
     'Zapallo natural 100%',
     'Del freezer directo a tu horno o sarten. ',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
     3
 );
 
 insert into products() values(
-	8,
-	'Nuggets de pollo x 500gr',
-	500,
-	15,
-	'Nuggets de pollo. 100% natural',
-	'nuggetsPollo.png',
-	'imagen de nuggets de pollo',
-	'Carne de pollo curada, cobertura 34%aceite de girasol, agua, harina de trigo (gluten), harina de maíz, pan rallado (harina de trigo (gluten), sal, levadura), sémola de trigo duro (gluten), gluten de trigo, sal, almidón de trigo (gluten), polvos de hornear (carbonatos de sodio, difosfatos), pimienta].',
-	'Del freezer directo a tu horno o sarten.',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	1
+    8,
+    'Nuggets de pollo x 500gr',
+    500,
+    15,
+    'Nuggets de pollo. 100% natural',
+    'nuggetsPollo.png',
+    'imagen de nuggets de pollo',
+    'Carne de pollo curada, cobertura 34%aceite de girasol, agua, harina de trigo (gluten), harina de maíz, pan rallado (harina de trigo (gluten), sal, levadura), sémola de trigo duro (gluten), gluten de trigo, sal, almidón de trigo (gluten), polvos de hornear (carbonatos de sodio, difosfatos), pimienta].',
+    'Del freezer directo a tu horno o sarten.',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    1
 );
 
 insert into products() values(
-	9,
-	'Ñoquis de papa x 500gr',
-	500,
-	15,
-	'Noquis de papa x 500gr. 100% natural',
-	'nioquis.png',
-	'imagen de ñoquis',
-	'Papa cocida 34,2%sémola de trigo duro (gluten), agua, papa deshidratada *, sal], leche desnatada rehidratada',
-	'Hervir agua. Separar los ñoquis. Salar el agua a gusto. Cocinar hasta que empiezen a flotar. Sacar inmediatamente. ',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	2
+    9,
+    'Ñoquis de papa x 500gr',
+    500,
+    null,
+    'Noquis de papa x 500gr. 100% natural',
+    'nioquis.png',
+    'imagen de ñoquis',
+    'Papa cocida 34,2%sémola de trigo duro (gluten), agua, papa deshidratada *, sal], leche desnatada rehidratada',
+    'Hervir agua. Separar los ñoquis. Salar el agua a gusto. Cocinar hasta que empiezen a flotar. Sacar inmediatamente. ',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    2
 );
 insert into products() values(
-	10,
-	'Croissants x 6 unidades',
-	600,
-	15,
-	'Croissants x 6 unidades. 100% caseras y natural',
-	'croissants.png',
-	'imagen de croissants',
-	'Harina de trigo * 43,8%harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. ',
-	' Precalienta tu horno a 180 ° C. Coloque los croissants en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
-	3
+    10,
+    'Croissants x 6 unidades',
+    600,
+    null,
+    'Croissants x 6 unidades. 100% caseras y natural',
+    'croissants.png',
+    'imagen de croissants',
+    'Harina de trigo * 43,8%harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. ',
+    ' Precalienta tu horno a 180 ° C. Coloque los croissants en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    3
 );
 insert into products() values(
-	11,
-	'Croissants re copados',
-	'111',
-	'111',
-	'Croissants x 6 unidades. 100% caseras y natural',
-	'croissants.png',
-	'croissants',
-	'Harina de trigo * 43,8%harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. ',
-	'Precalienta tu horno a 180 ° C. Coloque los croissants en una bandeja para hornear cubierta con papel de hornear. Horno tradicional: 20 min / Horno ventilado: 15 min.  Dejar enfriar durante 10 minutos antes de degustar.',
-	'409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    11,
+    'Waffles Love x 6 uni',
+    350,
+    null,
+    'Waffles x 6 unidades, con forma de corazon.',
+    'waffles.jpg',
+    'waffles',
+    'Harina de trigo * 43,8%harina de trigo (gluten), gluten de trigo], mantequilla * 24% (leche), agua *, levadura *, azúcar *, huevo (huevo, azúcar líquido) sal *, gluten de trigo. ',
+    'Colocar directo del frezeer a las tostadora. Se pueden descongelar previamente',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
      2
 );
 insert into products() values(
-	12,
-    'Pechuga de pollo orgánica al verdeo x 500gr',
-	700,
-    25,
-    'Pechuga de pollo al verdeo x 500gr. Producto organico',
-    'pollo-al-verdeo.jpg',
-    'pollo al verdeo',
-    'Pechuga de pollo organica al horno con verduras del huerta cocidas en su propio jugo ',
+    12,
+    'Pechuga de pollo orgánica x 500gr',
+    700,
+    null,
+    'Pechuga de pollo x 500gr. Producto orgánico',
+    'pollo.png',
+    'pechuga de pollo',
+    'Pechuga de pollo orgánica x 500gr ',
     'Descongelar naturalmente en heladera. Calentar al horno a 160 grados por 15 minutos ',
     '550 Kcal/gr Hdc/25gr prot./75gr grasas tot.',
     3
 );
 insert into products() values(
-	13,
-    'Milanesas de soja rellenas de espinaca x 500gr',
+    13,
+    'Lemon Pie x 12 porciones',
     400,
-    25,
-    'Milanesas caseras de soja, rellenas de espinaca y queso',
-    'milanesas-soja.jpg',
-    'milanesa de soja rellenas',
-    'Milanesa de soja rellenas de espinacas y queso',
-    'Retirar del freezer y calentar en horno (sin descongelar) por 15 minutos a fuego medio ',
+    null,
+    'Lemon Pie casero x 12 porciones',
+    'lemon-pie.png',
+    'Lemon Pie casero',
+    'Lemon Pie casero x 12 porciones',
+    'Descongelar naturalmente en heladera. ',
     '100 Kcal/gr Hdc/25gr prot./0 gr grasas tot.',
     1
 );
 
 insert into products() values(
-	14,
-    'Pan de carne x 1Kg',
+    14,
+    'Pan de carne x 500Kg',
     400,
-    25,
+    null,
     'Pan de carne casero como el que hace la abuela',
-    'pan-de-carne.jpg',
+    'pan-de-carne.png',
     'pan de carne',
     'Pan de carne preparado con carne picada magra, pan rallado, verduduras cortadas: cebolla, morrón y zanahora.',
     'Cocinar al horno por 30 minutos a fuego medio. Opcional cubrir con mostaza. ',
@@ -201,21 +200,21 @@ insert into products() values(
 );
 
 insert into products() values(
-	15,
-    'Albondigas con pure de papa x 500gr',
+    15,
+    'Tiramisu x 500gr',
     700,
-    25,
-    'Albondigas con pure de papas, 100% casero',
-    'albóndigas-con-puré-de-papas.jpg',
-    'albóndigas con pure de papas',
-    'Albondigas caseras con carne de res, cebolla, condimentadas, con pure de papas',
-    'Retirar del freezer y calentar en horno (sin descongelar) por 30 minutos a fuego bajo ',
+    10,
+    'Tiramisu x 500gr, 100% casero',
+    'tiramisu.jpg',
+    'Tiramisu',
+    'Tiramisu x 500gr, 100% casero',
+    'Retirar del freezer, descongelar en la heladera. Tambien se puede consumir congelado ',
     '100 Kcal/gr Hdc/25gr prot./0 gr grasas tot.',
-    3
+    1
 );
 
 insert into products() values(
-	16,
+    16,
     'Paella Madrileña x 500gr',
     800,
     25,
@@ -228,12 +227,12 @@ insert into products() values(
     1
 );
 insert into products() values(
-	17,
+    17,
     'Torta de chocolate selva negra',
     1200,
-    25,
+    null,
     'Torta de chocolate con productos de primera calidad',
-    'torta-selva-negra.jpg',
+    'torta-selva-negra.png',
     'torta selva negra',
     'Torta de chocolate selva negra con crema de leche y chocolate amargo',
     'Guardar en heladera hasta consumir, se puede frezar ',
@@ -242,12 +241,12 @@ insert into products() values(
 );
 
 insert into products() values(
-	18,
+    18,
     'Tarta de atun',
     500,
-    25,
+    null,
     'Tarta casera de atun con verduras salteadas ',
-    'Tarta-de-atun.jpg',
+    'Tarta-de-atun.png',
     'tarta casera de atun',
     'Tarta casera rellena de atun y verdudas varias ',
     'Comer fría o caliente ',
@@ -255,12 +254,11 @@ insert into products() values(
     3
 );
 
-
 insert into products() values(
-	19,
+    19,
     'Cazuela de mariscos x 500gr',
     800,
-    25,
+    null,
     ' Una combinación de marisco que incluye almejas, mejillones, camarones y vieiras; le da el sabor espectacular al caldo que se combina con el sabor distintivo y natural del azafrán',
     'cazuela-de-mariscos.jpg',
     'cazuela de mariscos',
@@ -271,21 +269,73 @@ insert into products() values(
 );
 
 insert into products() values(
-	20,
-    'Pan dulce con frutas x 500gr',
+    20,
+    'Helados en cono de crema y frambuesas x 6',
     800,
-    25,
-    'Pan dulce bien esponjoso, casero con muchas frutas confitadas en su interior ',
-    'pan-dulce.jpg',
-    'pan dulce con frutas',
-    'Pan dulce casero con gran variedad de frutas',
-    'Guardar en un lugar fresco y consumir dentro de los 7 días ',
+    null,
+    'Helados en cono de crema y frambuesas x 6, 100% casero ',
+    'helados.jpg',
+    'helados',
+    'Helados en cono de crema y frambuesas x 6, 100% casero',
+    'Consumir dentro de los 6 meses. ',
     '200 Kcal/gr Hdc/25gr prot./0 gr grasas tot.',
     2
 );
+insert into products() values(
+    21,
+    'Esparragos orgánico x 500gr',
+    800,
+    20,
+    'Esparragos orgánico IQF ',
+    'esparragos.jpg',
+    'Esparragos orgánico IQF',
+    'Esparragos orgánico IQF x 500gr',
+    'Descongelar en la heladera, el dia anterior a consumir. Tambien se puede cocinar directo al fuego sin descongelar. ',
+    '200 Kcal/gr Hdc/25gr prot./0 gr grasas tot.',
+    1
+);
+insert into products() values(
+    22,
+    'Tarta de vegetales asados',
+    600,
+    null,
+    'Tarta casera de vegetales asados. 8 porciones. 100% natural',
+    'tarta-vegetales.png',
+    'imagen de tarta de vegetales',
+    'Espinaca 26,2%, harina de trigo (gluten), crème fraîche líquida 14,5% (leche), leche desnatada, mantequilla 8,4% (leche), huevo de gallina de corral (líquido, pasteurizado), agua, Parmigiano Reggiano DOP * 4,2% (contiene leche), piñones 4%, almidón y harina de arroz, sal, pimienta.',
+    'Se puede descongelar previamente o sacar del freezer directo al horno bajo. ',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    2
+);
+insert into products() values(
+    23,
+    'Baguette de pan casero x 12',
+    650,
+    null,
+    'Baguette de pan casero. 100% natural',
+    'pan.png',
+    'imagen de pan casero',
+    'Espinaca 26,2%, harina de trigo (gluten), crème fraîche líquida 14,5% (leche), leche desnatada, mantequilla 8,4% (leche), huevo de gallina de corral (líquido, pasteurizado), agua, Parmigiano Reggiano DOP * 4,2% (contiene leche), piñones 4%, almidón y harina de arroz, sal, pimienta.',
+    'Se puede descongelar previamente o sacar del freezer directo al horno bajo. ',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    3
+);
+insert into products() values(
+    24,
+    'Arándanos x 500gr',
+    1550,
+    20,
+    'Arándanos enteros IQF x 500gr. 100% natural',
+    'arandanos.png',
+    'imagen de arandanos',
+    'Arandanos naturales.',
+    'Idealmente dejar descongelar en la heladera. De no ser posible se puede descongelar en el microondas.',
+    '409 Kcal/51gr Hdc/17gr prot./15gr grasas tot.',
+    3
+);
 
 insert into users() values(
-	1,
+    1,
     'ppalala@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Pepe',
@@ -295,7 +345,7 @@ insert into users() values(
 );
 
 insert into users() values(
-	2,
+    2,
    ' emelena@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Elena',
@@ -305,7 +355,7 @@ insert into users() values(
 );
 
 insert into users() values(
-	3,
+    3,
     'prancho@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Pancho',
@@ -314,7 +364,7 @@ insert into users() values(
     null
 );
 insert into users() values(
-	4,
+    4,
     'cmalandra@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Casandra',
@@ -323,7 +373,7 @@ insert into users() values(
     null
 );
 insert into users() values(
-	5,
+    5,
     'lmagnesia@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Lucrecia',
@@ -333,7 +383,7 @@ insert into users() values(
   
 );
 insert into users() values(
-	6,
+    6,
     'Mmarc@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Maria',
@@ -342,7 +392,7 @@ insert into users() values(
     null
 );
 insert into users() values(
-	7,
+    7,
    'Mdiaz@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Marcos',
@@ -351,7 +401,7 @@ insert into users() values(
     null
 );
 insert into users() values(
-	8,
+    8,
     'Menola@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
    ' Marta',
@@ -360,7 +410,7 @@ insert into users() values(
     null
 );
 insert into users() values(
-	9,
+    9,
     'Mmarton@mail.com',
    ' $2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Mario',
@@ -370,7 +420,7 @@ insert into users() values(
   
 );
 insert into users() values(
-	10,
+    10,
     'Aperez@mail.com',
     '$2a$10$fXJqByp1snzU1VW/F9wr0u9VrI1yRr2KSoY/hXJetyhkJcRzzi4TG',
     'Agustin',
@@ -378,8 +428,3 @@ insert into users() values(
     1,
     null
 );
-
-
-
-
-
