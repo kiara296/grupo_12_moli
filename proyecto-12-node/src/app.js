@@ -13,8 +13,8 @@ const cookieAuth = require('../src/middlewares/cookieAuth');
 
 app.use(methodOverride('_method'));
 app.use(session({secret: 'This is secret!'}));
-app.use(cookieParser());
-app.use(cookieAuth);
+/* app.use(cookieParser());
+app.use(cookieAuth); */
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 

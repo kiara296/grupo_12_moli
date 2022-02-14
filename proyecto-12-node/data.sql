@@ -428,3 +428,13 @@ insert into users() values(
     1,
     null
 );
+insert into users() values(
+    11,
+    'moliadmin@gmail.com',
+    '$2a$10$ZWARgRQk6mejOOKi5VheH.b3cTq.frS0Ljck0B6U8Gbdt/.dEVFsO',
+    'Moli Frozen',
+    'Admin',
+    1,
+   'profileImage-1644876316534.png'
+);
+	
