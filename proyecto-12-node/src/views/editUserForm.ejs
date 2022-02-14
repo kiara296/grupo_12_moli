@@ -1,133 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('./partials/head', { stylesFile: 'forms.css'}) %>
+  <%- include ('./partials/head', { stylesFile: 'forms.css', jsFile:''}) %>
 
-    <body>
-      <%- include ('./partials/header') %>
-        <main>
-          <div class="containerForm">
-            <div>
-              <h2 class="form-title">Perfil de usuario</h2>
+  <body>
+    <%- include ('./partials/header') %>
+    <main>
+      <div class="containerForm">
+        <div>
+          <h2 class="form-title">Perfil de usuario</h2>
+        </div>
+        <form
+          action="/users/<%= userToEdit.id %>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="box">
+            <div class="formBox">
+              <label for="name" class="form-label"> Nombre: </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Ingresa tu nombre"
+                minlength="5"
+                class="form-input"
+                value="<%= userToEdit && userToEdit.name ? userToEdit.name : '' %>"
+              />
+              <% if(errors && errors.name) { %>
+              <span class="error"><%= errors.name.msg %></span>
+              <% } %>
             </div>
-            <form action="/users/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-              <div class="box">
-                <div class="formBox">
-                  <label for="name" class="form-label">
-                    Nombre: 
-                  </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Ingresa tu nombre"
-                      minlength="5"
-                      class="form-input"
-                      value="<%= userToEdit && userToEdit.name ? userToEdit.name : '' %>"
-                    />
-                    <% if(errors && errors.name) { %>
-                      <span class="error"><%= errors.name.msg %></span>
-                    <% } %>
-                  </div>
-                  <div class="formBox">
-                    <label for="lastname" class="form-label"
-                      > Apellido: </label
-                    >
-                    <input
-                      type="text"
-                      id="lastname"
-                      name="lastname"
-                      placeholder="Ingresa tu apellido"
-                      minlength="5"
-                      class="form-input"
-                      value="<%= userToEdit && userToEdit.lastname ? userToEdit.lastname : '' %>"
-                    />
-                    <% if(errors && errors.lastname) { %>
-                      <span class="error"><%= errors.lastname.msg %></span>
-                    <% } %>
-                  </div>
-                </div>
-                <div class="formBox">
-                      <div class="formBox"> 
-                        <label for="username" class="form-label"> Usuario</label>
-                        <input
-                        type="email"
-                        id="username" 
-                        name="username"
-                        placeholder="Ingresá un e-mail"
-                        class="form-input"
-                        value="<%= userToEdit && userToEdit.username ? userToEdit.username : '' %>"
-                        />
-                        <% if(errors && errors.username) { %>
-                          <span class="error"><%= errors.username.msg %></span>
-                        <% } %>
-                  </div>
-                  <div class="box">
-                    <div class="formBox"> 
-                        <label id="password" class="form-label"> Contraseña </label>
-                        <input
-                        type="password"
-                        name="password"
-                        placeholder="Elegí una contraseña"
-                        minlength="8"
-                        class="form-input"
-                        value="<%= userToEdit&& userToEdit.password ? userToEdit.password : '' %>"
-                        />
-                        <% if(errors && errors.password) { %>
-                          <span class="error"><%= errors.password.msg %></span>
-                        <% } %>
-                    </div>    
-                    <div class="formBox"> 
-                        <label id="email" class="form-label"> Repetir contraseña </label>
-                        <input
-                        type="password"
-                        name="password_confirm"
-                        placeholder="Repetí tu contraseña"
-                        class="form-input"
-                        value="<%= userToEdit && userToEdit.password_confirm ? userToEdit.password_confirm : '' %>"
-                        />
-                        <% if(errors && errors.password_confirm) { %>
-                          <span class="error"><%= errors.password_confirm.msg %></span>
-                        <% } %>
-                    </div>    
-                  </div>    
-                </div>    
-                <div class="box">
-                  <div class="formBox">
-                    <label for="fileImage" class="form-label"
-                      >Imagen de perfil:</label
-                    >
-                    <img src="/images/<%=userToEdit.image%>" alt="<%=userToEdit.alt%>" class="imagenProducto formImage">
-                    <input
-                      type="file"
-                      name="profileImage"
-                      id="profileImage"
-                      class="form-input"
-                      value="/images/<%=userToEdit.image%>"
-                      width="50%"
-                    />
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="formBox">
-                    <div class="buttonForm">
-                      <button type="submit" class="button-general">
-                        Guardar cambios
-                      </button>
-                    </div>
-                  </div>
-                  
-                </div>
-              </form>
-              <div class="formBox">
-                <form action="/users/<%=userToEdit.id%>?_method=DELETE" method="POST">
-                  <button type="submit" class="button-general">
-                    Eliminar usuario
-                  </button>
-                </form>
-              </div>
+            <div class="formBox">
+              <label for="lastname" class="form-label"> Apellido: </label>
+              <input
+                type="text"
+                id="lastname"
+                name="lastname"
+                placeholder="Ingresa tu apellido"
+                minlength="5"
+                class="form-input"
+                value="<%= userToEdit && userToEdit.lastname ? userToEdit.lastname : '' %>"
+              />
+              <% if(errors && errors.lastname) { %>
+              <span class="error"><%= errors.lastname.msg %></span>
+              <% } %>
+            </div>
           </div>
-        </main>
-      <%- include ('./partials/footer.ejs') %>
-    </body>
-
+          <div class="formBox">
+            <div class="formBox">
+              <label for="username" class="form-label"> Usuario</label>
+              <input
+                type="email"
+                id="username"
+                name="username"
+                placeholder="Ingresá un e-mail"
+                class="form-input"
+                value="<%= userToEdit && userToEdit.username ? userToEdit.username : '' %>"
+              />
+              <% if(errors && errors.username) { %>
+              <span class="error"><%= errors.username.msg %></span>
+              <% } %>
+            </div>
+            <div class="box">
+              <div class="formBox">
+                <label id="password" class="form-label"> Contraseña </label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Elegí una contraseña"
+                  minlength="8"
+                  class="form-input"
+                  value="<%= userToEdit&& userToEdit.password ? userToEdit.password : '' %>"
+                />
+                <% if(errors && errors.password) { %>
+                <span class="error"><%= errors.password.msg %></span>
+                <% } %>
+              </div>
+              <div class="formBox">
+                <label id="email" class="form-label">
+                  Repetir contraseña
+                </label>
+                <input
+                  type="password"
+                  name="password_confirm"
+                  placeholder="Repetí tu contraseña"
+                  class="form-input"
+                  value="<%= userToEdit && userToEdit.password_confirm ? userToEdit.password_confirm : '' %>"
+                />
+                <% if(errors && errors.password_confirm) { %>
+                <span class="error"><%= errors.password_confirm.msg %></span>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="formBox">
+              <label for="fileImage" class="form-label"
+                >Imagen de perfil:</label
+              >
+              <img
+                src="/images/<%=userToEdit.image%>"
+                alt="<%=userToEdit.alt%>"
+                class="imagenProducto formImage"
+              />
+              <input
+                type="file"
+                name="profileImage"
+                id="profileImage"
+                class="form-input"
+                value="/images/<%=userToEdit.image%>"
+                width="50%"
+              />
+            </div>
+          </div>
+          <div class="box">
+            <div class="formBox">
+              <div class="buttonForm">
+                <button type="submit" class="button-general">
+                  Guardar cambios
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        
+                
+      </div>
+      <div class="containerForm">
+        <form action="/users/<%=userToEdit.id%>?_method=DELETE" method="POST">
+          <button type="submit" class="button-general">
+            Eliminar usuario
+          </button>
+        </form>
+      </div>
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+  </body>
 </html>

@@ -9,22 +9,21 @@
 }
 
 form {
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 60%;
-    padding: 10px;
-    border-radius: 2%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 60%;
+  padding: 10px;
+  border-radius: 2%;
 }
-
 
 /* CSS */
 .button-general {
   background-image: linear-gradient(-180deg, #96bf85 0%, #93be81 100%);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 16px;
   padding: 10px;
   width: fit-content;
@@ -39,7 +38,15 @@ form {
 
 .buttonForm {
   display: flex;
-  justify-content: center;
+}
+
+#formDelete {
+  display: flex;
+  justify-content: left;
+  background-color: transparent;
+  position: relative;
+  bottom: 68px;
+  left: 80px;
 }
 
 .formImage {
@@ -48,27 +55,26 @@ form {
 }
 
 .box {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 10px;
 }
 
 .box-textarea {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
 }
 
 .box-textarea input {
-    width: 100%;
+  width: 100%;
 }
 .formBox {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
 }
-
 
 .form-title {
   text-align: center;
@@ -78,13 +84,12 @@ form {
   padding: 10px;
   border: 0;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-  border-radius:10px;
+  border-radius: 10px;
   width: 90%;
   margin: 10px;
   align-self: center;
 }
 
 .form-label {
-    margin: 10px;
+  margin: 10px;
 }
-

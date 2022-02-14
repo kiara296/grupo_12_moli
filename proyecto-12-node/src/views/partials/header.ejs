@@ -4,7 +4,6 @@
     <div class="bienvenido" >HOLA <%= userLogged.name.toUpperCase() + " " + userLogged.lastname.toUpperCase() + ", " %> BIENVENID@!</div>
   <% } %>
   <img src="/images/logo-moli.png" alt="Logo Moli" />
-
   <nav>
     <ul class="nav1">
       <li><a href="/">Inicio</a></li>
@@ -35,7 +34,7 @@
 
           <% if(userLogged) { %>
             <li>
-              <form action="/users/logout" method="POST" enctype="multipart/form-data">
+              <form  id='logout' action="/users/logout" method="POST" enctype="multipart/form-data">
                 <button type="submit" id="button-general">Logout</button><i class="fas fa-sign-in-alt"></i>
               </form>
             </li>
