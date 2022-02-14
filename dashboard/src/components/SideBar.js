@@ -11,7 +11,7 @@ import Error404 from './Error404'; */
 
 function SideBar(){
     return(
-        <React.Fragment>
+        <>
             {/*<!-- Sidebar -->*/}
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -42,23 +42,23 @@ function SideBar(){
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="/">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pagínas</span>
+                        <span>Home</span>
                     </a>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <a className="nav-link" href="/products">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Graficos</span></a>
+                        <span>Productos</span></a>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <a className="nav-link" href="/">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tablas</span></a>
-                </li>
+                </li> */}
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
@@ -72,7 +72,7 @@ function SideBar(){
                 <Route exact path='/Products' element={<Products/>} />
                 <Route exact path='*' element={<Error404/>} />
             </Routes> */}
-        </React.Fragment>
+        </>
     )
 }
 export default SideBar;
