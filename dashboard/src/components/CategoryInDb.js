@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Category from "./Category";
 import {httpProductService} from "../service/httpProductService";
+import '../assets/css/general.css'
 
 function CategoryInDb() {
   const [categoriesList, setCategoriesList] = useState([]);
@@ -23,12 +24,12 @@ function CategoryInDb() {
       <div className="col-lg-6 mb-4">
         <div className="card shadow mb-4">
           <div className="card-header py-3">
-            <h6 className="m-0 font-weight-bold text-gray-800">
-              Categorías en la base de datos
-            </h6>
+            <h5 className="m-0 font-weight-bold text-gray-800">
+              Cantidad de productos por categoría
+            </h5>
           </div>
           <div className="card-body">
-            <div className="row">
+            <div className="row rowCategories">
             {categoriesList.map((category, index) => {
                 return <Category category={category} key={category + index} />;
               })}

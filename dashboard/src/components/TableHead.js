@@ -3,7 +3,7 @@ import React from "react";
 function TableHead({headValues}) {
   return (
     <>
-      <thead className="table-primary">
+      <thead className="table tableHead">
         <tr>
           <td>{headValues.id}</td>
           <td>{headValues.name}</td>

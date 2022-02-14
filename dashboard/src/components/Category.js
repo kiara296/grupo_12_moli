@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function Category(props){
     return(
         <>
@@ -10,6 +11,7 @@ function Category(props){
                         {props.category.count}
                     </div>
                 </div>
+                
             </div>
         </>
     )

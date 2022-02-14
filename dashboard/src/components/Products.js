@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 import { httpProductService } from "../service/httpProductService";
+import '../assets/css/general.css'
 
 let headValues = {
-  id: "id",
+  id: "Id",
   name: "Nombre",
   category: "Categoría",
   price: "Precio",
   discount: "Descuento",
-  description: "Descripcion",
+  description: "Descripción",
 };
 
 
@@ -55,7 +56,7 @@ const Products = () => {
   return (
     <>
       {/*<!-- PRODUCTS LIST -->*/}
-      <h1 className="h3 mb-2 text-gray-800">Listado de todos los productos</h1>
+      <h1 className="h3 mb-2 text-gray-800 tituloProductos">Listado de todos los productos</h1>
       {/*<!-- Tabla -->*/}
       <div className="card shadow mb-4">
         <div className="card-body">
@@ -75,30 +76,14 @@ const Products = () => {
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li class="page-item">
-                <button onClick={previousPage} class="page-link" href="#">
+                <button onClick={previousPage} class="page-link" >
                   Previous
                 </button>
               </li>
               <li class="page-item">
-                <button onClick={nextPage} class="page-link" href="#">
+                <button onClick={nextPage} class="page-link" >
                   Next
-                </button>
-           {/*    <li class="page-item">
-                <a class="page-link" href="#">
-                  1
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  2
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  3
-                </a>
-              </li> */}
-              
+                </button>              
               </li>
             </ul>
           </nav>

@@ -8,8 +8,8 @@ function TableBody(props) {
           <td>{props.id}</td>
           <td>{props.name}</td>
           <td>{props.product_category}</td>
-          <td>{props.price}</td>
-          <td>{props.discount}</td>
+          <td>{'$' + ' ' + props.price}</td>
+          <td>{ props.discount + '%' + ' '}</td>
           <td>{props.description}</td>
         </tr>
       </tbody>

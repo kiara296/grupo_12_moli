@@ -1,0 +1,24 @@
+.rowCategories {
+    flex-direction: column; 
+    align-items: center;
+}
+
+.tituloProductos {
+    margin-left: 2%;
+}
+
+.tableHead {
+    background-color: #f1b99e;
+}
+
+.tableHead td {
+  color: white;
+  font-weight: bold;
+
+}
+
+.page-item button {
+    color: black;
+    font-weight: bold;
+}
+
