@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { httpProductService } from "../service/httpProductService";
-import image from '../assets/images/productImages/pan-dulce.jpg'
+import image from '../assets/images/productImages/arandanos.png'
 
 
 
@@ -22,14 +22,6 @@ function UltimoProducto() {
     })();
   }, []);
 
-
- /*  const cambiarColor = () => {
-    //alert('Hola como vamos ')
-    //console.log(parrafo);
-    parrafo.current.classList.toggle("");
-  };
-
-  const parrafo = useRef(); */
 
   return (
     <>
