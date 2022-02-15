@@ -81,3 +81,15 @@ Continuar con la comunicacion fluida del grupo y las reuniones periodicas.
 4- Ya a esta altura es poco lo que no debemos hacer. Sin embargo en el apuro nos encontramos en algun momento trabajando en conjunto en distintos equipos y al momento de enviar al repositorio tuvimos algunos conflictos que pudimos solucionar. Pero nos sirvio para evidenciar lo que no hay que hacer (hasta ahora veniamos muy cuidadosos con eso).
 
 
+Retrospectiva Sprint 7 y 8:
+Respecto a las retrospectivas anteriores no hay mucho que agregar. 
+En este ultimo sprint nos complicamos bastante con el Repo, sobre todo por el dashboard.
+
+Como conclusion del ultimo sprint podriamos decir que:
+    No hay que perder el foco en la organizacion del repo.
+    No fue buena la experiencia de montarse en el dashboard y modificar. Creemos que nos complico mas modificarlo que crearlo de cero.  
+
+    La experiencia de todo el proyecto fue muy positiva, aprendimos mucho, la experiencia de codear en grupo tambien fue muy enriquecedora. Cada uno aporto segun sus conocimientos y habilidades y en todo momento fue muy colaborativo el grupo. 
+
+    En este ultimo sprint utilizamos la herramienta de Live Share que nos permitio codear al mismo tiempo en grupo.
+    
